@@ -5,7 +5,7 @@ import { Validators, FormGroup } from '@angular/forms';
 import { AppService } from '../services/app.service';
 
 @Component({
-    templateUrl: './pwa.component.html'
+    templateUrl: './json.component.html'
 })
 
 export class JsonComponent implements OnInit, OnDestroy {

@@ -6,9 +6,10 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { FormControl } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { JsonComponent} from './json/json.component';
-import { MainComponent} from '.main/main.component';
+import { MainComponent} from './main/main.component';
 import { Routes, RouterModule } from '@angular/router';
-import { applyEmailValidation } from './email.extension';
+import { AppService } from './services/app.service';
+
 
 export function IpValidator(control: FormControl): ValidationErrors {
   return !control.value || /(\d{1,3}\.){3}\d{1,3}/.test(control.value) ? null : { 'ip': true };
@@ -42,7 +43,12 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
   bootstrap: [AppComponent],
   declarations: [
     AppComponent,
+    JsonComponent,
+    MainComponent
   ],
+   providers: [
+    AppService   
+  ]
 })
 export class AppModule { }
 

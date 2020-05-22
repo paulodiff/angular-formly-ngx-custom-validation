@@ -5,10 +5,10 @@ import { Validators, FormGroup } from '@angular/forms';
 import { AppService } from '../services/app.service';
 
 @Component({
-    templateUrl: './pwa.component.html'
+    templateUrl: './main.component.html'
 })
 
-export class PWAComponent implements OnInit, OnDestroy {
+export class MainComponent implements OnInit, OnDestroy {
 
     public name = 'PWA Informazioni di PWA';
     public items: any;
@@ -40,6 +40,7 @@ export class PWAComponent implements OnInit, OnDestroy {
     this.tableName = 'PWA';
 
     const opts = {};
+    /*
     this._appService.getFakeUsers(opts).subscribe(
       data => {
         console.log(data);
@@ -48,6 +49,7 @@ export class PWAComponent implements OnInit, OnDestroy {
       err => console.log(err),
       () => console.log('PWA:getFakeUsers')
     );
+    */
 
 
     /*
