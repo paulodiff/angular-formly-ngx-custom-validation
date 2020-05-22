@@ -8,6 +8,8 @@ import { AppComponent } from './app.component';
 import { JsonComponent} from './json/json.component';
 import { MainComponent} from './main/main.component';
 import { Routes, RouterModule } from '@angular/router';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HttpModule, JsonpModule } from '@angular/http';
 import { AppService } from './services/app.service';
 
 
@@ -24,6 +26,8 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
     BrowserModule,
     ReactiveFormsModule,
     FormlyBootstrapModule,
+    HttpModule,
+    HttpClientModule,
     RouterModule.forRoot([
       { path: 'json', component: JsonComponent },
       { path: 'main', component: MainComponent }
