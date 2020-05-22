@@ -46,6 +46,7 @@ export class JsonComponent implements OnInit, OnDestroy {
 
     const opts = {};
 
+    
     this._appService.getUserData().subscribe(([model, fields]) => {
         console.log('returned...');
         this.model = model;
