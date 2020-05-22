@@ -5,6 +5,9 @@ import { FormlyModule, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { FormControl } from '@angular/forms';
 import { AppComponent } from './app.component';
+import { JsonComponent} from './json/json.component';
+import { MainComponent} from '.main/main.component';
+import { Routes, RouterModule } from '@angular/router';
 import { applyEmailValidation } from './email.extension';
 
 export function IpValidator(control: FormControl): ValidationErrors {
@@ -20,18 +23,20 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
     BrowserModule,
     ReactiveFormsModule,
     FormlyBootstrapModule,
+    RouterModule.forRoot([
+      { path: 'json', component: JsonComponent },
+      { path: 'main', component: MainComponent }
+    ]),
     FormlyModule.forRoot({
-      extensions: [
-        { 
-          name: 'email', 
-          extension: { prePopulate: applyEmailValidation } 
-        }],
+
       validators: [
         { name: 'ip', validation: IpValidator },
       ],
+
       validationMessages: [
         { name: 'ip', message: IpValidatorMessage },
       ],
+
     }),
   ],
   bootstrap: [AppComponent],
