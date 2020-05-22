@@ -46,15 +46,24 @@ export class JsonComponent implements OnInit, OnDestroy {
 
     const opts = {};
 
+/*
+   this._appService.getFields().subscribe((m) => {
+     console.log(m);
+   });
+   */
+
     
     this._appService.getUserData().subscribe(([model, fields]) => {
         console.log('returned...');
         this.model = model;
         this.fields = fields;
       },
-      err => console.log(err),
+      err => {
+        console.log('errore:');
+        console.log(err);},
       () => console.log('PWA:getFakeUsers')
     );
+    
 
 
 

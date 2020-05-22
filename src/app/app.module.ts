@@ -26,12 +26,12 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
     BrowserModule,
     ReactiveFormsModule,
     FormlyBootstrapModule,
-    HttpModule,
-    HttpClientModule,
+
     RouterModule.forRoot([
       { path: 'json', component: JsonComponent },
       { path: 'main', component: MainComponent }
     ]),
+
     FormlyModule.forRoot({
 
       validators: [
@@ -43,6 +43,9 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
       ],
 
     }),
+
+    HttpModule,
+    HttpClientModule
   ],
   bootstrap: [AppComponent],
   declarations: [

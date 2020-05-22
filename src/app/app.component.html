@@ -1,9 +1,17 @@
 <ul>
+  <li><a [routerLink]="'/'">info</a></li>
   <li><a [routerLink]="'/main'">main</a></li>
   <li><a [routerLink]="'/json'">json</a></li>
 </ul>
 
 <router-outlet></router-outlet>
+<h3>Json powered</h3>
+<ul>
+  <li>Custom validation in template options</li>
+  <li>Hide Expression con parametri legati a condizioni di altri parametri</li>
+  <li>Campi calolati o valori dipendenti da altri</li>
+  <li>Json powered cascade select https://github.com/ngx-formly/ngx-formly/pull/1280/files</li>
+</ul>
 
 <!--
 <form [formGroup]="form" (ngSubmit)="submit()">

@@ -1,0 +1,25 @@
+[
+    {
+      "key": "firstName",
+      "type": "input",
+      "templateOptions": {
+        "label": "First Name"
+      }
+    },
+    {
+      "key": "lastName",
+      "type": "input",
+      "templateOptions": {
+        "label": "Last Name"
+      }
+    },
+    {
+      "key": "mac",
+      "type": "input",
+      "templateOptions": {
+        "label": "Mac Address",
+        "pattern": "([0-9A-F]{2}[:-]){5}([0-9A-F]{2})"
+      }
+    }
+  ]
+  
