@@ -4,17 +4,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, forkJoin } from 'rxjs';
 import { shareReplay, map, catchError, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
-import { LookupResponse, LookupObject } from './lookup-interface';
-import { UploadOutput, UploadInput, UploadFile, humanizeBytes, UploaderOptions, UploadStatus } from 'ngx-uploader';
-import { FileUploader } from 'ng2-file-upload';
- 
-// https://www.metaltoad.com/blog/angular-5-making-api-calls-httpclient-service
-
-/*
-const httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json' })
-};
-*/
+import { FormlyFieldConfig } from '@ngx-formly/core';
 
 const CACHE_SIZE = 1;
 
@@ -52,8 +42,7 @@ export class AppService {
  
     // --------------------- ATTI ---------------------------------
 
-    private cacheConsegnatari$: Observable<Array<LookupObject>>;
-    private cacheDestinatari$: Observable<Array<LookupObject>>;
+
 
     private cacheConsegnatari: any[];
 
@@ -97,6 +86,7 @@ export class AppService {
   }
 
   getUserData(): Observable<any> {
+    console.log('..getUserData...');
     return forkJoin([this.getUser(), this.getFields()]);
   }
 

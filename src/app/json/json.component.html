@@ -1,15 +1,8 @@
 <h3>JSON component {{tableName}}/{{id}}</h3>
 
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+  <button type="submit" class="btn btn-primary submit-button">Submit</button>
+</form>
 
-
-
-    <ul>
-      <li><a routerLink="/pwa" routerLinkActive="active">PWA</a></li>
-      <li><a routerLink="/istanza/SIT01-component" routerLinkActive="active">ISTANZA</a></li>
-      <li><a routerLink="/error" routerLinkActive="active">ERROR </a></li>
-    </ul>
-
-    <a [routerLink]="['pwa']" >
-      link to user component
-    </a>
 
