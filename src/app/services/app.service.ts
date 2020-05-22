@@ -96,4 +96,16 @@ export class AppService {
     return this.http.get(sseUrl, { headers: this.httpOptions });
   }
 
+  getUserData(): Observable<any> {
+    return forkJoin([this.getUser(), this.getFields()]);
+  }
+
+  getUser() {
+    return this.http.get<{ firstName: string, lastName: string }>('assets/json-powered/user.json');
+  }
+
+  getFields() {
+    return this.http.get<FormlyFieldConfig[]>('assets/json-powered/user-form.json');
+  }
+
 }

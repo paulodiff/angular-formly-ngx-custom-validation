@@ -16,7 +16,12 @@ export class JsonComponent implements OnInit, OnDestroy {
     public tableName;
     connection;
     message;
-  // form Consegna
+    form = new FormGroup({});
+    options: FormlyFormOptions = {};
+
+    model;
+    fields: FormlyFieldConfig[];
+
 
 
   constructor(
@@ -24,14 +29,14 @@ export class JsonComponent implements OnInit, OnDestroy {
               private _appService: AppService
             ) {
 
-              console.log('PWA:constructor');
+              console.log('Json:constructor');
 
 
   }
 
   ngOnInit() {
 
-    console.log('PWA:ngOnInit');
+    console.log('Json:ngOnInit');
 
     // this.id = this.route.snapshot.paramMap.get('id');
     // this.tableName = this.route.snapshot.paramMap.get('tableName');
