@@ -1,0 +1,41 @@
+<h3>PWA info per la registrazione {{tableName}}/{{id}}</h3>
+
+<table class="table table-striped bg-light">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Id</th>
+            <th scope="col">TbName</th>
+            <th scope="col">fldName</th>
+            <th scope="col">oldValue</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let item of items">
+          <tr [ngClass]="[lastInsertedId == item.id  ? 'bg-warning' : '' ]"> 
+            <td>{{item.id}}
+
+              <a [routerLink]="['/pwa-item',item.id]">
+                item: {{item.id}}
+              </a>
+
+          
+
+
+            </td>
+            <td>{{item.name}}</td>
+            <td>{{item.email}}</td>
+            <td>{{item.phone}}</td>
+          </tr>
+        </tbody>
+    </table>
+
+
+    <ul>
+      <li><a routerLink="/pwa" routerLinkActive="active">PWA</a></li>
+      <li><a routerLink="/istanza/SIT01-component" routerLinkActive="active">ISTANZA</a></li>
+      <li><a routerLink="/error" routerLinkActive="active">ERROR </a></li>
+    </ul>
+
+    <a [routerLink]="['pwa']" >
+      link to user component
+    </a>
+
