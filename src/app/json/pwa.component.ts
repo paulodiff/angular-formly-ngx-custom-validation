@@ -2,16 +2,15 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 import { Validators, FormGroup } from '@angular/forms';
-import { SocketService } from '../services/socket.service';
 import { AppService } from '../services/app.service';
 
 @Component({
     templateUrl: './pwa.component.html'
 })
 
-export class PWAComponent implements OnInit, OnDestroy {
+export class JsonComponent implements OnInit, OnDestroy {
 
-    public name = 'PWA Informazioni di PWA';
+    public name = 'Json Informazioni di PWA';
     public items: any;
     public id;
     public tableName;
@@ -41,6 +40,7 @@ export class PWAComponent implements OnInit, OnDestroy {
     this.tableName = 'PWA';
 
     const opts = {};
+    /*
     this._appService.getFakeUsers(opts).subscribe(
       data => {
         console.log(data);
@@ -49,6 +49,7 @@ export class PWAComponent implements OnInit, OnDestroy {
       err => console.log(err),
       () => console.log('PWA:getFakeUsers')
     );
+    */
 
 
     /*

@@ -2,7 +2,6 @@ import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 import { Validators, FormGroup } from '@angular/forms';
-import { SocketService } from '../services/socket.service';
 import { AppService } from '../services/app.service';
 
 @Component({
