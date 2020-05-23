@@ -33,3 +33,21 @@ export function minMaxValidatorMessage(err, field: FormlyFieldConfig) {
 }
 
 
+export function lifecycleFormlyExtension(field: FormlyFieldConfig) {
+    console.log("lifecycle;", field.key);
+    /*
+    if (field.key === "reason") {
+      field.hideExpression = (
+        model: any,
+        formState: any,
+        field: FormlyFieldConfig
+      ) => {
+        if (model && model.color) {
+          return model.color === "null";
+        }
+        return true;
+      };
+    }
+    */
+};
+
