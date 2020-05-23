@@ -11,7 +11,8 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { AppService } from './services/app.service';
-import { Validator } from './services/validator';
+import * as FV from './services/validator';
+
 
 
 export function IpValidator(control: FormControl , field: FormlyFieldConfig): ValidationErrors {
@@ -60,10 +61,12 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
 
       validators: [
         { name: 'ip', validation: IpValidator },
+        { name: 'minMax', validation: FV.minMaxValidator}
       ],
 
       validationMessages: [
         { name: 'ip', message: IpValidatorMessage },
+        { name: 'minMax', message: FV.minMaxValidatorMessage },
       ],
 
     }),

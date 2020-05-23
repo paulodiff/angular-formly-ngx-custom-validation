@@ -8,7 +8,7 @@
         "maxValue" : 100
       },
       "validators": {
-        "validation": ["ip"]
+        "validation": ["minMax"]
       }
     },
     {

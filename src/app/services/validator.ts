@@ -2,9 +2,7 @@ import { ReactiveFormsModule, ValidationErrors } from '@angular/forms';
 import { FormlyModule, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormControl } from '@angular/forms';
 
-export class Validator {
-
- minMaxValidator(control: FormControl , field: FormlyFieldConfig): ValidationErrors {
+export function minMaxValidator(control: FormControl , field: FormlyFieldConfig): ValidationErrors {
   console.log(field.templateOptions.maxValue);
   // console.log(control);
   // console.log(control.value);
@@ -12,6 +10,7 @@ export class Validator {
   // console.log("1)", control.parent);
   // console.log("2)", control.parent.controls["firstName"]);
   // console.log("3)", control.parent.controls["firstName"].parent);
+  console.log('minMax');
   let maxValue = parseInt(field.templateOptions.maxValue);
   let minValue = parseInt(field.templateOptions.minValue);
   let curValue = parseInt(control.value);
@@ -29,10 +28,8 @@ export class Validator {
 
 }
 
- minMaxValidatorMessage(err, field: FormlyFieldConfig) {
+export function minMaxValidatorMessage(err, field: FormlyFieldConfig) {
   return `"${field.formControl.value}" is not in RANGE`;
-}
-
 }
 
 
