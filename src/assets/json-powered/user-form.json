@@ -3,10 +3,10 @@
       "key": "firstName",
       "type": "input",
       "templateOptions": {
-        "label": "First Name",
-        "validators": {
-         "validation": ["ip"]
-        }
+        "label": "First Name"
+      },
+      "validators": {
+        "validation": ["ip"]
       }
     },
     {
