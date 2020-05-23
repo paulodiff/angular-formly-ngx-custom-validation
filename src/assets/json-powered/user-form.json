@@ -4,8 +4,8 @@
       "type": "input",
       "templateOptions": {
         "label": "First Name",
-        "minValue" : 0,
-        "maxValue" : 110
+        "minValue" : 50,
+        "maxValue" : 100
       },
       "validators": {
         "validation": ["ip"]
