@@ -14,7 +14,10 @@ import { AppService } from './services/app.service';
 
 
 export function IpValidator(control: FormControl): ValidationErrors {
+  console.log(control);
   console.log(control.value);
+  console.log(control.parent.controls);
+  console.log("->", control.parent.controls["firstName"].value);
   return !control.value || /(\d{1,3}\.){3}\d{1,3}/.test(control.value) ? null : { 'ip': true };
 }
 
@@ -29,8 +32,10 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
     FormlyBootstrapModule,
 
     RouterModule.forRoot([
+
       { path: 'json', component: JsonComponent },
       { path: 'main', component: MainComponent }
+
     ]),
 
     FormlyModule.forRoot({
@@ -47,6 +52,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
 
     HttpModule,
     HttpClientModule
+
   ],
   bootstrap: [AppComponent],
   declarations: [
