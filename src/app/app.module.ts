@@ -69,6 +69,15 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
         { name: 'minMax', message: FV.minMaxValidatorMessage },
       ],
 
+      extensions: [
+        {
+          name: "hide_expression",
+          extension: {
+            prePopulate: FV.lifecycleFormlyExtension
+          }
+        }
+      ]
+
     }),
 
     HttpModule,

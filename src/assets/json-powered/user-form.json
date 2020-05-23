@@ -14,6 +14,7 @@
     {
       "key": "mac",
       "type": "input",
+      "hideExpression": "model.firstName=='11'",
       "templateOptions": {
         "label": "Mac Address",
         "pattern": "([0-9A-F]{2}[:-]){5}([0-9A-F]{2})"
