@@ -31,7 +31,7 @@ export class MainComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    console.log('PWA:ngOnInit');
+    console.log('Main:ngOnInit');
 
     // this.id = this.route.snapshot.paramMap.get('id');
     // this.tableName = this.route.snapshot.paramMap.get('tableName');

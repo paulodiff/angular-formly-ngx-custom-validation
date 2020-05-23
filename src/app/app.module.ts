@@ -14,6 +14,7 @@ import { AppService } from './services/app.service';
 
 
 export function IpValidator(control: FormControl): ValidationErrors {
+  console.log(control.value);
   return !control.value || /(\d{1,3}\.){3}\d{1,3}/.test(control.value) ? null : { 'ip': true };
 }
 
