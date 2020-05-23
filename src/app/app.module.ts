@@ -13,11 +13,14 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { AppService } from './services/app.service';
 
 
-export function IpValidator(control: FormControl): ValidationErrors {
-  console.log(control);
-  console.log(control.value);
-  console.log(control.parent.controls);
-  console.log("->", control.parent.controls["firstName"]);
+export function IpValidator(control: FormControl , field: FormlyFieldConfig): ValidationErrors {
+  console.log(field.templateOptions.maxValue);
+  // console.log(control);
+  // console.log(control.value);
+  // console.log(control.parent.controls);
+  // console.log("1)", control.parent);
+  // console.log("2)", control.parent.controls["firstName"]);
+  // console.log("3)", control.parent.controls["firstName"].parent);
   return !control.value || /(\d{1,3}\.){3}\d{1,3}/.test(control.value) ? null : { 'ip': true };
 }
 

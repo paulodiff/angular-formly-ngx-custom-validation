@@ -3,7 +3,9 @@
       "key": "firstName",
       "type": "input",
       "templateOptions": {
-        "label": "First Name"
+        "label": "First Name",
+        "minValue" : 0,
+        "maxValue" : 110
       },
       "validators": {
         "validation": ["ip"]
