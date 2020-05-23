@@ -17,7 +17,7 @@ export function IpValidator(control: FormControl): ValidationErrors {
   console.log(control);
   console.log(control.value);
   console.log(control.parent.controls);
-  console.log("->", control.parent.controls["firstName"].value);
+  console.log("->", control.parent.controls["firstName"]);
   return !control.value || /(\d{1,3}\.){3}\d{1,3}/.test(control.value) ? null : { 'ip': true };
 }
 
