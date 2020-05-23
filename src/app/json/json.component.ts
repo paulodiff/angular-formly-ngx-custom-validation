@@ -57,6 +57,15 @@ export class JsonComponent implements OnInit, OnDestroy {
         console.log('returned...');
         this.model = model;
         this.fields = fields;
+
+        this.options.formState.mainModel = this.model;
+        this.fields = fields.map(f => {
+          if (f.templateOptions && f.templateOptions.changeExpr) {
+            f.templateOptions.change = Function('field', f.templateOptions.changeExpr).bind(this);
+          }
+          return f;
+        });
+
       },
       err => {
         console.log('errore:');
