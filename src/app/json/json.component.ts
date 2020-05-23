@@ -45,13 +45,6 @@ export class JsonComponent implements OnInit, OnDestroy {
     this.tableName = 'PWA';
 
     const opts = {};
-
-/*
-   this._appService.getFields().subscribe((m) => {
-     console.log(m);
-   });
-   */
-
     
     this._appService.getUserData().subscribe(([model, fields]) => {
         console.log('returned...');
@@ -61,6 +54,7 @@ export class JsonComponent implements OnInit, OnDestroy {
         this.options.formState.mainModel = this.model;
         this.fields = fields.map(f => {
           if (f.templateOptions && f.templateOptions.changeExpr) {
+            console.log('json:assign:change:function');
             f.templateOptions.change = Function('field', f.templateOptions.changeExpr).bind(this);
           }
           return f;
@@ -73,42 +67,18 @@ export class JsonComponent implements OnInit, OnDestroy {
       () => console.log('PWA:getFakeUsers')
     );
     
+  }
 
+  nameVal(field)  {
+    console.log('nameVal');
+    console.log('checking name');
+  }
 
-
-    /*
-    this._appService.getFakeUsers(opts).subscribe(
-      data => {
-        console.log(data);
-        this.items = data;
-      },
-      err => console.log(err),
-      () => console.log('PWA:getFakeUsers')
-    );
-    */
-
-
-    /*
-    if (this.id) {
-      console.log(this.id);
-      this.name = this.name + ' registrazione numero: ' +  this.id;
-      let opts = {tblName : this.tableName, tblId : this.id };
-      this._appService.getFakeUsers(opts).subscribe(
-        data => { 
-          console.log(data);
-          this.items = data;
-        },
-        err => console.log(err),
-        () => console.log('PWA:getFakeUsers')
-      );
-    }
-    */
-
-    /*
-    this.connection = this._socketService.getMessages().subscribe(message => {
-      this.messages.push(message);
-    })
-    */
+  nameChange(field) {
+    console.log('nameChange');
+    console.log(field.model);
+    field.model.lastName="";
+    console.log(field.model);
   }
 
   ngOnDestroy() {
