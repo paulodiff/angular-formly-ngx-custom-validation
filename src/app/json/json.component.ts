@@ -78,7 +78,7 @@ export class JsonComponent implements OnInit, OnDestroy {
     // console.log('nameChange');
     console.log('nameChange', field.key);
     console.log('nameChange', field.templateOptions);
-    console.log('nameChange', field.parent.formControl.controls["mac"]);
+    console.log('nameChange', field.parent.formControl.controls["mac"].setValue("ss"));
     console.log(field.parent.form);
     // field.parent.formControl // will return FormGroup
     // field.parent.form // will return FormArray
