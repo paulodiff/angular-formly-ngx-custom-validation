@@ -34,19 +34,21 @@ export class AppService {
     return this.http.get(environment.apiStats, { params: Params, headers: this.httpOptions.headers } );
   }
 
-  getUserData(): Observable<any> {
-    console.log('..getUserData...');
-    return forkJoin([this.getModel(), this.getFields()]);
+  getFormData(formId): Observable<any> {
+    console.log('..getFormData...', formId);
+    return forkJoin([this.getModel(formId), this.getFields(formId)]);
   }
 
-  getModel() {
-    console.log('..getModel..');
-    return this.http.get<{ firstName: string, lastName: string }>('assets/json-powered/user-model.json');
+  getModel(formId) {
+    console.log('..getModel..',formId);
+    let asset = 'assets/json-powered/' + formId + '-model.json';
+    return this.http.get<{ firstName: string, lastName: string }>(asset);
   }
 
-  getFields() {
-     console.log('..getFields..');
-    return this.http.get<FormlyFieldConfig[]>('assets/json-powered/user-form.json');
+  getFields(formId) {
+     console.log('..getFields..',formId);
+     let asset = 'assets/json-powered/' + formId + '-form.json';
+    return this.http.get<FormlyFieldConfig[]>(asset);
   }
 
 }

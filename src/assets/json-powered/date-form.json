@@ -1,10 +1,9 @@
 [
     {
-      "key": "f1",
-      "type": "date",
+      "key": "d1",
+      "type": "input",
       "templateOptions": {
         "label": "date"
-      
       }
     }
   ]

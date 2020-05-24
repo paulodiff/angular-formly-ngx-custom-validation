@@ -43,13 +43,13 @@ export class JsonComponent implements OnInit, OnDestroy {
     // this.tableName = this.route.snapshot.paramMap.get('tableName');
 
   
-    
+
 
     this.tableName = 'PWA';
 
     const opts = {};
     
-    this._appService.getUserData().subscribe(([model, fields]) => {
+    this._appService.getFormData(this.itemId).subscribe(([model, fields]) => {
         console.log('returned...');
         this.model = model;
         this.fields = fields;
