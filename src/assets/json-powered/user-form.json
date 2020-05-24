@@ -1,15 +1,38 @@
 [
     {
-      "key": "firstName",
+      "key": "f1",
       "type": "input",
       "templateOptions": {
-        "label": "First Name",
+        "label": "f1",
         "minValue" : 50,
         "maxValue" : 100,
-        "changeExpr": "this.nameChange(field)"
+        "changeExpr": "this.nameChange(field)",
+        "sumExpr" : {
+          "listMemmber" : ["f1","f2"],
+          "destField" : "sumOfField"
+        }
       },
       "validators": {
         "validation": ["minMax"]
+      }
+    },
+    {
+      "key": "f2",
+      "type": "input",
+      "templateOptions": {
+        "label": "f2",
+        "sumExpr" : {
+          "listMemmber" : ["f1","f2"],
+          "destField" : "sumOfField"
+        }
+      }
+    },
+    {
+      "key": "sumOfField",
+      "type": "input",
+      "templateOptions": {
+        "label": "sumOfField"
+    
       }
     },
     {

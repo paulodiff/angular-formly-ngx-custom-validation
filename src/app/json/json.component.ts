@@ -53,9 +53,11 @@ export class JsonComponent implements OnInit, OnDestroy {
 
         this.options.formState.mainModel = this.model;
         this.fields = fields.map(f => {
-          if (f.templateOptions && f.templateOptions.changeExpr) {
+          if (f.templateOptions && f.templateOptions.sumExpr) {
             console.log('json:assign:change:function',f.templateOptions.changeExpr);
-            f.templateOptions.change = Function('field', f.templateOptions.changeExpr).bind(this);
+            f.templateOptions.change = 
+            // Function('field', f.templateOptions.changeExpr).bind(this);
+            Function('field', 'this.sumOnChange(field)').bind(this);
           }
           return f;
         });
@@ -72,6 +74,25 @@ export class JsonComponent implements OnInit, OnDestroy {
   nameVal(field)  {
     console.log('nameVal');
     console.log('checking name');
+  }
+
+  sumOnChange(field) {
+    // console.log('nameChange');
+    console.log('sumOnChange', field.key);
+    console.log('sumOnChange', field.templateOptions);
+    console.log('sumOnChange', field.parent.formControl.controls["mac"].setValue("ss"));
+    console.log(field.parent.form);
+
+    console.log(field.templateOptions.sumExpr.destField);
+    let d = field.templateOptions.sumExpr.destField;
+    field.parent.formControl.controls[d].setValue("SUM!");
+    // field.parent.formControl // will return FormGroup
+    // field.parent.form // will return FormArray
+    //  to access to the FormArray from the child FormGroup knowing which // index in the array has the child FormGroup assigned?
+
+    //field.parent.form.at(field.parent.key) // which will return the same result as `field.parent.formControl`
+    // field.model.lastName="";
+    // console.log(field.model);
   }
 
   nameChange(field) {
