@@ -77,7 +77,7 @@ export class JsonComponent implements OnInit, OnDestroy {
   nameChange(field) {
     console.log('nameChange');
     console.log(field.model);
-    field.model.lastName="";
+    // field.model.lastName="";
     console.log(field.model);
   }
 
