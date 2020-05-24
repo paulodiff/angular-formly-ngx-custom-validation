@@ -4,7 +4,7 @@
       "type": "input",
       "templateOptions": {
         "label": "f1",
-        "minValue" : 50,
+        "minValue" : 2,
         "maxValue" : 100,
         "changeExpr": "this.nameChange(field)",
         "sumExpr" : {
@@ -16,6 +16,7 @@
         "validation": ["minMax"]
       }
     },
+
     {
       "key": "f2",
       "type": "input",
@@ -27,6 +28,7 @@
         }
       }
     },
+
     {
       "key": "sumOfField",
       "type": "input",
@@ -35,6 +37,7 @@
     
       }
     },
+    
     {
       "key": "mac",
       "type": "input",
