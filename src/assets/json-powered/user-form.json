@@ -6,7 +6,6 @@
         "label": "f1",
         "minValue" : 2,
         "maxValue" : 100,
-        "changeExpr": "this.nameChange(field)",
         "sumExpr" : {
           "listMemmber" : ["f1","f2"],
           "destField" : "sumOfField"
@@ -37,11 +36,11 @@
     
       }
     },
-    
+
     {
       "key": "mac",
       "type": "input",
-      "hideExpression": "(model.firstName=='11') || (model.firstName=='22')",
+      "hideExpression": "(model.f1=='11') || (model.f1=='22')",
       "templateOptions": {
         "label": "mac"
       }

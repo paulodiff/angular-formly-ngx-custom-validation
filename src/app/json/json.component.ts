@@ -83,7 +83,7 @@ export class JsonComponent implements OnInit, OnDestroy {
     // console.log('nameChange');
     console.log('sumOnChange', field.key);
     console.log('sumOnChange', field.templateOptions);
-    console.log('sumOnChange', field.parent.formControl.controls["mac"].setValue("ss"));
+
     console.log(field.parent.form);
 
     console.log(field.templateOptions.sumExpr.destField);
