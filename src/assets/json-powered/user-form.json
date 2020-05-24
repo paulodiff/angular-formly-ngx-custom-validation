@@ -38,8 +38,10 @@
     {
       "key": "mac",
       "type": "input",
-      "hideExpression": "(model.firstName=='11') || (model.firstName=='22')"
-      
+      "hideExpression": "(model.firstName=='11') || (model.firstName=='22')",
+      "templateOptions": {
+        "label": "mac"
+      }
     }
   ]
   

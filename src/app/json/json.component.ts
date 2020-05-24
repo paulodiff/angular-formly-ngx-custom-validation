@@ -121,4 +121,10 @@ export class JsonComponent implements OnInit, OnDestroy {
     // this.connection.unsubscribe();
   }
 
+  submit() {
+    if (this.form.valid) {
+      alert(JSON.stringify(this.model));
+    }
+  }
+
 }
