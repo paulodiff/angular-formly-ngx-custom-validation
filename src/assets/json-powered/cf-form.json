@@ -1,0 +1,10 @@
+[
+    {
+      "key": "cf",
+      "type": "input",
+      "templateOptions": {
+        "label": "codice fiscale"
+      }
+    }
+    
+]

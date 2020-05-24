@@ -6,5 +6,21 @@
         "label": "date"
       }
     }
+    ,
+     {
+      "key": "d2",
+      "type": "input",
+      "templateOptions": {
+        "label": "date in range"
+      }
+    }
+    ,
+     {
+      "key": "d3",
+      "type": "input",
+      "templateOptions": {
+        "label": "date after d2"
+      }
+    }
   ]
   
