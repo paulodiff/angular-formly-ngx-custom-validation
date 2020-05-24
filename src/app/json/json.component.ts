@@ -12,7 +12,7 @@ export class JsonComponent implements OnInit, OnDestroy {
 
     public name = 'Json Informazioni di PWA';
     public items: any;
-    public id;
+    public itemId;
     public tableName;
     connection;
     message;
@@ -38,10 +38,13 @@ export class JsonComponent implements OnInit, OnDestroy {
 
     console.log('Json:ngOnInit');
 
-    // this.id = this.route.snapshot.paramMap.get('id');
+    this.itemId = this.route.snapshot.paramMap.get('itemId');
+    console.log('Json:itemId', this.itemId);
     // this.tableName = this.route.snapshot.paramMap.get('tableName');
 
-    this.id = '100';
+  
+    
+
     this.tableName = 'PWA';
 
     const opts = {};

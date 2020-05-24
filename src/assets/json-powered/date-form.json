@@ -1,0 +1,11 @@
+[
+    {
+      "key": "f1",
+      "type": "date",
+      "templateOptions": {
+        "label": "date"
+      
+      }
+    }
+  ]
+  

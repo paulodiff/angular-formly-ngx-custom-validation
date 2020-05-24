@@ -53,7 +53,8 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
     RouterModule.forRoot([
 
       { path: 'json', component: JsonComponent },
-      { path: 'main', component: MainComponent }
+      { path: 'main', component: MainComponent },
+      { path: 'json/:itemId', component: JsonComponent }
 
     ]),
 

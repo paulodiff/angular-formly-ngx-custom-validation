@@ -36,12 +36,12 @@ export class AppService {
 
   getUserData(): Observable<any> {
     console.log('..getUserData...');
-    return forkJoin([this.getUser(), this.getFields()]);
+    return forkJoin([this.getModel(), this.getFields()]);
   }
 
-  getUser() {
-    console.log('..getUser..');
-    return this.http.get<{ firstName: string, lastName: string }>('assets/json-powered/user.json');
+  getModel() {
+    console.log('..getModel..');
+    return this.http.get<{ firstName: string, lastName: string }>('assets/json-powered/user-model.json');
   }
 
   getFields() {
