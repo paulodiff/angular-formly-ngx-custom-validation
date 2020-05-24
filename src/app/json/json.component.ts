@@ -54,7 +54,7 @@ export class JsonComponent implements OnInit, OnDestroy {
         this.options.formState.mainModel = this.model;
         this.fields = fields.map(f => {
           if (f.templateOptions && f.templateOptions.changeExpr) {
-            console.log('json:assign:change:function');
+            console.log('json:assign:change:function',f.templateOptions.changeExpr);
             f.templateOptions.change = Function('field', f.templateOptions.changeExpr).bind(this);
           }
           return f;
@@ -75,10 +75,18 @@ export class JsonComponent implements OnInit, OnDestroy {
   }
 
   nameChange(field) {
-    console.log('nameChange');
-    console.log(field.model);
+    // console.log('nameChange');
+    console.log('nameChange', field.key);
+    console.log('nameChange', field.templateOptions);
+    console.log('nameChange', field.parent.formControl.controls["mac"]);
+    console.log(field.parent.form);
+    // field.parent.formControl // will return FormGroup
+    // field.parent.form // will return FormArray
+    //  to access to the FormArray from the child FormGroup knowing which // index in the array has the child FormGroup assigned?
+
+    //field.parent.form.at(field.parent.key) // which will return the same result as `field.parent.formControl`
     // field.model.lastName="";
-    console.log(field.model);
+    // console.log(field.model);
   }
 
   ngOnDestroy() {
