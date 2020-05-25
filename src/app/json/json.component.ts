@@ -16,13 +16,11 @@ export class JsonComponent implements OnInit, OnDestroy {
     public tableName;
     connection;
     message;
+    private sub: any;
     form = new FormGroup({});
     options: FormlyFormOptions = {};
-
-    model;
     fields: FormlyFieldConfig[];
-
-
+    model;
 
   constructor(
               private route: ActivatedRoute,
@@ -36,20 +34,13 @@ export class JsonComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
 
-    console.log('Json:ngOnInit');
-
-    this.itemId = this.route.snapshot.paramMap.get('itemId');
-    console.log('Json:itemId', this.itemId);
-    // this.tableName = this.route.snapshot.paramMap.get('tableName');
-
-  
-
-
-    this.tableName = 'PWA';
-
-    const opts = {};
-    
-    this._appService.getFormData(this.itemId).subscribe(([model, fields]) => {
+    this.sub = this.route.params.subscribe(params => {
+      console.log('Json:ngOnInit');
+      // this.itemId = +params['id']; // (+) converts string 'id' to a number
+      this.itemId = params['itemId'];
+      console.log('Json:itemId', this.itemId);
+       // In a real app: dispatch action to load the details here.
+      this._appService.getFormData(this.itemId).subscribe(([model, fields]) => {
         console.log('returned...');
         this.model = model;
         this.fields = fields;
@@ -64,15 +55,19 @@ export class JsonComponent implements OnInit, OnDestroy {
           }
           return f;
         });
-
       },
       err => {
         console.log('errore:');
         console.log(err);},
       () => console.log('PWA:getFakeUsers')
-    );
+      );
+    });
+
+
+  
+   
     
-  }
+  } // ngOnInit - end
 
   nameVal(field)  {
     console.log('nameVal');
@@ -119,6 +114,9 @@ export class JsonComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     // this.connection.unsubscribe();
+   
+    this.sub.unsubscribe();
+  
   }
 
   submit() {
