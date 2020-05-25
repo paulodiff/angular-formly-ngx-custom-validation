@@ -2,8 +2,21 @@ import { ReactiveFormsModule, ValidationErrors } from '@angular/forms';
 import { FormlyModule, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormControl } from '@angular/forms';
 
+// "^[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$"
+
+export function codiceFiscaleValidator(control: FormControl , field: FormlyFieldConfig): 
+ValidationErrors {
+  console.log("codiceFiscaleValidator");
+   return !control.value || /^[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$/.test(control.value) ? null : { 'codiceFiscaleValidator': true };
+}
+
+export function codiceFiscaleValidatorMessage(err, field: FormlyFieldConfig) {
+  return `"${field.formControl.value}" non è nel formato corretto!`;
+}
+
+
 export function minMaxValidator(control: FormControl , field: FormlyFieldConfig): ValidationErrors {
-  console.log("minMaxV", field.templateOptions.maxValue);
+  console.log("minMaxValidator", field.templateOptions.maxValue);
   // console.log(control);
   // console.log(control.value);
   // console.log(control.parent.controls);
