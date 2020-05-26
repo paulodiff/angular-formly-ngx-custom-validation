@@ -4,6 +4,9 @@
       "type": "input",
       "templateOptions": {
         "label": "codice fiscale"
+      },
+       "validators": {
+        "validation": ["codiceFiscaleValidator"]
       }
     }
     

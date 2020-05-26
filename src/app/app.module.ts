@@ -62,11 +62,13 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
 
       validators: [
         { name: 'ip', validation: IpValidator },
+        { name: 'codiceFiscaleValidator', validation: FV.codiceFiscaleValidator },
         { name: 'minMax', validation: FV.minMaxValidator}
       ],
 
       validationMessages: [
         { name: 'ip', message: IpValidatorMessage },
+        { name: 'codiceFiscaleValidator', message: FV.codiceFiscaleValidatorMessage },
         { name: 'minMax', message: FV.minMaxValidatorMessage },
       ],
 
