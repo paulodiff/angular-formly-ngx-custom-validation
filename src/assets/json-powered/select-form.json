@@ -1,0 +1,14 @@
+[
+    {
+      "key": "sel1",
+      "type": "select",
+      "templateOptions": {
+        "label": "select sel1",
+        "options": [
+          {"label": "aa", "value": "aa"},
+          {"label": "bb", "value": "bb"},
+          {"label": "cc", "value": "cc"}
+        ]
+    
+    },
+]
