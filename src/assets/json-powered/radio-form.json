@@ -1,6 +1,6 @@
 [
     {
-      "key": "cf",
+      "key": "rr",
       "type": "radio",
       "templateOptions": {
         "label": "lista di scelta",
@@ -18,7 +18,7 @@
     {
       "key": "f1",
       "type": "input",
-      "hideExpression": "(model.cf=='1')",
+      "hideExpression": "(model.rr=='1')",
       "templateOptions": {
         "label": "option1"
       }
