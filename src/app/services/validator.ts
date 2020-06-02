@@ -122,7 +122,8 @@ export function dateInRangeValidator(control: FormControl , field: FormlyFieldCo
   let fromDate = field.templateOptions.fromDate;
   let toDate = field.templateOptions.toDate;
   let curValue = control.value;
-  console.log("dateInRangeValidator",curValue, fromDate, toDate);
+  let fD = moment(curValue, "DD/MM/YYYY");
+  console.log("dValidator",curValue, fromDate, toDate, fD);
   let bValid = { 'dateInRangeValidator': true };
   /*
   if ((curValue < maxValue) && (curValue > minValue)) {
