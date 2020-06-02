@@ -10,15 +10,15 @@
         "options": [
           { "value": 1, "label": "Option 1" },
           { "value": 2, "label": "Option 2" },
-          { "value": 2, "label": "Option 3" }
+          { "value": 3, "label": "Option 3" }
         ]
       }
     },
 
     {
-      "key": "option1",
+      "key": "f1",
       "type": "input",
-      "hideExpression": "(model.cf==1)",
+      "hideExpression": "(model.cf=='1')",
       "templateOptions": {
         "label": "option1"
       }
