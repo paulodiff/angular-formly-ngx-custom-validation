@@ -42,7 +42,7 @@
       "type": "input",
       "hideExpression": "(model.f1=='11') || (model.f1=='22')",
       "templateOptions": {
-        "label": "mac"
+        "label": "mac  (hide if f1=11 or f1=22)"
       }
     }
   ]
