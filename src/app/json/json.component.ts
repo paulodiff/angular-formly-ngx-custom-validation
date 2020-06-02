@@ -40,13 +40,14 @@ export class JsonComponent implements OnInit, OnDestroy {
       this.itemId = params['itemId'];
       console.log('Json:itemId', this.itemId);
        // In a real app: dispatch action to load the details here.
-      this._appService.getFormData(this.itemId).subscribe(([model, fields]) => {
+      this._appService.getFormData(this.itemId).subscribe(([model, fields, options ]) => {
         console.log('returned...');
         // this.options = {};
         this.model = {};
         this.fields = null;
         this.model = model;
         this.fields = fields;
+        this.options = options;
 
         this.options.formState.mainModel = this.model;
         this.fields = fields.map(f => {
