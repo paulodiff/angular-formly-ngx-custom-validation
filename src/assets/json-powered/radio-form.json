@@ -3,7 +3,16 @@
       "key": "cf",
       "type": "radio",
       "templateOptions": {
-        "label": "codice fiscale"
+        "label": "lista di scelta"
+        "placeholder": "Placeholder",
+        "description": "Description",
+        "required": true,
+        "options": [
+          { "value": 1, "label": "Option 1" },
+          { "value": 2, "label": "Option 2" },
+          { "value": 2, "label": "Option 3" }
+        ]
+      }
       }
     }
     
