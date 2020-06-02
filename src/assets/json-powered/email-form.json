@@ -1,0 +1,14 @@
+[
+    {
+      "key": "em1",
+      "type": "input",
+      "templateOptions": {
+        "label": "email"
+      }
+      ,
+      "validators": {
+        "validation": ["emailValidator"]
+      }
+    }
+   
+  ]

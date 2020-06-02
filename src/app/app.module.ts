@@ -64,12 +64,14 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
         { name: 'ip', validation: IpValidator },
         { name: 'codiceFiscaleValidator', validation: FV.codiceFiscaleValidator },
         { name: 'minMax', validation: FV.minMaxValidator}
+        { name: 'emailValidator', validation: FV.emailValidator}
       ],
 
       validationMessages: [
         { name: 'ip', message: IpValidatorMessage },
         { name: 'codiceFiscaleValidator', message: FV.codiceFiscaleValidatorMessage },
         { name: 'minMax', message: FV.minMaxValidatorMessage },
+        { name: 'emailValidator', message: FV.emailValidatorMessage },
       ],
 
       extensions: [
