@@ -3,7 +3,7 @@
       "key": "f1",
       "type": "input",
       "templateOptions": {
-        "label": "f1",
+        "label": "f1 - minMaxValidator",
         "minValue" : 2,
         "maxValue" : 100,
         "sumExpr" : {
