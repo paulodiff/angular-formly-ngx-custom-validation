@@ -56,6 +56,18 @@ export function minMaxValidatorMessage(err, field: FormlyFieldConfig) {
   return `"${field.formControl.value}" is not in RANGE`;
 }
 
+// email Validator
+// /^\S+@\S+\.\S+$/
+
+export function emailValidator(control: FormControl , field: FormlyFieldConfig): 
+ValidationErrors {
+  console.log("emailValidator");
+   return !control.value || /^\S+@\S+\.\S+$/.test(control.value) ? null : { 'emailValidator': true };
+}
+
+export function emailValidatorMessage(err, field: FormlyFieldConfig) {
+  return `"${field.formControl.value}" non è nel formato corretto (2) !`;
+}
 
 export function lifecycleFormlyExtension(field: FormlyFieldConfig) {
     console.log("lifecycle;", field.key);
