@@ -50,12 +50,13 @@ export class JsonComponent implements OnInit, OnDestroy {
 
         this.options.formState.mainModel = this.model;
         this.fields = fields.map(f => {
+
           if (f.templateOptions && f.templateOptions.sumExpr) {
             console.log('json:assign:change:function',f.templateOptions.changeExpr);
             f.templateOptions.change = 
-            // Function('field', f.templateOptions.changeExpr).bind(this);
             Function('field', 'this.sumOnChange(field)').bind(this);
           }
+
           return f;
         });
       },
@@ -81,7 +82,6 @@ export class JsonComponent implements OnInit, OnDestroy {
     // console.log('nameChange');
     console.log('sumOnChange', field.key);
     console.log('sumOnChange', field.templateOptions);
-
     console.log(field.parent.form);
 
     console.log(field.templateOptions.sumExpr.destField);
