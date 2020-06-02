@@ -4,6 +4,9 @@
       "type": "input",
       "templateOptions": {
         "label": "date"
+      },
+       "validators": {
+        "validation": ["dateValidator"]
       }
     }
     ,
@@ -11,8 +14,14 @@
       "key": "d2",
       "type": "input",
       "templateOptions": {
-        "label": "date in range"
+        "label": "date in range",
+        "fromDate" : "01/01/2000",
+        "toDate" : "05/05/2000"
+      },
+       "validators": {
+        "validation": ["dateInRangeValidator"]
       }
+      
     }
     ,
      {

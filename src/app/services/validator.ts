@@ -1,6 +1,7 @@
 import { ReactiveFormsModule, ValidationErrors } from '@angular/forms';
 import { FormlyModule, FormlyFieldConfig } from '@ngx-formly/core';
 import { FormControl } from '@angular/forms';
+import moment = require('moment');
 
 // "^[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$"
 
@@ -70,7 +71,7 @@ export function minMaxValidatorMessage(err, field: FormlyFieldConfig) {
 
 export function dateValidator(control: FormControl , field: FormlyFieldConfig): 
 ValidationErrors {
-  console.log("dateValidator");
+  //console.log("dateValidator");
    return !control.value || /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/.test(control.value) ? null : { 'dateValidator': true };
 }
 
@@ -110,3 +111,33 @@ export function lifecycleFormlyExtension(field: FormlyFieldConfig) {
     */
 }
 
+
+// dateInRange
+
+export function dateInRangeValidator(control: FormControl , field: FormlyFieldConfig): ValidationErrors {
+  console.log("dateInRangeValidator", field.templateOptions.maxValue);
+  console.log(moment().format('dddd'));
+  // console.log(control);
+  // moment('2010-10-20').isBetween('2010-10-19', '2010-10-25');
+  let dateFrom = parseInt(field.templateOptions.dateFrom);
+  let dateTo = parseInt(field.templateOptions.dateTo);
+  let curValue = parseInt(control.value);
+  // console.log("minMaxV",curValue, minValue, maxValue);
+  let bValid = { 'dateInRangeValidator': true };
+  /*
+  if ((curValue < maxValue) && (curValue > minValue)) {
+    bValid = null;
+  } else {
+    bValid = { 'ip': true };
+  }
+  */
+  // return !control.value || /(\d{1,3}\.){3}\d{1,3}/.test(control.value) ? null : { 'ip': true };
+  // console.log("minMaxV",control.value);
+  // console.log("minMaxV",bValid);
+  return bValid;
+
+}
+
+export function dateInRangeValidatorMessage(err, field: FormlyFieldConfig) {
+  return `"${field.formControl.value}" date is not in RANGE`;
+}
