@@ -14,4 +14,20 @@
       }
     
     }
+    ,
+    {
+      "key": "team",
+      "type": "select",
+      "templateOptions": {
+        "label": "Team",
+        "options": [],
+        "valueProp": "id",
+        "labelProp": "name",
+      },
+      "expressionProperties": {
+        "templateOptions.options": "formState.selectOptionsData.teams.filter(team => team.sportId === model.sport)",
+        // reset model when updating select options
+        "model.team": "field.templateOptions.options.find(o => o.id === model.team) ? model.team:null"
+      }
+    }
 ]
