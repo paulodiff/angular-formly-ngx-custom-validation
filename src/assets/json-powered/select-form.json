@@ -1,14 +1,16 @@
 [
     {
-      "key": "sel1",
+      "key": "sport",
       "type": "select",
       "templateOptions": {
-        "label": "select sel1",
+        "label": "select sport",
         "options": [
-          {"label": "aa", "value": "aa"},
-          {"label": "bb", "value": "bb"},
-          {"label": "cc", "value": "cc"}
-        ]
+          {"id": 1, "name": "Calcio"},
+          {"id": 2, "name": "Basket"},
+          {"id": 2, "name": "Pallavolo"}
+        ],
+        "valueProp": "id",
+        "labelProp": "name"
       }
     
     }
