@@ -119,10 +119,10 @@ export function dateInRangeValidator(control: FormControl , field: FormlyFieldCo
   console.log(moment().format('dddd'));
   // console.log(control);
   // moment('2010-10-20').isBetween('2010-10-19', '2010-10-25');
-  let dateFrom = parseInt(field.templateOptions.dateFrom);
-  let dateTo = parseInt(field.templateOptions.dateTo);
-  let curValue = parseInt(control.value);
-  // console.log("minMaxV",curValue, minValue, maxValue);
+  let fromDate = field.templateOptions.fromDate;
+  let toDate = field.templateOptions.toDate;
+  let curValue = control.value;
+  console.log("dateInRangeValidator",curValue, fromDate, toDate);
   let bValid = { 'dateInRangeValidator': true };
   /*
   if ((curValue < maxValue) && (curValue > minValue)) {
