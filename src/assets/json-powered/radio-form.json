@@ -3,7 +3,7 @@
       "key": "cf",
       "type": "radio",
       "templateOptions": {
-        "label": "lista di scelta"
+        "label": "lista di scelta",
         "placeholder": "Placeholder",
         "description": "Description",
         "required": true,
@@ -13,6 +13,14 @@
           { "value": 2, "label": "Option 3" }
         ]
       }
+    },
+
+    {
+      "key": "option1",
+      "type": "input",
+      "hideExpression": "(model.cf==1)",
+      "templateOptions": {
+        "label": "option1"
       }
     }
     
