@@ -42,6 +42,7 @@ export class JsonComponent implements OnInit, OnDestroy {
        // In a real app: dispatch action to load the details here.
       this._appService.getFormData(this.itemId).subscribe(([model, fields]) => {
         console.log('returned...');
+        // this.options = {};
         this.model = {};
         this.fields = null;
         this.model = model;
