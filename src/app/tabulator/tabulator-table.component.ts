@@ -8,7 +8,7 @@ import Tabulator from 'tabulator-tables';
 @Component({
   selector: 'app-tabulator-table',
   templateUrl: './tabulator-table.component.html',
-  styleUrls: ['./tabulator-table.component.scss']
+  styleUrls: ['./tabulator-table.component.css']
 })
 export class TabulatorTableComponent implements OnChanges {
   @Input() tableData: any[] = [];

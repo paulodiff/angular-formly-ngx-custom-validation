@@ -7,6 +7,7 @@ import { FormControl } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { JsonComponent} from './json/json.component';
 import { MainComponent} from './main/main.component';
+import { TabulatorTableComponent } from './tabulator/tabulator-table.component';
 import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpModule, JsonpModule } from '@angular/http';
@@ -54,7 +55,8 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
 
       { path: 'json', component: JsonComponent },
       { path: 'main', component: MainComponent },
-      { path: 'json/:itemId', component: JsonComponent }
+      { path: 'json/:itemId', component: JsonComponent },
+      { path: 'tabulator', component: TabulatorTableComponent }
 
     ]),
 
@@ -97,7 +99,9 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
   declarations: [
     AppComponent,
     JsonComponent,
-    MainComponent
+    MainComponent,
+    TabulatorTableComponent
+
   ],
    providers: [
     AppService   
