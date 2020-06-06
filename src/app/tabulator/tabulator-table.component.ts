@@ -33,7 +33,7 @@ export class TabulatorTableComponent implements OnChanges {
         this.model = {};
         this.fields = null;
         this.model = model;
-        this.fields = fields;
+        this.tableData = fields;
         // this.options = options;
 
        
