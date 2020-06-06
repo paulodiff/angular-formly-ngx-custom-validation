@@ -36,6 +36,8 @@ export class TabulatorTableComponent implements OnChanges {
         this.tableData = fields;
         // this.options = options;
 
+        this.drawTable();
+
        
       },
       err => {
@@ -49,7 +51,7 @@ export class TabulatorTableComponent implements OnChanges {
   
 
   ngOnChanges(changes: SimpleChanges): void {
-    this.drawTable();
+    // this.drawTable();
   }
 
   private drawTable(): void {
