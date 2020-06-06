@@ -19,7 +19,7 @@ export class TabulatorTableComponent implements OnChanges {
   tab = document.createElement('div');
 
   constructor() {
-    var Tabulator = require('tabulator-tables');
+    //var Tabulator = require('tabulator-tables');
   }
 
   ngOnChanges(changes: SimpleChanges): void {
