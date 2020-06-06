@@ -57,10 +57,10 @@ export class TabulatorTableComponent implements OnChanges {
     new Tabulator(this.tab, {
       data: this.tableData,
       autoColumns:true,
-      reactiveData:true, //enable data reactivity
+      // reactiveData:true, //enable data reactivity
       // columns: this.columnNames,
-      layout: 'fitData',
-      height: this.height
+      // layout: 'fitData',
+      // height: this.height
     });
     document.getElementById('my-tabular-table').appendChild(this.tab);
   }
