@@ -32,6 +32,7 @@ export class TabulatorTableComponent implements OnChanges {
         this.model = {};
         this.fields = null;
         this.model = model;
+        this.columnNames = model;
         this.tableData = fields;
         // this.options = options;
 
@@ -57,9 +58,10 @@ export class TabulatorTableComponent implements OnChanges {
     new Tabulator(this.tab, {
       data: this.tableData,
       autoColumns: true,
-      layout:"fitColumns"
+      // headerVertical: true,
+      layout:"fitColumns",
       // reactiveData:true, //enable data reactivity
-      // columns: this.columnNames,
+      columns: this.columnNames,
       // layout: 'fitData',
       // height: this.height
     });
