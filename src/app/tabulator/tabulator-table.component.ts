@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import Tabulator from 'tabulator-tables';
+import { AppService } from '../services/app.service';
 
 /**
  * This is a wrapper class for the tabulator JS library.
@@ -17,10 +18,35 @@ export class TabulatorTableComponent implements OnChanges {
   // list properties you want to set per implementation here...
 
   tab = document.createElement('div');
+  model;
+  fields;
+  options;
 
-  constructor() {
+  constructor(private _appService: AppService) {
     //var Tabulator = require('tabulator-tables');
+
+      console.log('Tabulator:init');
+       // In a real app: dispatch action to load the details here.
+      this._appService.getFormData('tabulator').subscribe(([model, fields, options ]) => {
+        console.log('returned...');
+        // this.options = {};
+        this.model = {};
+        this.fields = null;
+        this.model = model;
+        this.fields = fields;
+        // this.options = options;
+
+       
+      },
+      err => {
+        console.log('errore:');
+        console.log(err);},
+      () => console.log('Tabulator:getData:done!')
+      );
   }
+
+
+  
 
   ngOnChanges(changes: SimpleChanges): void {
     this.drawTable();
