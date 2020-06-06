@@ -1,5 +1,5 @@
 [
-  {"title":"userId1", "field":"userId"},
+  {"title":"userId1", "field":"userId", "headerVertical":true},
    {"title":"id22222222", "field":"id"},
     {"title":"title", "field":"title"},
      {"title":"body", "field":"body"}
