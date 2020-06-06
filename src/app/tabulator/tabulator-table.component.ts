@@ -57,7 +57,7 @@ export class TabulatorTableComponent implements OnChanges {
   private drawTable(): void {
     new Tabulator(this.tab, {
       data: this.tableData,
-      autoColumns: true,
+      // autoColumns: true,
       // headerVertical: true,
       layout:"fitColumns",
       // reactiveData:true, //enable data reactivity
