@@ -23,9 +23,12 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/tabulator-tables/dist/css/tabulator.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/tabulator-tables/dist/js/tabulator.min.js"
+            ]
           },
           "configurations": {
             "production": {
