@@ -21,6 +21,7 @@ export class TabulatorTableComponent implements OnChanges {
   model;
   fields;
   options;
+  table;
 
   constructor(private _appService: AppService) {
     //var Tabulator = require('tabulator-tables');
@@ -30,6 +31,7 @@ export class TabulatorTableComponent implements OnChanges {
       this._appService.getFormData('tabulator').subscribe(([model, fields, options ]) => {
         console.log('returned...');
         // this.options = {};
+
         this.model = {};
         this.fields = null;
         this.model = model;
@@ -59,7 +61,7 @@ export class TabulatorTableComponent implements OnChanges {
   }
 
   private drawTable(): void {
-    new Tabulator(this.tab, {
+    this.table = new Tabulator(this.tab, {
       data: this.tableData,
       // autoColumns: true,
       // headerVertical: true,
@@ -77,6 +79,7 @@ export class TabulatorTableComponent implements OnChanges {
   downloadCSV() {
 
     console.log('download...');
+    this.table.download("csv", "data.csv");
 
   }
 
