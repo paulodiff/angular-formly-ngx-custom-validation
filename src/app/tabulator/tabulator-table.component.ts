@@ -39,6 +39,9 @@ export class TabulatorTableComponent implements OnChanges {
 
         this.drawTable();
 
+        /* generate worksheet */
+const ws: XLSX.WorkSheet = XLSX.utils.aoa_to_sheet(this.data);
+
        
       },
       err => {
@@ -67,5 +70,14 @@ export class TabulatorTableComponent implements OnChanges {
       // height: this.height
     });
     document.getElementById('my-tabular-table').appendChild(this.tab);
+
+ 
   }
+
+  downloadCSV() {
+
+    console.log('download...');
+
+  }
+
 }
