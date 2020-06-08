@@ -40,7 +40,7 @@ export class TabulatorTableComponent implements OnChanges {
         this.drawTable();
 
         /* generate worksheet */
-const ws: XLSX.WorkSheet = XLSX.utils.aoa_to_sheet(this.data);
+        // const ws: XLSX.WorkSheet = XLSX.utils.aoa_to_sheet(this.model);
 
        
       },
