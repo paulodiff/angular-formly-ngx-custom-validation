@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import Tabulator from 'tabulator-tables';
+import * as XLSX from 'xlsx';
 import { AppService } from '../services/app.service';
 
 /**
