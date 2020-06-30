@@ -12,6 +12,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { AppService } from './services/app.service';
+import { FormlyWrapperFormField } from './formly/formly-form-field.wrapper';
 import * as FV from './services/validator';
 
 
@@ -61,6 +62,15 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
     ]),
 
     FormlyModule.forRoot({
+
+      types: [
+          { name: 'counter', component: CounterInputComponentFieldType },
+          { name: 'upload', component: FormlyFileFieldType, defaultOptions: { defaultValue: [], }, wrappers: ['form-field'] }
+      ],
+
+       wrappers: [
+        { name: 'form-field', component: FormlyWrapperFormField }
+      ],
 
       validators: [
         { name: 'ip', validation: IpValidator },
