@@ -14,6 +14,8 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { AppService } from './services/app.service';
 import { FormlyWrapperFormField } from './formly/formly-form-field.wrapper';
 import { CounterInputComponent } from './formly/counter/formly-counter-type.component';
+import { FileValueAccessor } from './formly/file-value-accessor';
+import { FormlyFileFieldType } from './formly/file/formly-file-type.component';
 
 import * as FV from './services/validator';
 
@@ -112,7 +114,26 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
     AppComponent,
     JsonComponent,
     MainComponent,
-    TabulatorTableComponent
+    TabulatorTableComponent,
+
+
+    // LoaderComponent,
+    // SafeHtmlPipe,
+    FileValueAccessor,
+    // RatingInputComponent,
+    FormlyWrapperFormField,
+    CounterInputComponent,
+    // CounterInputComponentFieldType,
+    // CheckboxInputComponentFieldType,
+    // TextInputComponentFieldType,
+    // HtmlTemplateComponentFieldType,
+    // SelectInputComponentFieldType,
+    // RadioInputComponentFieldType,
+    FormlyFileFieldType,
+    // FormlyUploadFieldType,
+    // FormlyNg2UploadFieldType,
+    // FormlyDescriptionFieldType,
+    // FormlySvgCaptchaFieldType  
 
   ],
    providers: [
