@@ -13,7 +13,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { AppService } from './services/app.service';
 import { FormlyWrapperFormField } from './formly/formly-form-field.wrapper';
-import { CounterInputComponent } from './formly/counter/formly-counter-type.component';
+import { CounterInputComponentFieldType } from './formly/counter/formly-counter-type.component';
 import { FileValueAccessor } from './formly/file-value-accessor';
 import { FormlyFileFieldType } from './formly/file/formly-file-type.component';
 
@@ -122,7 +122,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
     FileValueAccessor,
     // RatingInputComponent,
     FormlyWrapperFormField,
-    CounterInputComponent,
+    CounterInputComponentFieldType,
     // CounterInputComponentFieldType,
     // CheckboxInputComponentFieldType,
     // TextInputComponentFieldType,

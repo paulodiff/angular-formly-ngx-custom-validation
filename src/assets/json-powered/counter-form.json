@@ -1,0 +1,11 @@
+[
+    {
+      "key": "cnt1",
+      "type": "counter",
+      "templateOptions": {
+        "label": "counter"
+      }
+     
+    }
+   
+  ]

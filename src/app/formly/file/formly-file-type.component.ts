@@ -19,6 +19,7 @@ import { FieldType } from '@ngx-formly/core';
     <ul class="it-list">
       <li>nome file: {{formControl.value.file_name}}</li>
       <li>dimensione: {{formControl.value.file_size}}</li>
+      <li>hash: {{formControl.value.file_hash}}</li>
       <li><button type="button" class="btn btn-primary" (click)="remove_item()">Rimuovi</button></li>
     </ul>
     </div>
@@ -46,6 +47,7 @@ export class FormlyFileFieldType extends FieldType {
         file.file_name = file.name;
         file.file_size = this.formatSize(file.size);
         file.file_type = file.type;
+        file.file_hash = Math.random();
 
         this.formControl.setValue(file);
         // file.file_folder = this.to.folder;

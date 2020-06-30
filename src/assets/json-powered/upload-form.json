@@ -1,0 +1,10 @@
+[
+    {
+      "key": "file1",
+      "type": "upload",
+      "templateOptions": {
+        "label": "file1"
+      }
+    }
+    
+]
