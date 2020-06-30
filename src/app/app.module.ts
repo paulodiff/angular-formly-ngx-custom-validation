@@ -13,7 +13,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { AppService } from './services/app.service';
 import { FormlyWrapperFormField } from './formly/formly-form-field.wrapper';
-import { CounterInputComponent } from './formly/counter/counter.component';
+import { CounterInputComponent } from './formly/counter/formly-counter-type.component';
 
 import * as FV from './services/validator';
 
