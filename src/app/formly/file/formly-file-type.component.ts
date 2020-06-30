@@ -16,12 +16,14 @@ import { FieldType } from '@ngx-formly/core';
 
     <div *ngIf="formControl.value.file_name" class="alert alert-info" role="alert">
     <div class="it-list-wrapper">
-    <ul class="it-list">
-      <li>nome file: {{formControl.value.file_name}}</li>
-      <li>dimensione: {{formControl.value.file_size}}</li>
-      <li>hash: {{formControl.value.file_hash}}</li>
-      <li><button type="button" class="btn btn-primary" (click)="remove_item()">Rimuovi</button></li>
-    </ul>
+    <p>nome file: {{formControl.value.file_name}}</p>
+    
+      
+      <p>dimensione: {{formControl.value.file_size}}</p>
+      <p>hash: {{formControl.value.file_hash}}</p>
+      
+    
+    <button type="button" class="btn btn-primary btn-block" (click)="remove_item()">Rimuovi</button>
     </div>
     </div>
   `
