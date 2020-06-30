@@ -40,9 +40,11 @@ export class FormlyFileFieldType extends FieldType {
     if( event.length === 1 ) {
       console.log('Set file data to model:');
       for (const file of event) {
+        
         console.log(file);
         console.log(file.name);
         console.log(this.formatSize(file.size));
+
         file.file_id = Math.random();
         file.file_name = file.name;
         file.file_size = this.formatSize(file.size);
