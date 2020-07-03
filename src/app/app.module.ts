@@ -93,12 +93,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
         { name: 'dateInRangeValidator', message: FV.dateInRangeValidatorMessage },
         { name: 'emailValidator', message: FV.emailValidatorMessage },
 
-
         { name: 'required', message: 'Questo campo è richiesto' }
-
-
-
-
 
 
       ],
