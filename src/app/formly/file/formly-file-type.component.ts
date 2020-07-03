@@ -120,6 +120,11 @@ export class FormlyFileFieldType extends FieldType {
     // this.propagateChange(this.counterValue);
   }
 
+  buildHash() {
+
+    return 'sha256';
+  }
+
 }
 
 /*
