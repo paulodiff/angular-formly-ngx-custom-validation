@@ -14,6 +14,7 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { AppService } from './services/app.service';
 import { FormlyWrapperFormField } from './formly/formly-form-field.wrapper';
 import { CounterInputComponentFieldType } from './formly/counter/formly-counter-type.component';
+import { HtmlTemplateComponentFieldType } from './formly/html-template/formly-html-template-type.component';
 import { FileValueAccessor } from './formly/file-value-accessor';
 import { FormlyFileFieldType } from './formly/file/formly-file-type.component';
 
@@ -69,7 +70,8 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
 
       types: [
           { name: 'counter', component: CounterInputComponentFieldType },
-          { name: 'upload', component: FormlyFileFieldType, defaultOptions: { defaultValue: [], }, wrappers: ['form-field'] }
+          { name: 'upload', component: FormlyFileFieldType, defaultOptions: { defaultValue: [], }, wrappers: ['form-field'] },
+          { name: 'html-template', component: HtmlTemplateComponentFieldType, defaultOptions: { defaultValue: [], }, wrappers: ['form-field'] }
       ],
 
        wrappers: [
@@ -127,6 +129,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
     // RatingInputComponent,
     FormlyWrapperFormField,
     CounterInputComponentFieldType,
+    HtmlTemplateComponentFieldType,
     // CounterInputComponentFieldType,
     // CheckboxInputComponentFieldType,
     // TextInputComponentFieldType,

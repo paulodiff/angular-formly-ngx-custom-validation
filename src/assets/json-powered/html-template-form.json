@@ -1,0 +1,12 @@
+[
+    {
+      "key": "em1",
+      "type": "html-template",
+      "templateOptions": {
+        "htmlTemplate" : "<h1>htmlTemplate</h1><ul><li>item1</li></ul>",
+        "label": "html template label"
+      }
+     
+    }
+   
+  ]
