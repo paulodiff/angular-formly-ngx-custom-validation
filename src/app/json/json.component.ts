@@ -59,8 +59,8 @@ export class JsonComponent implements OnInit, OnDestroy {
           }
 
           if (f.templateOptions && f.templateOptions.optionsUrl) {
-            console.log('json:async:loading:data');
-            f.templateOptions.options = {};
+            console.log('json:async:loading:data:',f.templateOptions.optionsUrl);
+            // f.templateOptions.options = {};
           }
 
           return f;
