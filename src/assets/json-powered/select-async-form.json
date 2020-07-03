@@ -3,8 +3,8 @@
   "type": "select",
   "templateOptions": {
     "label": "Sport",
-    "options": "this._appService.getFormData('tabulator')",
+    "optionsUrl": "test",
     "valueProp": "id",
-    "labelProp": "name"
+    "labelProp": "title"
   }
 }

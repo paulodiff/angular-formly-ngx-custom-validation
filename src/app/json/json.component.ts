@@ -58,6 +58,11 @@ export class JsonComponent implements OnInit, OnDestroy {
             Function('field', 'this.sumOnChange(field)').bind(this);
           }
 
+          if (f.templateOptions && f.templateOptions.optionsUrl) {
+            console.log('json:async:loading:data');
+            f.templateOptions.options = {};
+          }
+
           return f;
         });
       },
