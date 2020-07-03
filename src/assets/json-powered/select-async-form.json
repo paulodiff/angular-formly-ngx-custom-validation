@@ -1,0 +1,10 @@
+{
+  "key": "sport",
+  "type": "select",
+  "templateOptions": {
+    "label": "Sport",
+    "options": "this.dataService.getSports()",
+    "valueProp": "id",
+    "labelProp": "name"
+  }
+}
