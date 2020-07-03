@@ -3,8 +3,9 @@
   "type": "select",
   "templateOptions": {
     "label": "Sport",
-    "optionsUrl": "test",
+    "optionsUrl1": "test",
+    "options": [{ "id": "1", "name": "aa"},{"id": "2", "name": "b" }],
     "valueProp": "id",
-    "labelProp": "title"
+    "labelProp": "name"
   }
 }

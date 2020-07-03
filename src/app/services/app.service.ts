@@ -35,7 +35,7 @@ export class AppService {
   }
 
   getFormData(formId): Observable<any> {
-    console.log('..getFormData...', formId);
+    console.log('AppService:getFormData:', formId);
     return forkJoin([
       this.getModel(formId), 
       this.getFields(formId),
@@ -44,20 +44,22 @@ export class AppService {
   }
 
   getModel(formId) {
-    console.log('..getModel..',formId);
     let asset = 'assets/json-powered/' + formId + '-model.json';
+    console.log('AppService:getModel:',asset);
     return this.http.get<{ firstName: string, lastName: string }>(asset);
   }
 
   getFields(formId) {
-     console.log('..getFields..',formId);
+     
      let asset = 'assets/json-powered/' + formId + '-form.json';
+     console.log('AppService:getFields:',asset);
     return this.http.get<FormlyFieldConfig[]>(asset);
   }
 
   getOptions(formId) {
-     console.log('..getOptions..',formId);
+     
      let asset = 'assets/json-powered/' + formId + '-options.json';
+     console.log('AppService:getOptions:',asset);
     return this.http.get<FormlyFieldConfig[]>(asset);
   }
 
