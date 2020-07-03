@@ -22,7 +22,7 @@
         "label": "Team",
         "options": [],
         "valueProp": "id",
-        "labelProp": "name",
+        "labelProp": "name"
       },
       "expressionProperties": {
         "templateOptions.options": "formState.selectOptionsData.teams.filter(team => team.sportId === model.sport)",

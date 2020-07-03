@@ -14,7 +14,7 @@
       "key": "d2",
       "type": "input",
       "templateOptions": {
-        "label": "date in range",
+        "label": "date in range 01/01/2000 - 05/05/2000",
         "fromDate" : "01/01/2000",
         "toDate" : "05/05/2000"
       },
@@ -28,7 +28,7 @@
       "key": "d3",
       "type": "input",
       "templateOptions": {
-        "label": "date after d2"
+        "label": "date after d2 TODO VALIDATOR"
       }
     }
   ]

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FieldType } from '@ngx-formly/core';
+import * as shajs from 'sha.js';
 
 @Component({
   selector: 'formly-field-file',
@@ -41,6 +42,7 @@ export class FormlyFileFieldType extends FieldType {
     console.log('event.lenght:', event.length);
     if( event.length === 1 ) {
       console.log('Set file data to model:');
+
       for (const file of event) {
         
         console.log(file);
@@ -55,6 +57,9 @@ export class FormlyFileFieldType extends FieldType {
         // https://medium.com/@0xVaccaro/hashing-big-file-with-filereader-js-e0a5c898fc98
         // calcolo sha 256 back
         file.file_hash = Math.random();
+        // file.file_hash = sha256File(file.name);
+
+        this.buildHash(file);
 
         this.formControl.setValue(file);
         // file.file_folder = this.to.folder;
@@ -103,6 +108,8 @@ export class FormlyFileFieldType extends FieldType {
     //filesArray and filesData File Stored Onto Database and Server.
   }
 
+
+
   formatSize(size: number) {
     const k = 1000, dm = 1,
       sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'],
@@ -120,7 +127,16 @@ export class FormlyFileFieldType extends FieldType {
     // this.propagateChange(this.counterValue);
   }
 
-  buildHash() {
+  buildHash(file) {
+    console.log('buildHash');
+    var reader = new FileReader();
+    reader.onload = function (event) {
+      var data = event.target.result;
+      // var encrypted = CryptoJS.SHA256( data );
+      var encrypted = shajs('sha256').update(data).digest('hex');
+      console.log('encrypted: ' + encrypted);   
+    };
+    reader.readAsBinaryString(file);
 
     return 'sha256';
   }
