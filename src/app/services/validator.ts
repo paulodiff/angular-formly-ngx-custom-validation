@@ -121,7 +121,7 @@ export function emailValidatorMessage(err, field: FormlyFieldConfig) {
 }
 
 export function lifecycleFormlyExtension(field: FormlyFieldConfig) {
-  console.log("lifecycle;", field.key);
+  console.log("lifecycleFormlyExtension:", field.key);
   /*
     if (field.key === "reason") {
       field.hideExpression = (

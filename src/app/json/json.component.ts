@@ -41,7 +41,7 @@ export class JsonComponent implements OnInit, OnDestroy {
       console.log('Json:itemId', this.itemId);
        // In a real app: dispatch action to load the details here.
       this._appService.getFormData(this.itemId).subscribe(([model, fields, options ]) => {
-        console.log('returned...');
+        console.log('returned data ... building form ... ');
         // this.options = {};
         this.model = {};
         this.fields = null;
@@ -68,8 +68,9 @@ export class JsonComponent implements OnInit, OnDestroy {
       },
       err => {
         console.log('errore:');
-        console.log(err);},
-      () => console.log('PWA:getFakeUsers')
+        console.log(err);
+        },
+      () => console.log('json:form:builded!')
       );
     });
 
