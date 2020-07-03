@@ -60,6 +60,9 @@ export class JsonComponent implements OnInit, OnDestroy {
 
           if (f.templateOptions && f.templateOptions.optionsUrl) {
             console.log('json:async:loading:data:',f.templateOptions.optionsUrl);
+             this._appService.getFormData('tabulator').subscribe(([model, fields, options ]) => {
+               f.templateOptions.options = fields;
+             });
             // f.templateOptions.options = {};
           }
 

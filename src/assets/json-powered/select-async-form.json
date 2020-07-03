@@ -5,9 +5,9 @@
     "templateOptions": {
       "label": "Sport",
       "optionsUrl" : "test-url",
-      "options": [{ "id": "1", "name": "aa"},{"id": "2", "name": "b" }],
+      "options": [{ "id": "1", "title": "aa"},{"id": "2", "title": "b" }],
       "valueProp": "id",
-      "labelProp": "name"
+      "labelProp": "title"
     }
  }
 ]
