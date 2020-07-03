@@ -7,27 +7,29 @@
         "options": [
           {"id": 1, "name": "Calcio"},
           {"id": 2, "name": "Basket"},
-          {"id": 2, "name": "Pallavolo"}
+          {"id": 3, "name": "Pallavolo"}
+        ],
+        "valueProp": "id",
+        "labelProp": "name"
+      }
+    
+    },
+
+   {
+      "key": "sport2",
+      "type": "select",
+      "templateOptions": {
+        "label": "select sport 2",
+        "options": [
+          {"id": 1, "name": "Scherma"},
+          {"id": 2, "name": "Moto"},
+          {"id": 3, "name": "Nuoto"}
         ],
         "valueProp": "id",
         "labelProp": "name"
       }
     
     }
-    ,
-    {
-      "key": "team",
-      "type": "select",
-      "templateOptions": {
-        "label": "Team",
-        "options": [],
-        "valueProp": "id",
-        "labelProp": "name"
-      },
-      "expressionProperties": {
-        "templateOptions.options": "formState.selectOptionsData.teams.filter(team => team.sportId === model.sport)",
-        // reset model when updating select options
-        "model.team": "field.templateOptions.options.find(o => o.id === model.team) ? model.team:null"
-      }
-    }
+
+  
 ]
