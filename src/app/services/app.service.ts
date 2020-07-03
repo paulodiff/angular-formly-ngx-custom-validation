@@ -55,8 +55,8 @@ export class AppService {
     return this.http.get<FormlyFieldConfig[]>(asset);
   }
 
-    getOptions(formId) {
-     console.log('..getOptions..',formId);
+  getOptions(formId) {
+     console.log('..getOptions..5',formId);
      let asset = 'assets/json-powered/' + formId + '-options.json';
     return this.http.get<FormlyFieldConfig[]>(asset);
   }
