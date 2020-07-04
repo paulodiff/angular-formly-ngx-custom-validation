@@ -49,7 +49,7 @@ export class FormlyFileFieldType extends FieldType {
         console.log(file.name);
         console.log(this.formatSize(file.size));
 
-        file.file_id = Math.random();
+        file.file_id = key;
         file.file_name = file.name;
         file.file_size = this.formatSize(file.size);
         file.file_type = file.type;

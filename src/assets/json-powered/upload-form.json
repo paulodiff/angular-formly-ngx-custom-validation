@@ -3,7 +3,11 @@
       "key": "file1",
       "type": "upload",
       "templateOptions": {
-        "label": "file1"
+        "required" : true,
+        "label": "file1",
+        "maxFileSize" : "200KB",
+        "minFileSize" : "2KB",
+        "fileExtension" : "pdf,doc"
       }
     }
     
