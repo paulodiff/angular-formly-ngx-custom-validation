@@ -9,7 +9,7 @@ export function codiceFiscaleValidator(
   control: FormControl,
   field: FormlyFieldConfig
 ): ValidationErrors {
-  console.log("codiceFiscaleValidator");
+  console.log("codiceFiscaleValidator", control.value);
   return !control.value ||
     /^[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$/.test(
       control.value
@@ -36,7 +36,7 @@ export function codiceFiscaleValidator2(
       control.value
     )
     ? null
-    : { codiceFiscaleValidator: true };
+    : { codiceFiscaleValidator2: true };
 }
 
 export function codiceFiscaleValidator2Message(err, field: FormlyFieldConfig) {
@@ -186,7 +186,7 @@ export function fileSizeValidator(
   let curValue = control.value;
   // let fD = moment(curValue, "DD/MM/YYYY");
   console.log("fileSizeValidator ", curValue);
-  let bValid = { fileSizeValidator: true };
+  let bValid = { fileSizeValidator: false };
   /*
   if ((curValue < maxValue) && (curValue > minValue)) {
     bValid = null;
@@ -197,6 +197,7 @@ export function fileSizeValidator(
   // return !control.value || /(\d{1,3}\.){3}\d{1,3}/.test(control.value) ? null : { 'ip': true };
   // console.log("minMaxV",control.value);
   // console.log("minMaxV",bValid);
+  console.log("fileSizeValidator ", bValid);
   return bValid;
 }
 

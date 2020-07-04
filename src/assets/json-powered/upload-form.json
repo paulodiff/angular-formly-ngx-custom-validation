@@ -9,6 +9,11 @@
         "minFileSize" : "2KB",
         "fileExtension" : "pdf,doc"
       }
+
+      ,
+      "validators": {
+        "validation": ["fileSizeValidator"]
+      }
     }
     
 ]

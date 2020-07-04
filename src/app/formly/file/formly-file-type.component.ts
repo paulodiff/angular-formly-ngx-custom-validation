@@ -51,7 +51,7 @@ export class FormlyFileFieldType extends FieldType {
 
         file.file_id = key;
         file.file_name = file.name;
-        file.file_size = this.formatSize(file.size);
+        file.file_size = file.size;
         file.file_type = file.type;
 
         // https://medium.com/@0xVaccaro/hashing-big-file-with-filereader-js-e0a5c898fc98
