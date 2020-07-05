@@ -172,12 +172,12 @@ export function dateInRangeValidatorMessage(err, field: FormlyFieldConfig) {
 }
 
 
-export function fileSizeValidator(
+export function fileValidator(
   control: FormControl,
   field: FormlyFieldConfig
 ): ValidationErrors {
-  console.log("fileSizeValidator min:", field.templateOptions.minFileSize);
-  console.log("fileSizeValidator max", field.templateOptions.maxFileSize);
+  console.log("fileValidator min:", field.templateOptions.minFileSize);
+  console.log("fileValidator max", field.templateOptions.maxFileSize);
   // console.log(moment().format("dddd"));
   // console.log(control);
   // moment('2010-10-20').isBetween('2010-10-19', '2010-10-25');
@@ -201,6 +201,6 @@ export function fileSizeValidator(
   return bValid;
 }
 
-export function fileSizeValidatorMessage(err, field: FormlyFieldConfig) {
+export function fileValidatorMessage(err, field: FormlyFieldConfig) {
   return `ERROR file size not valid!`;
 }
