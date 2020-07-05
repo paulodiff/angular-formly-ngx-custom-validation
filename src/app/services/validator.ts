@@ -186,6 +186,7 @@ export function fileValidator(
   let curValue = control.value;
   // let fD = moment(curValue, "DD/MM/YYYY");
   console.log("fileSizeValidator ", curValue);
+  console.log("fileSizeValidator ", curValue.file_size);
   let bValid = { fileSizeValidator: false };
   /*
   if ((curValue < maxValue) && (curValue > minValue)) {
