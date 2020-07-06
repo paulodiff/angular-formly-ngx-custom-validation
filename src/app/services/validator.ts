@@ -202,7 +202,8 @@ export function fileValidator(
   } 
 
   // controllo estensione
-
+  console.log("fileValidator ext:", field.templateOptions.fileExtension);
+  // if (Utils.isFileNameInPattern(curValue.file_name))
   // let bValid = { fileSizeValidator: false };
   /*
   if ((curValue < maxValue) && (curValue > minValue)) {
