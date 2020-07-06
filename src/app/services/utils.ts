@@ -5,11 +5,11 @@ export default class Utils {
     static translateSize (str: string) {
       if(!str) return 0;
       if (str.search(/kb/i) === str.length - 2) {
-          return parseFloat(
+          return 
             parseFloat(str.substring(0, str.length - 2)) 
-            * 1024);
+            * 1024;
       } else if (str.search(/mb/i) === str.length - 2) {
-          return parseFloat(str.substring(0, str.length - 2) * 1048576);
+          return parseFloat(str.substring(0, str.length - 2)) * 1048576;
       } else {
         return 0;
       }
