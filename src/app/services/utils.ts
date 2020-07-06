@@ -14,4 +14,27 @@ export default class Utils {
         return 0;
       }
     }
+
+    /* controllo estensione*/
+
+    static   isFileNameInPattern (fName, sPattern) {
+    if(!fName) { return false; }
+    if(!sPattern) { return false; }
+    
+    let patterns = sPattern.split(",");
+    var bCheck = false;
+  
+    for (let j = 0; j < patterns.length; j++ ) {
+  
+      var cP1 = patterns[j].substring(1);
+      var cP1l = cP1.length;
+      var fNameExtension = fName.slice(-1 * cP1l);
+      // console.log(fName, fNameExtension, cP1, cP1l);
+      if(fNameExtension == cP1){
+        bCheck = true;
+      }
+      
+    }
+    return bCheck;
+}
 }

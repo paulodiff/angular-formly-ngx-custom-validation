@@ -193,14 +193,15 @@ export function fileValidator(
   console.log("fileSizeValidator ", curFileSize, minFileSize, maxFileSize);
   console.log(curFileSize, minFileSize, (curFileSize >= minFileSize));
   console.log(curFileSize, maxFileSize, (curFileSize <= maxFileSize));
-  let bValid = null;
-  if(curFileSize >= minFileSize){
-    console.log('ok1');
-    if (curFileSize <= maxFileSize) {
+
+  // controllo dimensione
+  let bValid = { fileValidator: true };
+  if((curFileSize >= minFileSize) && (curFileSize <= maxFileSize)) {
       console.log("fileSizeValidator dimensione valida!");
-      bValid = { fileSizeValidator: false };
-    }
+      bValid = null;
   } 
+
+  // controllo estensione
 
   // let bValid = { fileSizeValidator: false };
   /*
@@ -219,5 +220,6 @@ export function fileValidator(
 
 export function fileValidatorMessage(err, field: FormlyFieldConfig) {
   console.log('fileValidatorMessage', err);
+  console.log(field);
   return `ERROR file size not valid!`;
 }
