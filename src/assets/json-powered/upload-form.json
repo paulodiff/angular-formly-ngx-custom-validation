@@ -5,8 +5,8 @@
       "templateOptions": {
         "required" : true,
         "label": "file1",
-        "maxFileSize" : "2000",
-        "minFileSize" : "1024",
+        "maxFileSize" : "2024KB",
+        "minFileSize" : "10KB",
         "fileExtension" : "pdf,doc"
       }
 

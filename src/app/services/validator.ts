@@ -2,6 +2,7 @@ import { ReactiveFormsModule, ValidationErrors } from "@angular/forms";
 import { FormlyModule, FormlyFieldConfig } from "@ngx-formly/core";
 import { FormControl } from "@angular/forms";
 import moment = require("moment");
+import Utils from './utils'
 
 // "^[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$"
 
@@ -181,9 +182,8 @@ export function fileValidator(
   // console.log(moment().format("dddd"));
   // console.log(control);
   // moment('2010-10-20').isBetween('2010-10-19', '2010-10-25');
-  let minFileSize = field.templateOptions.minFileSize ? parseFloat(field.templateOptions.minFileSize) : 0;
-  let maxFileSize = field.templateOptions.maxFileSize ?
-  parseFloat(field.templateOptions.maxFileSize) : 1000000000000;
+  let minFileSize = Utils.translateSize(field.templateOptions.minFileSize);
+  let maxFileSize = Utils.translateSize(field.templateOptions.maxFileSize);
   // let toDate = field.templateOptions.toDate;
   let curValue = control.value;
   let curFileSize = curValue.file_size;
@@ -191,15 +191,16 @@ export function fileValidator(
   // let fD = moment(curValue, "DD/MM/YYYY");
   console.log("fileSizeValidator ", curValue);
   console.log("fileSizeValidator ", curFileSize, minFileSize, maxFileSize);
-  console.log((curFileSize >= minFileSize));
-  console.log((curFileSize <= maxFileSize));
+  console.log(curFileSize, minFileSize, (curFileSize >= minFileSize));
+  console.log(curFileSize, maxFileSize, (curFileSize <= maxFileSize));
   let bValid = null;
-  if((curFileSize >= minFileSize) && (curFileSize <= maxFileSize)) {
-    console.log("fileSizeValidator dimensione non valida!");
-    bValid = { fileSizeValidator: false };
-  } else {
-    console.log("fileSizeValidator dimensione  valida!");
-  }
+  if(curFileSize >= minFileSize){
+    console.log('ok1');
+    if (curFileSize <= maxFileSize) {
+      console.log("fileSizeValidator dimensione valida!");
+      bValid = { fileSizeValidator: false };
+    }
+  } 
 
   // let bValid = { fileSizeValidator: false };
   /*
