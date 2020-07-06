@@ -181,13 +181,27 @@ export function fileValidator(
   // console.log(moment().format("dddd"));
   // console.log(control);
   // moment('2010-10-20').isBetween('2010-10-19', '2010-10-25');
-  // let fromDate = field.templateOptions.fromDate;
+  let minFileSize = field.templateOptions.minFileSize ? parseFloat(field.templateOptions.minFileSize) : 0;
+  let maxFileSize = field.templateOptions.maxFileSize ?
+  parseFloat(field.templateOptions.maxFileSize) : 1000000000000;
   // let toDate = field.templateOptions.toDate;
   let curValue = control.value;
+  let curFileSize = curValue.file_size;
+  
   // let fD = moment(curValue, "DD/MM/YYYY");
   console.log("fileSizeValidator ", curValue);
-  console.log("fileSizeValidator ", curValue.file_size);
-  let bValid = { fileSizeValidator: false };
+  console.log("fileSizeValidator ", curFileSize, minFileSize, maxFileSize);
+  console.log((curFileSize >= minFileSize));
+  console.log((curFileSize <= maxFileSize));
+  let bValid = null;
+  if((curFileSize >= minFileSize) && (curFileSize <= maxFileSize)) {
+    console.log("fileSizeValidator dimensione non valida!");
+    bValid = { fileSizeValidator: false };
+  } else {
+    console.log("fileSizeValidator dimensione  valida!");
+  }
+
+  // let bValid = { fileSizeValidator: false };
   /*
   if ((curValue < maxValue) && (curValue > minValue)) {
     bValid = null;
@@ -203,5 +217,6 @@ export function fileValidator(
 }
 
 export function fileValidatorMessage(err, field: FormlyFieldConfig) {
+  console.log('fileValidatorMessage', err);
   return `ERROR file size not valid!`;
 }
