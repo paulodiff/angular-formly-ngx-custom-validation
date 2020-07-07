@@ -47,6 +47,7 @@ export class JsonComponent implements OnInit, OnDestroy {
         this.fields = null;
         this.model = model;
         this.fields = fields;
+        this.options = options
         // this.options = options;
 
         this.options.formState.mainModel = this.model;

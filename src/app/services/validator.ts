@@ -177,8 +177,8 @@ export function fileValidator(
   control: FormControl,
   field: FormlyFieldConfig
 ): ValidationErrors {
-  console.log("fileValidator min:", field.templateOptions.minFileSize);
-  console.log("fileValidator max", field.templateOptions.maxFileSize);
+  // console.log("fileValidator min:", field.templateOptions.minFileSize);
+  // console.log("fileValidator max", field.templateOptions.maxFileSize);
   // console.log(moment().format("dddd"));
   // console.log(control);
   // moment('2010-10-20').isBetween('2010-10-19', '2010-10-25');
@@ -189,21 +189,25 @@ export function fileValidator(
   let curFileSize = curValue.file_size;
   
   // let fD = moment(curValue, "DD/MM/YYYY");
-  console.log("fileSizeValidator ", curValue);
-  console.log("fileSizeValidator ", curFileSize, minFileSize, maxFileSize);
-  console.log(curFileSize, minFileSize, (curFileSize >= minFileSize));
-  console.log(curFileSize, maxFileSize, (curFileSize <= maxFileSize));
+  // console.log("fileSizeValidator ", curValue);
+  // console.log("fileSizeValidator ", curFileSize, minFileSize, maxFileSize);
+  // console.log(curFileSize, minFileSize, (curFileSize >= minFileSize));
+  // console.log(curFileSize, maxFileSize, (curFileSize <= maxFileSize));
 
   // controllo dimensione
   let bValid = null;
   if((curFileSize < minFileSize) || (curFileSize > maxFileSize)) {
       console.log("fileSizeValidator dimensione NON valida!");
       bValid = { fileValidator: true };
-  } 
+  } else {
+    console.log("fileSizeValidator dimensione  valida!");
+  }
 
   // controllo estensione
-  console.log("fileValidator ext:", field.templateOptions.fileExtension);
+  // console.log("fileValidator ext:", field.templateOptions.fileExtension);
   if (Utils.isFileNameInPattern(curValue.file_name,field.templateOptions.fileExtension)){
+       console.log("fileSizeValidator estensione valida!");
+  } else {
       console.log("fileSizeValidator estensione NON valida!");
       bValid = { fileValidator: true };
   }
@@ -225,5 +229,5 @@ export function fileValidator(
 export function fileValidatorMessage(err, field: FormlyFieldConfig) {
   console.log('fileValidatorMessage', err);
   console.log(field);
-  return `ERROR file size not valid!`;
+  return `ERRORE dimensione file o formato NON validi!`;
 }
