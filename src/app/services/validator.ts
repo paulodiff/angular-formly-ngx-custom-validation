@@ -203,7 +203,7 @@ export function fileValidator(
 
   // controllo estensione
   console.log("fileValidator ext:", field.templateOptions.fileExtension);
-  if (Utils.isFileNameInPattern(curValue.file_name)){
+  if (Utils.isFileNameInPattern(curValue.file_name,field.templateOptions.fileExtension)){
       console.log("fileSizeValidator estensione NON valida!");
       bValid = { fileValidator: true };
   }

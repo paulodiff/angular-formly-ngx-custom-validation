@@ -3,13 +3,18 @@ export default class Utils {
     static doSomethingElse(val: string) { return val; }
     /* trsforma un valore di dimensione in bytes */ 
     static translateSize (str: string) {
+      console.log('translateSize', str);
       if(!str) return 0;
       if (str.search(/kb/i) === str.length - 2) {
-          return 
-            parseFloat(str.substring(0, str.length - 2)) 
-            * 1024;
+        console.log('translateSize', str.substring(0, str.length - 2));
+        let v = parseFloat(str.substring(0, str.length - 2));
+        console.log(v * 1024);
+        return v * 1024;
+            
       } else if (str.search(/mb/i) === str.length - 2) {
-          return parseFloat(str.substring(0, str.length - 2)) * 1048576;
+        console.log('translateSize', str.substring(0, str.length - 2));
+          let v = parseFloat(str.substring(0, str.length - 2));
+          return v * 1048576;
       } else {
         return 0;
       }
@@ -18,6 +23,9 @@ export default class Utils {
     /* controllo estensione*/
 
     static   isFileNameInPattern (fName, sPattern) {
+      console.log('isFileNameInPattern', fName);
+      console.log('isFileNameInPattern', sPattern);
+
     if(!fName) { return false; }
     if(!sPattern) { return false; }
     
