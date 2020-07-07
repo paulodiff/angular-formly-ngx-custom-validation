@@ -195,15 +195,18 @@ export function fileValidator(
   console.log(curFileSize, maxFileSize, (curFileSize <= maxFileSize));
 
   // controllo dimensione
-  let bValid = { fileValidator: true };
-  if((curFileSize >= minFileSize) && (curFileSize <= maxFileSize)) {
-      console.log("fileSizeValidator dimensione valida!");
-      bValid = null;
+  let bValid = null;
+  if((curFileSize < minFileSize) || (curFileSize > maxFileSize)) {
+      console.log("fileSizeValidator dimensione NON valida!");
+      bValid = { fileValidator: true };
   } 
 
   // controllo estensione
   console.log("fileValidator ext:", field.templateOptions.fileExtension);
-  // if (Utils.isFileNameInPattern(curValue.file_name))
+  if (Utils.isFileNameInPattern(curValue.file_name)){
+      console.log("fileSizeValidator estensione NON valida!");
+      bValid = { fileValidator: true };
+  }
   // let bValid = { fileSizeValidator: false };
   /*
   if ((curValue < maxValue) && (curValue > minValue)) {
