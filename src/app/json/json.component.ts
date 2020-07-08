@@ -52,6 +52,7 @@ export class JsonComponent implements OnInit, OnDestroy {
         // this.options = options;
 
         //this.options.formState.mainModel = this.model;
+        // riassegna delle funzioni per ora sumExpr che fa una somma di due campi
         this.fields = fields.map(f => {
 
           if (f.templateOptions && f.templateOptions.sumExpr) {
@@ -60,6 +61,7 @@ export class JsonComponent implements OnInit, OnDestroy {
             Function('field', 'this.sumOnChange(field)').bind(this);
           }
 
+          // recupera i dati da una select con dati async
           if (f.templateOptions && f.templateOptions.optionsUrl) {
             console.log('json:async:loading:data:',f.templateOptions.optionsUrl);
              this._appService.getFormData('tabulator').subscribe(([model, fields, options ]) => {
@@ -137,6 +139,8 @@ export class JsonComponent implements OnInit, OnDestroy {
   submit() {
     if (this.form.valid) {
       alert(JSON.stringify(this.model));
+    } else {
+      alert('errori da sistemare');
     }
   }
 
