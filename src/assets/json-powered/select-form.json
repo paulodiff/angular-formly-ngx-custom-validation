@@ -3,10 +3,11 @@
       "key": "sport",
       "type": "select",
       "templateOptions": {
-        "label": "Sport",
+        "label": "Grado scuola",
         "options": [
-          { "id": "1", "name": "Soccer" },
-          { "id": "2", "name": "Basketball" }
+          { "id": "1", "name": "Primaria (elementari)" },
+          { "id": "2", "name": "Secondaria I° grado (medie)" },
+          { "id": "3", "name": "Secondaria II° grado (superiori)" }
         ],
         "valueProp": "id",
         "labelProp": "name"

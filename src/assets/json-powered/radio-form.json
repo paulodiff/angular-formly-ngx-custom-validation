@@ -8,7 +8,7 @@
         "description": "Description",
         "required": true,
         "options": [
-          { "value": 1, "label": "Option 1" },
+          { "value": 1, "label": "Al contrario di quanto si pensi, Lorem Ipsum non è semplicemente una sequenza casuale di caratteri. Risale ad un classico della letteratura latina del 45 AC, cosa che lo rende vecchio di 2000 anni. Richard McClintock, professore di latino al Hampden-Sydney College in Virginia, ha ricercato una delle più oscure parole latine, consectetur, da un passaggio del Lorem Ipsum e ha scoperto tra i vari testi in cui è citata," },
           { "value": 2, "label": "Option 2" },
           { "value": 3, "label": "Option 3" }
         ]

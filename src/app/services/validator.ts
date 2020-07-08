@@ -198,7 +198,7 @@ export function fileValidator(
   let bValid = null;
   if((curFileSize < minFileSize) || (curFileSize > maxFileSize)) {
       console.log("fileSizeValidator dimensione NON valida!");
-      bValid = { fileValidator: true };
+      bValid = { fileValidator: { message: 'dimensione NON valida' } };
   } else {
     console.log("fileSizeValidator dimensione  valida!");
   }
@@ -209,7 +209,7 @@ export function fileValidator(
        console.log("fileSizeValidator estensione valida!");
   } else {
       console.log("fileSizeValidator estensione NON valida!");
-      bValid = { fileValidator: true };
+      bValid = { fileValidator: { message: 'estensione NON valida' } };
   }
   // let bValid = { fileSizeValidator: false };
   /*

@@ -2,10 +2,12 @@
     "formState": {
       "selectOptionsData": {
         "teams": [
-          { "id": "1", "name": "Bayern Munich", "sportId": "1" },
-          { "id": "2", "name": "Real Madrid", "sportId": "1" },
-          { "id": "3", "name": "Cleveland", "sportId": "2" },
-          { "id": "4", "name": "Miami", "sportId": "2" }
+          { "id": "1", "name": "Rimini", "sportId": "1" },
+          { "id": "2", "name": "Santarcangelo di Romagna", "sportId": "1" },
+          { "id": "3", "name": "Pggio Torriana", "sportId": "1" },
+          { "id": "3", "name": "Bellaria Igea Marina", "sportId": "1" },
+          { "id": "4", "name": "Rimini", "sportId": "2" },
+          { "id": "4", "name": "Santarcangelo di Romagna", "sportId": "2" }
         ],
         "players": [
           { "id": "1", "name": "Bayern Munich (Player 1)", "teamId": "1" },

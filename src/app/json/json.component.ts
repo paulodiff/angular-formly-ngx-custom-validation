@@ -39,7 +39,8 @@ export class JsonComponent implements OnInit, OnDestroy {
       // this.itemId = +params['id']; // (+) converts string 'id' to a number
       this.itemId = params['itemId'];
       console.log('Json:itemId', this.itemId);
-       // In a real app: dispatch action to load the details here.
+      // In a real app: dispatch action to load the details here.
+      // recupera model,fields,options 
       this._appService.getFormData(this.itemId).subscribe(([model, fields, options ]) => {
         console.log('returned data ... building form ... ');
         // this.options = {};
@@ -47,10 +48,10 @@ export class JsonComponent implements OnInit, OnDestroy {
         this.fields = null;
         this.model = model;
         this.fields = fields;
-        this.options = options
+        this.options = options;
         // this.options = options;
 
-        this.options.formState.mainModel = this.model;
+        //this.options.formState.mainModel = this.model;
         this.fields = fields.map(f => {
 
           if (f.templateOptions && f.templateOptions.sumExpr) {
