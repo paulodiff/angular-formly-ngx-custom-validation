@@ -24,7 +24,6 @@
             ],
             "styles": [
               "node_modules/tabulator-tables/dist/css/tabulator.min.css",
-              "node_modules/bootstrap-italia/css/bootstrap-italia.min.css",
               "src/styles.scss"
             ],
             "scripts": [
