@@ -1,0 +1,10 @@
+{
+      "key": "Checkbox",
+      "type": "checkbox",
+      "templateOptions": {
+        "label": "Accept terms",
+        "description": "In order to proceed, please accept terms",
+        "pattern": true,
+        "required": true,
+      }
+]
