@@ -14,12 +14,12 @@
       "key": "d2",
       "type": "input",
       "templateOptions": {
-        "label": "date in range 01/01/2000 - 05/05/2000",
-        "fromDate" : "01/01/2000",
-        "toDate" : "05/05/2000"
+        "label": "date in range 07/01/2000 - 05/11/2000",
+        "fromDate" : "07/01/2000",
+        "toDate" : "05/11/2000"
       },
        "validators": {
-        "validation": ["dateInRangeValidator"]
+        "validation": ["dateValidator","dateInRangeValidator"]
       }
       
     }

@@ -51,7 +51,7 @@ export class JsonComponent implements OnInit, OnDestroy {
         this.options = options;
         // this.options = options;
 
-        //this.options.formState.mainModel = this.model;
+        // this.options.formState.mainModel = this.model;
         // riassegna delle funzioni per ora sumExpr che fa una somma di due campi
         this.fields = fields.map(f => {
 

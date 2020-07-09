@@ -60,6 +60,7 @@ export function minMaxValidator(
   let minValue = parseInt(field.templateOptions.minValue);
   let curValue = parseInt(control.value);
   console.log("minMaxV", curValue, minValue, maxValue);
+  console.log(moment(curValue).isBetween(minValue, maxValue));
   let bValid = { ip: true };
   if (curValue < maxValue && curValue > minValue) {
     bValid = null;
@@ -89,7 +90,7 @@ export function dateValidator(
   control: FormControl,
   field: FormlyFieldConfig
 ): ValidationErrors {
-  //console.log("dateValidator");
+  console.log("dateValidator");
   return !control.value ||
     /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[13-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)?\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)?(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)?\d{2})$/.test(
       control.value
@@ -145,15 +146,15 @@ export function dateInRangeValidator(
   control: FormControl,
   field: FormlyFieldConfig
 ): ValidationErrors {
-  console.log("dateInRangeValidator", field.templateOptions.maxValue);
-  console.log(moment().format("dddd"));
+  console.log("dateInRangeValidator", field.templateOptions.fromDate);
+  console.log("dateInRangeValidator", field.templateOptions.toDate);
   // console.log(control);
   // moment('2010-10-20').isBetween('2010-10-19', '2010-10-25');
   let fromDate = field.templateOptions.fromDate;
   let toDate = field.templateOptions.toDate;
   let curValue = control.value;
   let fD = moment(curValue, "DD/MM/YYYY");
-  console.log("dValidator", curValue, fromDate, toDate, fD);
+  console.log("dateInRangeValidator", curValue, fromDate, toDate, fD);
   let bValid = { dateInRangeValidator: true };
   /*
   if ((curValue < maxValue) && (curValue > minValue)) {
