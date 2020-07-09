@@ -60,7 +60,7 @@ export function minMaxValidator(
   let minValue = parseInt(field.templateOptions.minValue);
   let curValue = parseInt(control.value);
   console.log("minMaxV", curValue, minValue, maxValue);
-  console.log(moment(curValue).isBetween(minValue, maxValue));
+  
   let bValid = { ip: true };
   if (curValue < maxValue && curValue > minValue) {
     bValid = null;
@@ -150,22 +150,17 @@ export function dateInRangeValidator(
   console.log("dateInRangeValidator", field.templateOptions.toDate);
   // console.log(control);
   // moment('2010-10-20').isBetween('2010-10-19', '2010-10-25');
-  let fromDate = field.templateOptions.fromDate;
-  let toDate = field.templateOptions.toDate;
-  let curValue = control.value;
-  let fD = moment(curValue, "DD/MM/YYYY");
-  console.log("dateInRangeValidator", curValue, fromDate, toDate, fD);
+  let fromDate = moment(field.templateOptions.fromDate,"DD/MM/YYYY");
+  let toDate = moment(field.templateOptions.toDate,"DD/MM/YYYY");
+  let curValue = moment(control.value,"DD/MM/YYYY");
+  // let fD = moment(curValue, "DD/MM/YYYY");
+  console.log("dateInRangeValidator", curValue, fromDate, toDate);
+  console.log(moment(curValue).isBetween(fromDate, toDate));
   let bValid = { dateInRangeValidator: true };
-  /*
-  if ((curValue < maxValue) && (curValue > minValue)) {
+  if ( moment(curValue).isBetween(fromDate, toDate) ) {
+    console.log("dateInRangeValidator",'OK');
     bValid = null;
-  } else {
-    bValid = { 'ip': true };
   }
-  */
-  // return !control.value || /(\d{1,3}\.){3}\d{1,3}/.test(control.value) ? null : { 'ip': true };
-  // console.log("minMaxV",control.value);
-  // console.log("minMaxV",bValid);
   return bValid;
 }
 
@@ -231,4 +226,25 @@ export function fileValidatorMessage(err, field: FormlyFieldConfig) {
   console.log('fileValidatorMessage', err);
   console.log(field);
   return `ERRORE dimensione file o formato NON validi!`;
+}
+
+/* CAP */
+
+export function capValidator(
+  control: FormControl,
+  field: FormlyFieldConfig
+): ValidationErrors {
+  console.log("capValidator");
+  return !control.value ||
+    /^[0-9]{5}$/.test(
+      control.value
+    )
+    ? null
+    : { capValidator: true };
+}
+
+export function capValidatorMessage(err, field: FormlyFieldConfig) {
+  return `"${
+    field.formControl.value
+  }" CAP non è nel formato corretto NNNNN`;
 }

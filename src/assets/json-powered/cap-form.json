@@ -1,0 +1,13 @@
+[
+    {
+      "key": "cap",
+      "type": "input",
+      "templateOptions": {
+        "label": "cap"
+      },
+       "validators": {
+        "validation": ["capValidator"]
+      }
+    }
+    
+]

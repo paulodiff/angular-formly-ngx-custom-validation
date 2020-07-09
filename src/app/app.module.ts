@@ -85,7 +85,8 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
         { name: 'dateValidator', validation: FV.dateValidator},
         { name: 'dateInRangeValidator', validation: FV.dateInRangeValidator},
         { name: 'emailValidator', validation: FV.emailValidator},
-        { name: 'fileValidator', validation: FV.fileValidator}
+        { name: 'fileValidator', validation: FV.fileValidator},
+        { name: 'capValidator', validation: FV.capValidator}
       ],
 
       validationMessages: [
@@ -96,7 +97,9 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
         { name: 'dateInRangeValidator', message: FV.dateInRangeValidatorMessage },
         { name: 'emailValidator', message: FV.emailValidatorMessage },
         { name: 'fileValidator', message: FV.fileValidatorMessage },
-        { name: 'required', message: 'Questo dato è richiesto' }
+        { name: 'required', message: 'Questo dato è richiesto' },
+        { name: 'capValidator', message: FV.capValidatorMessage }
+
 
 
       ],
