@@ -7,5 +7,17 @@
           "description": "In order to proceed, please accept terms",
           "required": true
         }
+  },
+
+
+ {
+        "key": "CheckboxTerms",
+        "type": "checkbox-italia",
+        "templateOptions": {
+          "label": "Accept terms italia",
+          "description": "Italia In order to proceed, please accept terms",
+          "required": true
+        }
   }
+
 ]

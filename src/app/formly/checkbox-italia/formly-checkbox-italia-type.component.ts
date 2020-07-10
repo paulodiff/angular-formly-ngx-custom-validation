@@ -22,7 +22,7 @@ import { FieldType } from '@ngx-formly/core';
 
 })
 
-export class CheckboxItaliaInputComponentFieldType extends FieldType {
+export class FormlyCheckboxItaliaInputComponentFieldType extends FieldType {
 
     constructor() {
         super();

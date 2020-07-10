@@ -17,7 +17,11 @@ import { CounterInputComponentFieldType } from './formly/counter/formly-counter-
 import { HtmlTemplateComponentFieldType } from './formly/html-template/formly-html-template-type.component';
 import { FileValueAccessor } from './formly/file-value-accessor';
 import { FormlyFileFieldType } from './formly/file/formly-file-type.component';
-import { CheckboxItaliaInputComponentFieldType } from './formly/checkbox-italia/formly-checkbox-italia-type.component';
+import { FormlyCheckboxItaliaInputComponentFieldType } from './formly/checkbox-italia/formly-checkbox-italia-type.component';
+
+import { FormlyRadioItaliaInputComponentFieldType } from  ',/formly/radio-italia/formly-radio-italia-input-type.component';
+
+
 import * as FV from './services/validator';
 
 
@@ -71,7 +75,8 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
       types: [
           { name: 'counter', component: CounterInputComponentFieldType },
           { name: 'upload', component: FormlyFileFieldType, defaultOptions: { defaultValue: [], }, wrappers: ['form-field'] },
-          { name: 'html-template', component: HtmlTemplateComponentFieldType, defaultOptions: { defaultValue: [], } }
+          { name: 'html-template', component: HtmlTemplateComponentFieldType, defaultOptions: { defaultValue: [], } },
+          { name: 'checkbox-italia', component: FormlyCheckboxItaliaInputComponentFieldType}
       ],
 
        wrappers: [
@@ -134,6 +139,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
     FormlyWrapperFormField,
     CounterInputComponentFieldType,
     HtmlTemplateComponentFieldType,
+    FormlyCheckboxItaliaInputComponentFieldType,
     // CounterInputComponentFieldType,
     // CheckboxInputComponentFieldType,
     // TextInputComponentFieldType,
