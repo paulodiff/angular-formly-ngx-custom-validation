@@ -17,7 +17,7 @@ import { CounterInputComponentFieldType } from './formly/counter/formly-counter-
 import { HtmlTemplateComponentFieldType } from './formly/html-template/formly-html-template-type.component';
 import { FileValueAccessor } from './formly/file-value-accessor';
 import { FormlyFileFieldType } from './formly/file/formly-file-type.component';
-
+import { CheckboxItaliaInputComponentFieldType } from './formly/checkbox-italia/formly-checkbox-italia-type.component';
 import * as FV from './services/validator';
 
 
