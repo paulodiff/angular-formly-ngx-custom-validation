@@ -7,6 +7,7 @@ import { FieldType } from '@ngx-formly/core';
   selector: 'radio-italia',
   template:
     `
+    <p>RADIO INPUT ITALIA</p>
     <div>
       <div *ngFor="let option of to.options; let i = index;" class="form-check">
         <input type="radio"
