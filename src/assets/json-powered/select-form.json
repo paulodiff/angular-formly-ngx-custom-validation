@@ -1,4 +1,14 @@
 [
+
+     {
+      "key": "em2",
+      "type": "html-template",
+      "templateOptions": {
+        "htmlTemplate" :"<h3>Per ogni minore </h3>",
+        "label": "html template label"
+      }
+     
+    },
     {
       "key": "sport",
       "type": "select",

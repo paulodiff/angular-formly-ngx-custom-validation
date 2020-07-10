@@ -1,4 +1,13 @@
 [
+      {
+      "key": "em2",
+      "type": "html-template",
+      "templateOptions": {
+        "htmlTemplate" :"<h3>Per ogni minore </h3>",
+        "label": "html template label"
+      }
+     
+    },
     {
       "key": "em1",
       "type": "html-template",
@@ -6,10 +15,6 @@
         "htmlTemplate" : 
 
 "<p class='u-text-r-m'>Per ogni minore frequentante potrà essere riconosciuto il contributo massimo erogabile pari a 336,00 euro per la frequenza:</p><ul><li class='u-text-r-m'><span class='Dot u-background-70'></span>fino a 4 settimane nel caso in cui il costo settimanale sia uguale o superiore a 84,00 euro</li><li class='u-text-r-m'><span class='Dot u-background-70'></span>per un numero superiore di settimane nel caso in cui il costo settimanale sia inferiore a 84,00 euro</li><li class='u-text-r-m'><span class='Dot u-background-70'></span>altri dati</li></ul><p class='u-text-r-m'>Il contributo totale non potrà  essere superiore al costo effettivo di frequenza sostenuto dalla famiglia</p>",
-
-
-
-
         "label": "html template label"
       }
      

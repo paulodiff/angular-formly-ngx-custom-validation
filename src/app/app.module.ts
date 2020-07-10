@@ -71,11 +71,11 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
       types: [
           { name: 'counter', component: CounterInputComponentFieldType },
           { name: 'upload', component: FormlyFileFieldType, defaultOptions: { defaultValue: [], }, wrappers: ['form-field'] },
-          { name: 'html-template', component: HtmlTemplateComponentFieldType, defaultOptions: { defaultValue: [], }, wrappers: ['form-field'] }
+          { name: 'html-template', component: HtmlTemplateComponentFieldType, defaultOptions: { defaultValue: [], } }
       ],
 
        wrappers: [
-        { name: 'form-field', component: FormlyWrapperFormField }
+        // { name: 'form-field', component: FormlyWrapperFormField }
       ],
 
       validators: [
