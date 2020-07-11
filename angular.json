@@ -27,7 +27,8 @@
               "src/styles.scss"
             ],
             "scripts": [
-              "node_modules/tabulator-tables/dist/js/tabulator.min.js"
+              "node_modules/tabulator-tables/dist/js/tabulator.min.js",
+              "src/assets/bootstrap-italia/bootstrap-italia.bundle.min.js"
             ]
           },
           "configurations": {
