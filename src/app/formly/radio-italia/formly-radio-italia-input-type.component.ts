@@ -22,7 +22,7 @@ import { FieldType } from '@ngx-formly/core';
           [formlyAttributes]="field">
         <label style="white-space: normal; text-overflow: clip; overflow: visible;"
           [for]="id + '_' + i">
-          {{ option.name }}
+          {{ option.label }}
         </label>
       </div>
     </div>

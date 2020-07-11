@@ -1,7 +1,7 @@
 [
     {
       "key": "rr",
-      "type": "radio",
+      "type": "radio-italia",
       "templateOptions": {
         "label": "lista di scelta",
         "placeholder": "Placeholder",

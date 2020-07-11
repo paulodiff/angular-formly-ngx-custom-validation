@@ -9,6 +9,18 @@
       "validators": {
         "validation": ["emailValidator"]
       }
+    },
+
+        {
+      "key": "em1",
+      "type": "input-italia",
+      "templateOptions": {
+        "label": "email"
+      }
+      ,
+      "validators": {
+        "validation": ["emailValidator"]
+      }
     }
    
   ]
