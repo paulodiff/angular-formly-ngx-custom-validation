@@ -8,6 +8,28 @@
        "validators": {
         "validation": ["capValidator"]
       }
+    },
+
+        {
+      "key": "cap1",
+      "type": "input",
+      "templateOptions": {
+        "label": "cap1"
+      },
+       "validators": {
+        "validation": ["capValidator"]
+      }
+    },
+
+        {
+      "key": "cap2",
+      "type": "input",
+      "templateOptions": {
+        "label": "cap2"
+      },
+       "validators": {
+        "validation": ["capValidator"]
+      }
     }
     
 ]

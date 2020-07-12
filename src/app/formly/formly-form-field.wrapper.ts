@@ -8,8 +8,10 @@ import { FieldWrapper } from '@ngx-formly/core';
   <p *ngIf="to.description">{{ to.description }}<p>
   <ng-template #fieldComponent></ng-template>
   <div *ngIf="showError" class="invalid-feedback" [style.display]="'block'">
-    <div class="alert alert-danger" role="alert">
-      <formly-validation-message [field]="field"></formly-validation-message>
+    <div class="callout danger callout-highlight">
+    <div class="text-sans-serif font-weight-bold">ATTENZIONE</div>
+    <p class="text-sans-serif">
+      <formly-validation-message [field]="field"></formly-validation-message></p>
     </div>
   </div>
 </div>

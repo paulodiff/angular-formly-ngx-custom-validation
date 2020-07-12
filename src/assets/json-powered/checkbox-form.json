@@ -1,15 +1,5 @@
 [
-  {
-        "key": "CheckboxTerms",
-        "type": "checkbox",
-        "templateOptions": {
-          "label": "Accept terms",
-          "description": "In order to proceed, please accept terms",
-          "required": true
-        }
-  },
-
-
+  
  {
         "key": "CheckboxTerms",
         "type": "checkbox-italia",
@@ -18,6 +8,14 @@
           "description": "Italia In order to proceed, please accept terms",
           "required": true
         }
-  }
+  },
+
+   {
+      "key": "iban",
+      "type": "input",
+      "templateOptions": {
+        "label": "iban"
+      }
+    }
 
 ]

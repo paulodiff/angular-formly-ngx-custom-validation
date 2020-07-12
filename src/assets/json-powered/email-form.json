@@ -3,19 +3,7 @@
       "key": "em1",
       "type": "input",
       "templateOptions": {
-        "label": "email"
-      }
-      ,
-      "validators": {
-        "validation": ["emailValidator"]
-      }
-    },
-
-        {
-      "key": "em1",
-      "type": "input-italia",
-      "templateOptions": {
-        "label": "email"
+        "label": "email1"
       }
       ,
       "validators": {

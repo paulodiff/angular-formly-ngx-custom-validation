@@ -1,6 +1,6 @@
 [
     {
-      "key": "rr",
+      "key": "radioInput",
       "type": "radio-italia",
       "templateOptions": {
         "label": "lista di scelta",
@@ -18,7 +18,7 @@
     {
       "key": "f1",
       "type": "input",
-      "hideExpression": "(model.rr=='1')",
+      "hideExpression": "(model.radioInput=='1')",
       "templateOptions": {
         "label": "option1"
       }
