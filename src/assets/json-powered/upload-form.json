@@ -4,7 +4,7 @@
       "type": "upload",
       "templateOptions": {
         "required" : true,
-        "label": "file1",
+        "label": "file1-LABEL",
         "maxFileSize" : "1024kb",
         "minFileSize" : "10kb",
         "fileExtension" : "pdf,doc"

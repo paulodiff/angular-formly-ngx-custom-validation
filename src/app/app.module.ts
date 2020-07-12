@@ -80,11 +80,12 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
           { name: 'html-template', component: HtmlTemplateComponentFieldType, defaultOptions: { defaultValue: [], } },
           { name: 'checkbox-italia', component: FormlyCheckboxItaliaInputComponentFieldType},
           {name : 'radio-italia', component: FormlyRadioItaliaInputComponentFieldType},
-          {name : 'input-italia', component: FormlyInputItaliaComponentFieldType}
+          {name : 'input-italia', component: FormlyInputItaliaComponentFieldType,
+          defaultOptions: { defaultValue: [], }, wrappers: ['form-field']}
       ],
 
        wrappers: [
-        // { name: 'form-field', component: FormlyWrapperFormField }
+         { name: 'form-field', component: FormlyWrapperFormField }
       ],
 
       validators: [

@@ -15,13 +15,12 @@ const shajs = require('sha.js');
      [formControl]="formControl" [formlyAttributes]="field" (change)="onChange1(key, $event.target.files)">
 </div>
 
-    <div *ngIf="formControl.value.file_name" class="alert alert-info" role="alert">
+    <div *ngIf="formControl.value.file_name" 
+    class="" role="alert">
     <div class="it-list-wrapper">
     <p>nome file: {{formControl.value.file_name}}</p>
-    
-      
-      <p>dimensione: {{formControl.value.file_size}}</p>
-      <p>hash: {{formControl.value.file_hash}}</p>
+    <p>dimensione: {{formControl.value.file_size}}</p>
+    <p>hash: {{formControl.value.file_hash}}</p>
       
     
     <button type="button" class="btn btn-primary btn-block" (click)="remove_item()">Rimuovi</button>
