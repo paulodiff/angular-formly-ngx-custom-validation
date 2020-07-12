@@ -16,7 +16,7 @@ import { FieldType } from '@ngx-formly/core';
       [formlyAttributes]="field"
       [class.is-invalid]="showError"
       type="checkbox">
-    <label for="{{id}}">{{to.label}}</label>
+    <label for="{{id}}">{{id}}#{{to.label}}</label>
   </div>
 </div>
   `
