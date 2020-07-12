@@ -9,10 +9,12 @@ import { FieldType } from '@ngx-formly/core';
     `
 <div>
   <div class="form-check">
+  {{id}}#{{to.label}}
     <input 
       id="{{id}}"
       [formControl]="formControl"
       [formlyAttributes]="field"
+      [class.is-invalid]="showError"
       type="checkbox">
     <label for="{{id}}">{{to.label}}</label>
   </div>

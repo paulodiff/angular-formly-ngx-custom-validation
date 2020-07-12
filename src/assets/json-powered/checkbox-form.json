@@ -1,13 +1,26 @@
 [
   
  {
-        "key": "CheckboxTerms",
-        "type": "checkbox-italia",
-        "templateOptions": {
-          "label": "Accept terms italia",
-          "description": "Italia In order to proceed, please accept terms",
-          "required": true
-        }
+    "key": "CheckboxTerms",
+    "type": "checkbox",
+    "templateOptions": {
+      "label": "Accept terms ",
+      "description": "Italiapt terms",
+      "pattern": "true",
+      "required": true
+    }
+  },
+
+
+   {
+    "key": "CheckboxTerms3",
+    "type": "checkbox-italia",
+    "templateOptions": {
+      "label": "Accept terms 3 ",
+      "default" : false,
+      "description": "Itali3apt terms",
+      "required": true
+    }
   },
 
    {
