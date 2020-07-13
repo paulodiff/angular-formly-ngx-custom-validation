@@ -248,3 +248,23 @@ export function capValidatorMessage(err, field: FormlyFieldConfig) {
     field.formControl.value
   }" CAP non è nel formato corretto NNNNN`;
 }
+
+
+
+
+export function euroValidator(
+  control: FormControl,
+  field: FormlyFieldConfig
+): ValidationErrors {
+  console.log("euroValidator", control.value);
+  return !control.value ||
+    /^([0-9]*[,][0-9][0-9])$/.test(
+      control.value
+    )
+    ? null
+    : { euroFiscaleValidator: true };
+}
+
+export function euroValidatorMessage(err, field: FormlyFieldConfig) {
+  return `"${field.formControl.value}" non è nel formato corretto 12335,00 (euro1) !`;
+}
