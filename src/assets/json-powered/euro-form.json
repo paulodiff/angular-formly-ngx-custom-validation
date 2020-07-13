@@ -12,16 +12,16 @@
     },
 
     {
-      "key": "euro1",
+      "key": "euro2",
       "type": "input",
       "templateOptions": {
-        "label": "euro1",
+        "label": "euro in range 18000 - 40000",
         "fromEuro" : "18000,00",
         "toEuro" : "40000,00"
       }
       ,
       "validators": {
-        "validation": ["euroValidator, euroInRangeValidator"]
+        "validation": ["euroValidator","euroInRangeValidator"]
       }
     }
    
