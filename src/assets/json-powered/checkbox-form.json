@@ -1,18 +1,6 @@
 [
   
- {
-    "key": "CheckboxTerms1",
-    "type": "checkbox",
-    "templateOptions": {
-      "label": "Accept terms ",
-      "description": "Italiapt terms",
-      "required": true
-    }
-    ,
-       "validators": {
-        "validation": ["checkboxValidator"]
-      }
-  },
+
 
 
    {
@@ -23,6 +11,10 @@
       "description": "Itali3apt terms",
       "required": true
     }
+     ,
+       "validators": {
+        "validation": ["checkboxValidator"]
+      }
     
   },
 

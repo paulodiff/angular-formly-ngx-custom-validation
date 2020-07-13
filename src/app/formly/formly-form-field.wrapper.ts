@@ -7,7 +7,9 @@ import { FieldWrapper } from '@ngx-formly/core';
   <h4> [fwrp] {{ to.label }} <span *ngIf="to.required && to.hideRequiredMarker !== true"> (obbligatorio) </span> </h4>
   <p *ngIf="to.description">{{ to.description }}<p>
   <ng-template #fieldComponent></ng-template>
-  <div *ngIf="showError" class="invalid-feedback" [style.display]="'block'">
+  <div *ngIf="showError" 
+  class="invalid-feedback border border-danger" 
+  [style.display]="'block'">
     <div class="callout danger callout-highlight">
     <div class="text-sans-serif font-weight-bold">ATTENZIONE</div>
     <p class="text-sans-serif">

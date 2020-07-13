@@ -306,12 +306,16 @@ export function checkboxValidator(
 ): ValidationErrors {
   console.log("checkboxValidator", control.value);
   if( field.templateOptions.required) {
+    console.log('checkbox IS required');
     if (!control.value) {
-      return null;
+      return { checkboxValidator: true };
     } else {
-      return  { checkboxValidator: true }
+      return  null;
     }
 
+  } else {
+    console.log('checkbox NOT required');
+    return null;
   }
 
 }
