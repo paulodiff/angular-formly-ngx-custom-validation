@@ -1,12 +1,11 @@
 [
   
  {
-    "key": "CheckboxTerms",
+    "key": "CheckboxTerms1",
     "type": "checkbox",
     "templateOptions": {
       "label": "Accept terms ",
       "description": "Italiapt terms",
-      "pattern": "true",
       "required": true
     }
   },
@@ -17,7 +16,6 @@
     "type": "checkbox-italia",
     "templateOptions": {
       "label": "Accept terms 3 ",
-      "default" : false,
       "description": "Itali3apt terms",
       "required": true
     }

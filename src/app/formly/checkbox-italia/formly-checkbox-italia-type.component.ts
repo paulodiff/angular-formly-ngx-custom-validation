@@ -9,7 +9,7 @@ import { FieldType } from '@ngx-formly/core';
     `
 <div>
   <div class="form-check">
-  {{id}}#{{to.label}}
+  {{id}}#{{to.label}}#{{field | json}}#{{model | json}}
     <input 
       id="{{id}}"
       [formControl]="formControl"
@@ -32,25 +32,11 @@ export class FormlyCheckboxItaliaInputComponentFieldType extends FieldType {
     }
 
 
-  @Input()
-  counterValue = 0;
-
-
-  propagateChange = (_: any) => {};
-
-  registerOnChange(fn) {
-    this.propagateChange = fn;
-  }
-
+  
   // As mentioned earlier, it takes a new value from the form model and writes it into the view. 
   // In our case, all we need is updating the counterValue property, as it’s interpolated automatically.
   // This method gets called when the form is initialized, with the form model’s initial value
 
-  writeValue(value: any) {
-    if (value !== undefined) {
-      this.counterValue = value;
-    }
-  }
   
 
 
