@@ -297,3 +297,27 @@ export function euroInRangeValidator(
 export function euroInRangeValidatorMessage(err, field: FormlyFieldConfig) {
   return `"${field.formControl.value}" euro is not in RANGE`;
 }
+
+
+
+export function checkboxValidator(
+  control: FormControl,
+  field: FormlyFieldConfig
+): ValidationErrors {
+  console.log("checkboxValidator", control.value);
+  if( field.templateOptions.required) {
+    if (!control.value) {
+      return null;
+    } else {
+      return  { checkboxValidator: true }
+    }
+
+  }
+
+}
+
+export function checkboxValidatorMessage(err, field: FormlyFieldConfig) {
+  return `"${
+    field.formControl.value
+  }" checkboxValidator Check richiesto (3) !`;
+}

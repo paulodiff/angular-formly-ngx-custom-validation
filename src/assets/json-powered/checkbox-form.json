@@ -8,6 +8,10 @@
       "description": "Italiapt terms",
       "required": true
     }
+    ,
+       "validators": {
+        "validation": ["checkboxValidator"]
+      }
   },
 
 
@@ -19,6 +23,7 @@
       "description": "Itali3apt terms",
       "required": true
     }
+    
   },
 
    {

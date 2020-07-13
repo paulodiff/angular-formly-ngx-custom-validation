@@ -3,7 +3,8 @@
       "key": "euro1",
       "type": "input",
       "templateOptions": {
-        "label": "euro1"
+        "label": "euro1",
+        "required" : true
       }
       ,
       "validators": {
