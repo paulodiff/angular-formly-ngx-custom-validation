@@ -9,6 +9,20 @@
       "validators": {
         "validation": ["euroValidator"]
       }
+    },
+
+    {
+      "key": "euro1",
+      "type": "input",
+      "templateOptions": {
+        "label": "euro1",
+        "fromEuro" : "18000,00",
+        "toEuro" : "40000,00"
+      }
+      ,
+      "validators": {
+        "validation": ["euroValidator, euroInRangeValidator"]
+      }
     }
    
   ]

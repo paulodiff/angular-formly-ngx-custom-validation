@@ -262,9 +262,38 @@ export function euroValidator(
       control.value
     )
     ? null
-    : { euroFiscaleValidator: true };
+    : { euroValidator: true };
 }
 
 export function euroValidatorMessage(err, field: FormlyFieldConfig) {
-  return `"${field.formControl.value}" non è nel formato corretto 12335,00 (euro1) !`;
+  return `"${field.formControl.value}" non  formato corretto 12335,00 (euro1) !`;
+}
+
+
+export function euroInRangeValidator(
+  control: FormControl,
+  field: FormlyFieldConfig
+): ValidationErrors {
+  console.log("euroInRangeValidator", field.templateOptions.fromEuro);
+  console.log("euroInRangeValidator", field.templateOptions.toEuro);
+  // console.log(control);
+  // moment('2010-10-20').isBetween('2010-10-19', '2010-10-25');
+  let fromEuro = parseFloat(field.templateOptions.fromEuro);
+  let toEuro = parseFloat(field.templateOptions.toEuro);
+  let curValue = parseFloat(control.value);
+  // let fD = moment(curValue, "DD/MM/YYYY");
+  console.log("euroInRangeValidator", curValue, fromEuro, toEuro);
+  // console.log(curValue).isBetween(fromDate, toDate));
+  let bValid = { euroInRangeValidator: true };
+  if (( curValue >= fromEuro) && (curValue <= toEuro))  {
+    console.log("euroInRangeValidator",'OK');
+    bValid = null;
+  }
+
+
+  return bValid;
+}
+
+export function euroInRangeValidatorMessage(err, field: FormlyFieldConfig) {
+  return `"${field.formControl.value}" euro is not in RANGE`;
 }
