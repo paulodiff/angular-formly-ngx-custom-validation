@@ -15,7 +15,7 @@
     "type": "checkbox-italia",
     "templateOptions": {
       "label": "il dichiarante...",
-      "description": "al fine.",
+      "description": "al fine...",
       "required": true
     }
      ,
@@ -29,7 +29,7 @@
       "type": "upload-italia",
       "templateOptions": {
         "required" : true,
-        "label": "file1-LABEL",
+        "label": "file1- documento di identità in formato PDF con dimensione massima 1 MB",
         "maxFileSize" : "1024kb",
         "minFileSize" : "10kb",
         "fileExtension" : "pdf,doc"
@@ -42,10 +42,11 @@
     },
 
      {
-      "key": "cap",
+      "key": "capRimini",
       "type": "input",
       "templateOptions": {
-        "label": "cap rimini"
+        "label": "cap 1 rimini",
+        "required" : true
       },
        "validators": {
         "validation": ["capValidator"]

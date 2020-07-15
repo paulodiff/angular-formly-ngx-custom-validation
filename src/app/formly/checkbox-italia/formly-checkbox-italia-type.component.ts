@@ -9,6 +9,7 @@ import { FieldType } from '@ngx-formly/core';
     `
 <div>
   <div class="form-check">
+  {{formControl}}- {{field}}
   
     <input 
       id="{{id}}"

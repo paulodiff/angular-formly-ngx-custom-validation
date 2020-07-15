@@ -3,31 +3,18 @@ import { FieldWrapper } from '@ngx-formly/core';
 
 @Component({
   selector: 'formly-wrapper-form-field',
-  template:  `<div class="form-group" [class.has-error]="showError">
-  <h4> [fwrp] {{ to.label }} <span *ngIf="to.required && to.hideRequiredMarker !== true"> (obbligatorio) </span> </h4>
+  template:  `<div class="form-group border border-primary" [class.has-error]="showError">
+  <h5>{{ to.label }} <span *ngIf="to.required && to.hideRequiredMarker !== true"> (obbligatorio) </span> </h5>
   <p *ngIf="to.description">{{ to.description }}<p>
   <ng-template #fieldComponent></ng-template>
   <div *ngIf="showError" 
-  class="border border-danger align-middle" 
+  class="border border-danger align-middle bg-danger" 
   >
     
-  
-    
-
-
-          <h5 class="font-weight-bold text-danger">Attenzione</h5>
+            <h5 class="font-weight-bold text-white">Attenzione</h5>
           <p class="card-text"><formly-validation-message [field]="field"></formly-validation-message></p>
           
    
-
-
-
-
-
-
-
-
-
 
   </div>
 </div>

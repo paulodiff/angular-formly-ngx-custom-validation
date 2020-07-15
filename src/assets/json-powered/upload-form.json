@@ -4,7 +4,7 @@
       "type": "upload-italia",
       "templateOptions": {
         "required" : true,
-        "label": "file1-LABEL",
+        "label": "file1 - documento in formato PDF di dimensione non superiore a 1MB",
         "maxFileSize" : "1024kb",
         "minFileSize" : "10kb",
         "fileExtension" : "pdf,doc"
