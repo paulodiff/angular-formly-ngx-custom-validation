@@ -7,7 +7,6 @@ import { FieldType } from '@ngx-formly/core';
   selector: 'radio-italia',
   template:
     `
-    <p>RADIO INPUT ITALIA</p>
     <div>
       <div *ngFor="let option of to.options; let i = index;" class="form-check">
         <input type="radio"
@@ -20,7 +19,7 @@ import { FieldType } from '@ngx-formly/core';
           [value]="option.value"
           [formControl]="formControl"
           [formlyAttributes]="field">
-        <label style="white-space: normal; text-overflow: clip; overflow: visible;"
+        <label class="font-weight-bold text-secondary" style="white-space: normal; text-overflow: clip; overflow: visible;"
           [for]="id + '_' + i">
           {{ option.label }}
         </label>
