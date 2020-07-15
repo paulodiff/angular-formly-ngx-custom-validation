@@ -4,7 +4,7 @@
       "type": "input",
       "templateOptions": {
         "label": "email1",
-        "description" : "desc"
+        "description" : "desc1"
       }
       ,
       "validators": {
