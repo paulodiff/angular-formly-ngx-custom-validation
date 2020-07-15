@@ -1,9 +1,10 @@
 [
     {
-      "key": "iban",
+      "key": "svgCaptcha",
       "type": "svgcaptcha",
       "templateOptions": {
-        "label": "iban"
+        "label": "SVG CAPTCHA TEXT",
+        "required" : true
       }
     }
     

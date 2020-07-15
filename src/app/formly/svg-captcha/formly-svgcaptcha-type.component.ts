@@ -6,12 +6,13 @@ import { FieldType } from '@ngx-formly/core';
   template: `
     <div class="card"><div class="card-body">
 
-    <p class="u-text-h3">{{to.title}}</p>
-    <p>{{formState.svgcaptcha.image}}</p>
+    <p class="u-text-h3">title:{{to.title}}</p>
+    <p>formState:{{formState.svgcaptcha.image}}</p>
+ 
 
     
-    <p>{{to.description}}</p>
-    <p>{{id}}</p>
+    <p>desc:{{to.description}}</p>
+    <p>id:{{id}}</p>
     <input
     type="text"
     [formControl]="formControl"
