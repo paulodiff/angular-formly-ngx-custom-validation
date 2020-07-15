@@ -3,7 +3,8 @@
       "key": "em1",
       "type": "input",
       "templateOptions": {
-        "label": "email1"
+        "label": "email1",
+        "description" : "desc"
       }
       ,
       "validators": {

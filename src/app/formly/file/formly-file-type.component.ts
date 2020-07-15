@@ -17,14 +17,26 @@ const shajs = require('sha.js');
 
     <div *ngIf="formControl.value.file_name" 
     class="" role="alert">
+
+    <table class="table table-bordered table-sm">
+    <tr>
+      <td>Nome:</td>
+      <td>{{formControl.value.file_name}}</td>
+    </tr>
+    <tr>
+      <td>Dim:</td>
+      <td>{{formControl.value.file_size}} bytes</td>
+    </tr>
+    </table>
+
     <div class="it-list-wrapper">
     <p>nome file: {{formControl.value.file_name}}</p>
-    <p>dimensione: {{formControl.value.file_size}}</p>
+    <p>dimensione: {{formControl.value.file_size}} bytes</p>
     <p>hash: {{formControl.value.file_hash}}</p>
-      
-    
+        
     <button type="button" class="btn btn-primary btn-block" (click)="remove_item()">Rimuovi</button>
     </div>
+    
     </div>
   `
 })
