@@ -8,23 +8,20 @@
       }
   },
   
-  {
-    "key": "info2",
-    "type": "html-template",
-    "templateOptions": {
-      "htmlTemplate" :"<h3>Test infomraioni 2</h3>",
-      "label": "html template label"
-      }
-  },
+
 
    {
     "key": "CheckboxTerms",
     "type": "checkbox-italia",
     "templateOptions": {
-      "label": "il dichiarante/richiedebte identificato dai dati inseriti dichiaro di aver preso visione dell'informativa sul trattamento dei dati personali",
-      "description": "al fine di procedere è necessario accettare i termini dell'informativa del trattamento dei dati personali",
+      "label": "il dichiarante...",
+      "description": "al fine.",
       "required": true
     }
+     ,
+       "validators": {
+        "validation": ["checkboxValidator"]
+      }
   },
 
    {
@@ -48,12 +45,12 @@
       "key": "cap",
       "type": "input",
       "templateOptions": {
-        "label": "cap rimi"
+        "label": "cap rimini"
       },
        "validators": {
         "validation": ["capValidator"]
       }
-    },
+    }
 
  
 
