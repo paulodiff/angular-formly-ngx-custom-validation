@@ -4,15 +4,13 @@ import { FieldType } from '@ngx-formly/core';
 @Component({
   selector: 'svgcaptcha',
   template: `
-    <div class="card"><div class="card-body">
-
-    <p class="u-text-h3">title:{{to.title}}</p>
-    <p>formState:{{formState.svgcaptcha.image}}</p>
- 
-
     
-    <p>desc:{{to.description}}</p>
-    <p>id:{{id}}</p>
+
+   
+    <small>SVG IMAGE:{{formState.svgcaptcha.svgImage}}</>
+    <img [src]="'data:image/svg+xml;;utf8,' + formState.svgcaptcha.svgImage | safeHtml ">
+    <p>{{formState.svgcaptcha.question}}</p>
+   
     <input
     type="text"
     [formControl]="formControl"
@@ -20,7 +18,7 @@ import { FieldType } from '@ngx-formly/core';
     [class.is-invalid]="showError"
     >
 
-    </div></div>
+    
   `,
 })
 export class FormlySvgCaptchaFieldType extends FieldType {}

@@ -24,9 +24,10 @@ import { FormlyRadioItaliaInputComponentFieldType } from  './formly/radio-italia
 import { FormlyInputItaliaComponentFieldType } from './formly/input-italia/formly-text-italia-input-type.component';
 
 
-
 import { FormlySvgCaptchaFieldType } from './formly/svg-captcha/formly-svgcaptcha-type.component';
 
+
+import { SafeHtmlPipe} from './pipes/safeHTML.pipe';
 import * as FV from './services/validator';
 
 
@@ -152,7 +153,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
 
 
     // LoaderComponent,
-    // SafeHtmlPipe,
+    SafeHtmlPipe,
     FileValueAccessor,
     // RatingInputComponent,
     FormlyWrapperFormField,

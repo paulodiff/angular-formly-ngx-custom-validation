@@ -3,8 +3,10 @@
       "key": "svgCaptcha",
       "type": "svgcaptcha",
       "templateOptions": {
-        "label": "SVG CAPTCHA TEXT",
+        "label": "Controllo di sicurezza",
+        "description" : "ATTENZIONE visualizzare l'immagine, leggere con attenzione la domanda e rispondere digitando i numeri richiesti",
         "required" : true
+     
       }
     }
     
