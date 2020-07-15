@@ -1,7 +1,7 @@
 [
     {
       "key": "file1",
-      "type": "upload",
+      "type": "upload-italia",
       "templateOptions": {
         "required" : true,
         "label": "file1-LABEL",

@@ -3,7 +3,7 @@
     "key": "info1",
     "type": "html-template",
     "templateOptions": {
-      "htmlTemplate" :"<h3>IL \"PROGETTO CONCILIAZIONE VITA-LAVORO\" APPROVATO CON DELIBERA DELLA GIUNTA REGIONE EMILIA ROMAGNA N. 2213/2019 È COFINANZIATO DAL FONDO SOCIALE EUROPEO PO 2014-2020 REGIONE EMILIA-ROMAGNA</h3>",
+      "htmlTemplate" :"<h3>Test informazioni</h3>",
       "label": "html template label"
       }
   },
@@ -12,49 +12,48 @@
     "key": "info2",
     "type": "html-template",
     "templateOptions": {
-      "htmlTemplate" :"<h3>DISTRETTO RIMINI NORD</h3>",
+      "htmlTemplate" :"<h3>Test infomraioni 2</h3>",
       "label": "html template label"
       }
   },
 
-
-  {
-    "key": "info3",
-    "type": "html-template",
-    "templateOptions": {
-      "htmlTemplate" :"<h3>RICHIESTA DI ADESIONE AL \"PROGETTO CONCILIAZIONE VITA-LAVORO\" PER SOGGETTI GESTORI DI CENTRI ESTIVI PER MINORI NELLA FASCIA DI ETA' COMPRESA TRA I 3 E I 13 ANNI (GIUGNO/SETTEMBRE 2020)</h3>",
-      "label": "html template label"
-      }
-  },
-
-
-  {
-    "key": "info4",
-    "type": "html-template",
-    "templateOptions": {
-      "htmlTemplate" :"<h3>Occorrente per compilare il seguente modulo:</h3>",
-      "label": "html template label"
-      }
-  },
-
-  {
-    "key": "info5",
-    "type": "html-template",
-    "templateOptions": {
-      "htmlTemplate" :"<ul><li class='u-text-r-m'>Dati relstivo</li><li class='u-text-r-m'>Dati aante</li><li class='u-text-r-m'>Dati relsvolgimento)</li><li class='u-text-r-m'>Datrotocollo), se presentata</li> <li class='u-text-r-m'>Dati prea gestione di un Centro Estivo</li><li class='u-text-r-m'>Eventuali dati aggiudicazione/stipula convenzione con il Comune  </li><li>Scansione deDF</li></ul>",
-      "label": "html template label"
-      }
-  },
-
-  {
+   {
     "key": "CheckboxTerms",
-    "type": "checkbox",
+    "type": "checkbox-italia",
     "templateOptions": {
       "label": "il dichiarante/richiedebte identificato dai dati inseriti dichiaro di aver preso visione dell'informativa sul trattamento dei dati personali",
       "description": "al fine di procedere è necessario accettare i termini dell'informativa del trattamento dei dati personali",
       "required": true
     }
-  }
+  },
+
+   {
+      "key": "documento1",
+      "type": "upload-italia",
+      "templateOptions": {
+        "required" : true,
+        "label": "file1-LABEL",
+        "maxFileSize" : "1024kb",
+        "minFileSize" : "10kb",
+        "fileExtension" : "pdf,doc"
+      }
+
+      ,
+      "validators": {
+        "validation": ["fileValidator"]
+      }
+    },
+
+     {
+      "key": "cap",
+      "type": "input",
+      "templateOptions": {
+        "label": "cap rimi"
+      },
+       "validators": {
+        "validation": ["capValidator"]
+      }
+    },
 
  
 

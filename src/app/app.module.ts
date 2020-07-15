@@ -80,7 +80,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
 
       types: [
           { name: 'counter', component: CounterInputComponentFieldType },
-          { name: 'upload', component: FormlyFileFieldType, defaultOptions: { defaultValue: [], }, wrappers: ['form-field'] },
+          { name: 'upload-italia', component: FormlyFileFieldType, defaultOptions: { defaultValue: [], }, wrappers: ['form-field'] },
           { name: 'html-template', component: HtmlTemplateComponentFieldType, defaultOptions: { defaultValue: [], } },
           { name: 'checkbox-italia', component: FormlyCheckboxItaliaInputComponentFieldType,
           defaultOptions: { defaultValue: [], }, wrappers: ['form-field']},
