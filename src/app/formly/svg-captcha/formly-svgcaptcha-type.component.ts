@@ -9,7 +9,7 @@ import { FieldType } from '@ngx-formly/core';
     <p class="u-text-h3">{{to.title}}</p>
     <p>{{formState.svgcaptcha.image}}</p>
 
-    <img [src]="'data:image/svg+xml;base64,' + to.svgImageB64 | safeHtml ">
+    
     <p>{{to.description}}</p>
     <p>{{id}}</p>
     <input
@@ -25,4 +25,5 @@ import { FieldType } from '@ngx-formly/core';
 export class FormlySvgCaptchaFieldType extends FieldType {}
 
 // <img [src]="{{to.svgImage | safeHtml}}" class="u-sizeFit">
+// <img [src]="'data:image/svg+xml;base64,' + to.svgImageB64 | safeHtml ">
 // "data:image/svg+xml;base64,"
