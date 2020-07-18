@@ -107,13 +107,14 @@ export function dateValidatorMessage(err, field: FormlyFieldConfig) {
 
 // email Validator
 // /^\S+@\S+\.\S+$/
+// /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w+)+$/
 
 export function emailValidator(
   control: FormControl,
   field: FormlyFieldConfig
 ): ValidationErrors {
   console.log("emailValidator");
-  return !control.value || /^\S+@\S+\.\S+$/.test(control.value)
+  return !control.value || /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w+)+$/.test(control.value)
     ? null
     : { emailValidator: true };
 }
