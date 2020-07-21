@@ -2,7 +2,27 @@ import { ReactiveFormsModule, ValidationErrors } from "@angular/forms";
 import { FormlyModule, FormlyFieldConfig } from "@ngx-formly/core";
 import { FormControl } from "@angular/forms";
 import moment = require("moment");
+import IBAN = require("iban");
 import Utils from './utils'
+
+
+// IBAN
+
+export function ibanValidator(
+  control: FormControl,
+  field: FormlyFieldConfig
+): ValidationErrors {
+  console.log("ibanValidator", control.value);
+  return !control.value ||
+    IBAN.valid(control.value )
+    ? null
+    : { ibanValidator: true };
+}
+
+export function ibanValidatorMessage(err, field: FormlyFieldConfig) {
+  return `"${field.formControl.value}" non è nel formato corretto (iban) !`;
+}
+
 
 // "^[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-9]{2}[a-zA-Z][0-9]{3}[a-zA-Z]$"
 

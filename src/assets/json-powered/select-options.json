@@ -1,6 +1,12 @@
 {
     "formState": {
       "selectOptionsData": {
+        "cities": [
+          { "value": "1", "label": "Rimini"},
+          { "value": "2", "label": "Santarcangelo di Romagna"}
+         
+        ],
+
         "teams": [
           { "id": "1", "name": "Rimini", "sportId": "1" },
           { "id": "2", "name": "Santarcangelo di Romagna", "sportId": "1" },

@@ -1,1 +1,11 @@
-{}
+{
+    "formState": {
+      "selectOptionsData": {
+        "cities": [
+          { "value": "1", "label": "Rimini"},
+          { "value": "2", "label": "Santarcangelo di Romagna"}
+         
+        ]
+      }
+    }
+}

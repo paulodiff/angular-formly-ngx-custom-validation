@@ -5,6 +5,10 @@
       "templateOptions": {
         "label": "iban"
       }
+      ,
+      "validators": {
+        "validation": ["ibValidator"]
+      }
     }
     
 ]

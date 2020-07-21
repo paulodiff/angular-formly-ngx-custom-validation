@@ -1,6 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
+import { FormlyJsonschema } from '@ngx-formly/core/json-schema';
 import { Validators, FormGroup } from '@angular/forms';
 import { AppService } from '../services/app.service';
 
@@ -24,7 +25,8 @@ export class SchemaComponent implements OnInit, OnDestroy {
 
   constructor(
               private route: ActivatedRoute,
-              private _appService: AppService
+              private _appService: AppService,
+              private formlyJsonschema: FormlyJsonschema
             ) {
 
               console.log('Json:constructor');
@@ -35,43 +37,30 @@ export class SchemaComponent implements OnInit, OnDestroy {
   ngOnInit() {
 
     this.sub = this.route.params.subscribe(params => {
-      console.log('Json:ngOnInit');
+      console.log('Schema:ngOnInit');
       // this.itemId = +params['id']; // (+) converts string 'id' to a number
-      this.itemId = params['itemId'];
+      // this.itemId = params['itemId'];
+      this.itemId = 'schema';
       console.log('Json:itemId', this.itemId);
       // In a real app: dispatch action to load the details here.
       // recupera model,fields,options 
       this._appService.getFormData(this.itemId).subscribe(([model, fields, options ]) => {
         console.log('returned data ... building form ... ');
         // this.options = {};
-        this.model = {};
-        this.fields = null;
+
+        // this.type = type;
+        this.form = new FormGroup({});
+        this.options = {};
+        this.fields = [this.formlyJsonschema.toFieldConfig(fields)];
         this.model = model;
-        this.fields = fields;
-        this.options = options;
+
+
+        
         // this.options = options;
 
         // this.options.formState.mainModel = this.model;
         // riassegna delle funzioni per ora sumExpr che fa una somma di due campi
-        this.fields = fields.map(f => {
-
-          if (f.templateOptions && f.templateOptions.sumExpr) {
-            console.log('json:assign:change:function',f.templateOptions.changeExpr);
-            f.templateOptions.change = 
-            Function('field', 'this.sumOnChange(field)').bind(this);
-          }
-
-          // recupera i dati da una select con dati async
-          if (f.templateOptions && f.templateOptions.optionsUrl) {
-            console.log('json:async:loading:data:',f.templateOptions.optionsUrl);
-             this._appService.getFormData('tabulator').subscribe(([model, fields, options ]) => {
-               f.templateOptions.options = fields;
-             });
-            // f.templateOptions.options = {};
-          }
-
-          return f;
-        });
+      
       },
       err => {
         console.log('errore:');
