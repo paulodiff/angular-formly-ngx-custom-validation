@@ -2,7 +2,8 @@ import { ReactiveFormsModule, ValidationErrors } from "@angular/forms";
 import { FormlyModule, FormlyFieldConfig } from "@ngx-formly/core";
 import { FormControl } from "@angular/forms";
 import moment = require("moment");
-import IBAN = require("iban");
+
+import ibantools = require('ibantools');
 import Utils from './utils'
 
 
@@ -14,7 +15,7 @@ export function ibanValidator(
 ): ValidationErrors {
   console.log("ibanValidator", control.value);
   return !control.value ||
-    IBAN.valid(control.value )
+    ibantools.isValidIBAN(control.value )
     ? null
     : { ibanValidator: true };
 }

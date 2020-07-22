@@ -7,7 +7,7 @@
       }
       ,
       "validators": {
-        "validation": ["ibValidator"]
+        "validation": ["ibanValidator"]
       }
     }
     
