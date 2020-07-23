@@ -1,8 +1,9 @@
 {
-    "security" : {
-      "token" : "alfksjflksjdflkjsdflkjsdlfkj"
-      },
+  
     "formState": {
+      "security" : {
+        "token" : "token-id-AA-BB-CC-DD-EE-FF"
+      },
       "svgcaptcha" : {
         "svgImage" : "%3Csvg xmlns='http://www.w3.org/2000/svg' height='100' width='100'%3E%3Ccircle cx='50' cy='50' r='40' stroke='black' stroke-width='3' fill='red' /%3E%3C/svg%3E",
         "question" : "Indicare le ultime due cifre dell'immagine visualizzata"

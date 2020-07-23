@@ -7,7 +7,7 @@ import { FieldType } from '@ngx-formly/core';
     
 
    
-    <small>SVG IMAGE:{{formState.svgcaptcha.svgImage}}</small>
+    
     <img [src]="'data:image/svg+xml;;utf8,' + formState.svgcaptcha.svgImage | safeHtml ">
     <p>{{formState.svgcaptcha.question}}</p>
    
@@ -18,6 +18,8 @@ import { FieldType } from '@ngx-formly/core';
     [class.is-invalid]="showError"
     >
 
+
+    <p>Token: {{formState.security.token}} </p>
     
   `,
 })
