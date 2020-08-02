@@ -355,23 +355,47 @@ export function checkboxValidatorMessage(err, field: FormlyFieldConfig) {
 
 // NO trailing spaces validator
 
-// CAP 
 
-export function avoidStartingAndEndnigSpaceValidator(
+export function avoidStartingAndEndingSpaceValidator(
   control: FormControl,
   field: FormlyFieldConfig
 ): ValidationErrors {
-  console.log("avoidStartingAndEndnigSpaceValidator");
+  console.log("avoidStartingAndEndingSpaceValidator", control.value);
+  console.log(/^[\s]*(.*?)[\s]*$/.test(control.value));
   return !control.value ||
     /^[\s]*(.*?)[\s]*$/.test(
       control.value
     )
     ? null
-    : { avoidStartingAndEndnigSpaceValidator: true };
+    : { avoidStartingAndEndingSpaceValidator: true };
 }
 
-export function avoidStartingAndEndnigSpaceValidatorMessage(err, field: FormlyFieldConfig) {
+export function avoidStartingAndEndingSpaceValidatorMessage(err, field: FormlyFieldConfig) {
   return `"${
     field.formControl.value
   }" sono presenti spazi bianchi prima o dopo il dato inserito`;
+}
+
+// default user input validator
+// un validatore che consente maiuscole minuscole e numeri
+
+
+export function defaultUserInputValidator(
+  control: FormControl,
+  field: FormlyFieldConfig
+): ValidationErrors {
+  console.log("defaultUserInputValidator", control.value);
+  console.log(/^[a-zA-Z 0-9_-]{1,255}$/.test(control.value));
+  return !control.value ||
+    /^[a-zA-Z 0-9_-]{1,255}$/.test(
+      control.value
+    )
+    ? null
+    : { defaultUserInputValidator: true };
+}
+
+export function defaultUserInputValidatorMessage(err, field: FormlyFieldConfig) {
+  return `"${
+    field.formControl.value
+  }" controllare il dato inserito NON deve contenere caratteri speciali`;
 }

@@ -44,6 +44,21 @@
       "templateOptions": {
         "label": "mac  (hide if f1=11 or f1=22)"
       }
+    },
+
+    {
+      "key": "noTrailingSpaces",
+      "type": "input",
+      "templateOptions": {
+        "label": "no trailing or ending space AAND default control"
+      }
+      ,
+      "validators": {
+        "validation": [
+          "avoidStartingAndEndnigSpaceValidator",
+          "defaultUserInputValidator"
+          ]
+      }
     }
   ]
   

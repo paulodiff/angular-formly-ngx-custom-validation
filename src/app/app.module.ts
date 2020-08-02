@@ -110,7 +110,15 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
         { name: 'capValidator', validation: FV.capValidator},
         { name: 'euroValidator', validation: FV.euroValidator},
         { name: 'euroInRangeValidator', validation: FV.euroInRangeValidator},
-        { name: 'checkboxValidator', validation: FV.checkboxValidator}
+        { name: 'checkboxValidator', validation: FV.checkboxValidator},
+        { 
+          name: 'avoidStartingAndEndnigSpaceValidator',
+          validation: FV.avoidStartingAndEndingSpaceValidator
+        },
+        { 
+          name: 'defaultUserInputValidator',
+          validation: FV.defaultUserInputValidator
+        }
 
       ],
 
@@ -127,7 +135,18 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
         { name: 'capValidator', message: FV.capValidatorMessage },
         { name: 'euroValidator', message: FV.euroValidatorMessage },
         { name: 'euroInRangeValidator', message: FV.euroInRangeValidatorMessage },
-        { name: 'checkboxValidator', message: FV.checkboxValidatorMessage }
+        { 
+          name: 'checkboxValidator', 
+          message: FV.checkboxValidatorMessage 
+        },
+        {
+          name : 'avoidStartingAndEndnigSpaceValidator',
+          message : FV.avoidStartingAndEndnigSpaceValidatorMessage
+        },
+        { 
+          name: 'defaultUserInputValidator',
+          message: FV.defaultUserInputValidatorMessage
+        }
 
 
 
