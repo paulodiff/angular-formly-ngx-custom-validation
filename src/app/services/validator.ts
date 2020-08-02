@@ -350,3 +350,28 @@ export function checkboxValidatorMessage(err, field: FormlyFieldConfig) {
     field.formControl.value
   }" checkboxValidator Check richiesto (3) !`;
 }
+
+
+
+// NO trailing spaces validator
+
+// CAP 
+
+export function avoidStartingAndEndnigSpaceValidator(
+  control: FormControl,
+  field: FormlyFieldConfig
+): ValidationErrors {
+  console.log("avoidStartingAndEndnigSpaceValidator");
+  return !control.value ||
+    /^[\s]*(.*?)[\s]*$/.test(
+      control.value
+    )
+    ? null
+    : { avoidStartingAndEndnigSpaceValidator: true };
+}
+
+export function avoidStartingAndEndnigSpaceValidatorMessage(err, field: FormlyFieldConfig) {
+  return `"${
+    field.formControl.value
+  }" sono presenti spazi bianchi prima o dopo il dato inserito`;
+}
