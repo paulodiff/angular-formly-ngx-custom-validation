@@ -377,7 +377,7 @@ export function avoidStartingAndEndingSpaceValidatorMessage(err, field: FormlyFi
 }
 
 // default user input validator
-// un validatore che consente maiuscole minuscole e numeri
+// un validatore che consente maiuscole minuscole spazio e numeri
 
 
 export function defaultUserInputValidator(
