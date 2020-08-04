@@ -63,4 +63,13 @@ export class AppService {
     return this.http.get<FormlyFieldConfig[]>(asset);
   }
 
+  uploadData(fData) {
+    console.log('service-upload-data');
+    var SERVER_URL = 'https://ISTANZESERVERV2.paulodiff.repl.co/upload';
+    return this.http.post<any>(SERVER_URL, forData, {
+      reportProgress: true,
+      observe: 'events'
+    });
+  }
+
 }

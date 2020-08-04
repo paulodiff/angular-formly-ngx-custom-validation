@@ -145,6 +145,7 @@ export class JsonComponent implements OnInit, OnDestroy {
   }
 
   uploadData() {
+    console.log('##----------------------------');
     console.log(this.model);
 
     const formData = new FormData();  
@@ -156,8 +157,13 @@ export class JsonComponent implements OnInit, OnDestroy {
       this.model[key] instanceof File );
 
       if ( this.model[key] instanceof File ) {
-        formData.append(key, this.model[key].data);  
+        formData.append('files[]', this.model[key].data);  
+      } 
+
+      if (typeof this.model[key] === 'string') {
+        formData.append(key, this.model[key]);  
       }
+      
 
 
 
