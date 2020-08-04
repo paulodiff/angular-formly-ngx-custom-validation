@@ -147,11 +147,20 @@ export class JsonComponent implements OnInit, OnDestroy {
   uploadData() {
     console.log(this.model);
 
+    const formData = new FormData();  
+
     Object.keys(this.model).forEach((key, index) => {
       console.log(key, 
       this.model[key], 
       typeof this.model[key],
       this.model[key] instanceof File );
+
+      if ( this.model[key] instanceof File ) {
+        formData.append(key, this.model[key].data);  
+      }
+
+
+
     });
 
    

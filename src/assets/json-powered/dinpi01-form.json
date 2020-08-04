@@ -55,6 +55,21 @@
        "validators": {
         "validation": ["capValidator"]
       }
+    },
+
+    {
+      "key": "noTrailingSpaces",
+      "type": "input",
+      "templateOptions": {
+        "label": "no trailing or ending space AAND default control"
+      }
+      ,
+      "validators": {
+        "validation": [
+          "avoidStartingAndEndnigSpaceValidator",
+          "defaultUserInputValidator"
+          ]
+      }
     }
 
  
