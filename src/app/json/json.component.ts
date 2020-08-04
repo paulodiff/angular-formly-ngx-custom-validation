@@ -144,4 +144,9 @@ export class JsonComponent implements OnInit, OnDestroy {
     }
   }
 
+  upload() {
+    console.log(this.model);
+    console.log(this.files);
+  }
+
 }

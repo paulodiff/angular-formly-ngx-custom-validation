@@ -3,7 +3,7 @@
     "key": "info1",
     "type": "html-template",
     "templateOptions": {
-      "htmlTemplate" :"<h3>Test informazioni</h3>",
+      "htmlTemplate" :"<h3>Test html template</h3>",
       "label": "html template label"
       }
   },
@@ -11,25 +11,29 @@
 
 
    {
-    "key": "CheckboxTerms",
-    "type": "checkbox-italia",
-    "templateOptions": {
-      "label": "il dichiarante...",
-      "description": "al fine...",
-      "required": true
-    }
-     ,
-       "validators": {
-        "validation": ["checkboxValidator"]
-      }
-  },
-
-   {
       "key": "documento1",
       "type": "upload-italia",
       "templateOptions": {
         "required" : true,
         "label": "file1- documento di identità in formato PDF con dimensione massima 1 MB",
+        "maxFileSize" : "1024kb",
+        "minFileSize" : "10kb",
+        "fileExtension" : "pdf,doc"
+      }
+
+      ,
+      "validators": {
+        "validation": ["fileValidator"]
+      }
+    },
+
+
+     {
+      "key": "documento",
+      "type": "upload-italia",
+      "templateOptions": {
+        "required" : true,
+        "label": "file2- documento di identità in formato PDF con dimensione massima 1 MB",
         "maxFileSize" : "1024kb",
         "minFileSize" : "10kb",
         "fileExtension" : "pdf,doc"
