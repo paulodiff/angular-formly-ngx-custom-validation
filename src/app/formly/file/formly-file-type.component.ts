@@ -9,7 +9,7 @@ const shajs = require('sha.js');
   
 
   <div class="upload-btn-wrapper btn-block" [hidden]="formControl.value.file_name">
-    <button class="btn btn-primary btn-block">Seleziona un allegato ...</button>
+    <button class="btn btn-primary btn-block">Seleziona un allegato</button>
     <input type="file" 
      [hidden]="formControl.value.file_name"
      [formControl]="formControl" [formlyAttributes]="field" (change)="onChange1(key, $event.target.files)">
@@ -33,7 +33,7 @@ const shajs = require('sha.js');
 
     <p>hash: {{formControl.value.file_hash}}</p>
         
-    <button type="button" class="btn btn-primary btn-block" (click)="remove_item()">Rimuovi</button>
+    <button type="button" class="btn btn-warning btn-block" (click)="remove_item()">Rimuovi l'allegato</button>
 
 
     
