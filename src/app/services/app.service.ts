@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams, HttpEvent, HttpErrorResponse, HttpEventType } from '@angular/common/http';
 import { Observable, forkJoin } from 'rxjs';
 import { shareReplay, map, catchError, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
@@ -70,6 +70,31 @@ export class AppService {
       reportProgress: true,
       observe: 'events'
     });
+
+    return this.http.post<any>(SERVER_URL, fData, {
+      reportProgress: true,
+      observe: 'events'
+    }).pipe(map((event) => {
+
+      switch (event.type) {
+
+        case HttpEventType.UploadProgress:
+          const progress = Math.round(100 * event.loaded / event.total);
+          return { status: 'progress', message: progress };
+
+        case HttpEventType.Response:
+          return event.body;
+
+        default:
+          return `Unhandled event: ${event.type}`;
+          
+      }
+    })
+    );
+
+
+
+
   }
 
 }

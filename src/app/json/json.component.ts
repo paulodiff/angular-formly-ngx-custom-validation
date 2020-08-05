@@ -164,7 +164,7 @@ export class JsonComponent implements OnInit, OnDestroy {
         formData.append(key, this.model[key]);  
       }
       
-
+      this._appService.uploadData(formData).subscribe()
 
 
     });
