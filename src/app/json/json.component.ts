@@ -21,6 +21,9 @@ export class JsonComponent implements OnInit, OnDestroy {
     options: FormlyFormOptions = {};
     fields: FormlyFieldConfig[];
     model;
+    error: string;
+    userId: number = 1;
+    uploadResponse = { status: '', message: '', filePath: '' };
 
   constructor(
               private route: ActivatedRoute,
@@ -165,6 +168,11 @@ export class JsonComponent implements OnInit, OnDestroy {
       }
       
       this._appService.uploadData(formData).subscribe()
+
+      this._appService.uploadData(formData).subscribe(
+      (res) => this.uploadResponse = res,
+      (err) => this.error = err
+    );
 
 
     });
