@@ -24,6 +24,7 @@ export class JsonComponent implements OnInit, OnDestroy {
     error: string;
     userId: number = 1;
     uploadResponse = { status: '', message: '', filePath: '' };
+    securityToken = '';
 
   constructor(
               private route: ActivatedRoute,
@@ -52,6 +53,12 @@ export class JsonComponent implements OnInit, OnDestroy {
         this.model = model;
         this.fields = fields;
         this.options = options;
+
+        console.log(options);
+        if(options.formState) {
+          this.securityToken = options.formState.security.token;
+        }
+
         // this.options = options;
 
         // this.options.formState.mainModel = this.model;
