@@ -55,7 +55,7 @@ export class JsonComponent implements OnInit, OnDestroy {
         this.options = options;
 
         console.log(options);
-        if(options.formState) {
+        if(options && options.formState && options.formState.security && options.formState.security.token) {
           this.securityToken = options.formState.security.token;
         }
 
