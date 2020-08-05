@@ -174,12 +174,13 @@ export class JsonComponent implements OnInit, OnDestroy {
     this._appService.uploadData(formData).subscribe(
         (res) => {
           console.log(res);
-          this.uploadResponse = res
+          // this.uploadResponse = res
         },
         (err) => {
           console.log(err);
           this.error = err
-        }
+        },
+        () => console.log('uploadData:DONE!')
     );
 
 
