@@ -160,22 +160,28 @@ export class JsonComponent implements OnInit, OnDestroy {
       this.model[key] instanceof File );
 
       if ( this.model[key] instanceof File ) {
-        formData.append('files[]', this.model[key].data);  
+        formData.append('files[]', this.model[key]);  
       } 
 
       if (typeof this.model[key] === 'string') {
         formData.append(key, this.model[key]);  
       }
       
-      this._appService.uploadData(formData).subscribe()
-
-      this._appService.uploadData(formData).subscribe(
-      (res) => this.uploadResponse = res,
-      (err) => this.error = err
-    );
-
+        
 
     });
+
+    this._appService.uploadData(formData).subscribe(
+        (res) => {
+          console.log(res);
+          this.uploadResponse = res
+        },
+        (err) => {
+          console.log(err);
+          this.error = err
+        }
+    );
+
 
    
     //console.log(this.files);
