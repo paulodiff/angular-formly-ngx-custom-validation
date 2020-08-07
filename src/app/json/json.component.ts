@@ -30,8 +30,7 @@ export class JsonComponent implements OnInit, OnDestroy {
 
   constructor(
               private route: ActivatedRoute,
-              private _appService: AppService,
-              private http: HttpClient
+              private _appService: AppService
             ) {
 
               console.log('Json:constructor');
@@ -196,7 +195,7 @@ export class JsonComponent implements OnInit, OnDestroy {
         },
         () => console.log('uploadData:DONE!')
     );
-    *
+    
 
 
    

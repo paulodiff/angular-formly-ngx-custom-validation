@@ -69,41 +69,22 @@ export class AppService {
 
     var SERVER_URL = 'https://ISTANZESERVERV2.paulodiff.repl.co/upload';
 
+    // httpbin.org
+    // curl -X POST "https://httpbin.org/anything" -H "accept: application/json"
+
+    SERVER_URL = "https://httpbin.org/anything""
+
     console.log('service-upload-data', SERVER_URL);
-    /*
-    return this.http.post<any>(SERVER_URL, fData, {
-      reportProgress: true,
-      observe: 'events'
-    });
-    */
+  
 
     console.log(fOptions);
 
-/*
-    const httpHeaders: HttpHeaders = new HttpHeaders({
-      Authorization: 'my-auth-token'
-    });
-*/
-     let httpHeaders = new HttpHeaders({
-	    Authorization: 'my-auth-token'
-     });    
 
-     let options = {
-	      headers: httpHeaders,
-        reportProgress : true,
-        observe: 'events'
-     }; 
-
-    const  headers1 = new  HttpHeaders().set("X-CustomHttpHeader", "CUSTOM_VALUE");
-
-// const headers = { 'Authorization': 'Bearer my-token', 'My-Custom-Header': 'foobar' }
 const headers = new HttpHeaders().set('Authorization', 'Bearer my-token')
-return this.http.post<any>(SERVER_URL, fData, {headers : headers1});
 
-/*
 
     return this.http.post<any>(SERVER_URL, fData, {
-      headers: headers1,
+      headers: headers,
       reportProgress: true,
       observe: "events"
     }).pipe(map((event) => {
@@ -123,7 +104,7 @@ return this.http.post<any>(SERVER_URL, fData, {headers : headers1});
       }
     })
     );
-    */
+    
   }
   
 
