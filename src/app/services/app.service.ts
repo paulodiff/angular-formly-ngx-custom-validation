@@ -65,8 +65,11 @@ export class AppService {
 
   // upload data ....
   uploadData(fData, fOptions) {
-    console.log('service-upload-data');
+    
+
     var SERVER_URL = 'https://ISTANZESERVERV2.paulodiff.repl.co/upload';
+
+    console.log('service-upload-data', SERVER_URL);
     /*
     return this.http.post<any>(SERVER_URL, fData, {
       reportProgress: true,
@@ -76,14 +79,33 @@ export class AppService {
 
     console.log(fOptions);
 
+/*
     const httpHeaders: HttpHeaders = new HttpHeaders({
-      'x-istanze-id': fOptions.securityToken
+      Authorization: 'my-auth-token'
     });
+*/
+     let httpHeaders = new HttpHeaders({
+	    Authorization: 'my-auth-token'
+     });    
+
+     let options = {
+	      headers: httpHeaders,
+        reportProgress : true,
+        observe: 'events'
+     }; 
+
+    const  headers1 = new  HttpHeaders().set("X-CustomHttpHeader", "CUSTOM_VALUE");
+
+// const headers = { 'Authorization': 'Bearer my-token', 'My-Custom-Header': 'foobar' }
+const headers = new HttpHeaders().set('Authorization', 'Bearer my-token')
+return this.http.post<any>(SERVER_URL, fData, {headers : header});
+
+/*
 
     return this.http.post<any>(SERVER_URL, fData, {
-      headers: httpHeaders,
+      headers: headers1,
       reportProgress: true,
-      observe: 'events'
+      observe: "events"
     }).pipe(map((event) => {
 
       switch (event.type) {
@@ -101,10 +123,8 @@ export class AppService {
       }
     })
     );
-
-
-
-
+    */
   }
+  
 
 }
