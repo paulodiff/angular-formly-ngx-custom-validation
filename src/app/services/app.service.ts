@@ -98,7 +98,7 @@ export class AppService {
 
 // const headers = { 'Authorization': 'Bearer my-token', 'My-Custom-Header': 'foobar' }
 const headers = new HttpHeaders().set('Authorization', 'Bearer my-token')
-return this.http.post<any>(SERVER_URL, fData, {headers : header});
+return this.http.post<any>(SERVER_URL, fData, {headers : headers1});
 
 /*
 

@@ -4,6 +4,8 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 import { Validators, FormGroup } from '@angular/forms';
 import { AppService } from '../services/app.service';
 
+
+
 @Component({
     templateUrl: './json.component.html'
 })
@@ -28,7 +30,8 @@ export class JsonComponent implements OnInit, OnDestroy {
 
   constructor(
               private route: ActivatedRoute,
-              private _appService: AppService
+              private _appService: AppService,
+              private http: HttpClient
             ) {
 
               console.log('Json:constructor');
@@ -181,6 +184,7 @@ export class JsonComponent implements OnInit, OnDestroy {
 
     let formOptions = <any>{};
     formOptions.securityToken = this.securityToken;
+
     this._appService.uploadData(formData, formOptions).subscribe(
         (res) => {
           console.log(res);
@@ -192,6 +196,7 @@ export class JsonComponent implements OnInit, OnDestroy {
         },
         () => console.log('uploadData:DONE!')
     );
+    *
 
 
    
