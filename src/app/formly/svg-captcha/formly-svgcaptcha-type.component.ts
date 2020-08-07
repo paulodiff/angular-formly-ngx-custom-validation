@@ -19,7 +19,7 @@ import { FieldType } from '@ngx-formly/core';
     >
 
 
-    <p>Token: {{formState.security.token}} </p>
+ 
     
   `,
 })

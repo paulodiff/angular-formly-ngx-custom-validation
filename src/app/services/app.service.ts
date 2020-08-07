@@ -63,7 +63,8 @@ export class AppService {
     return this.http.get<FormlyFieldConfig[]>(asset);
   }
 
-  uploadData(fData) {
+  // upload data ....
+  uploadData(fData, fOptions) {
     console.log('service-upload-data');
     var SERVER_URL = 'https://ISTANZESERVERV2.paulodiff.repl.co/upload';
     /*
@@ -73,7 +74,14 @@ export class AppService {
     });
     */
 
+    console.log(fOptions);
+
+    const httpHeaders: HttpHeaders = new HttpHeaders({
+      'x-istanze-id': fOptions.securityToken
+    });
+
     return this.http.post<any>(SERVER_URL, fData, {
+      headers: httpHeaders,
       reportProgress: true,
       observe: 'events'
     }).pipe(map((event) => {

@@ -55,7 +55,7 @@ export class JsonComponent implements OnInit, OnDestroy {
         this.options = options;
 
         console.log(options);
-        if(options && options.formState && options.formState.security && options.formState.security.token) {
+        if(options && options.formState && options.formState.security ) {
           this.securityToken = options.formState.security.token;
         }
 
@@ -179,7 +179,9 @@ export class JsonComponent implements OnInit, OnDestroy {
 
     });
 
-    this._appService.uploadData(formData).subscribe(
+    let formOptions = <any>{};
+    formOptions.securityToken = this.securityToken;
+    this._appService.uploadData(formData, formOptions).subscribe(
         (res) => {
           console.log(res);
           // this.uploadResponse = res
