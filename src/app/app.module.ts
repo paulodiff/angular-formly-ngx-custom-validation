@@ -83,7 +83,8 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
       types: [
           { name: 'counter', component: CounterInputComponentFieldType },
           { name: 'upload-italia', component: FormlyFileFieldType, defaultOptions: { defaultValue: [], }, wrappers: ['form-field'] },
-          { name: 'html-template', component: HtmlTemplateComponentFieldType, defaultOptions: { defaultValue: [], } },
+          // { name: 'html-template', component: HtmlTemplateComponentFieldType, defaultOptions: { defaultValue: [], } },
+          { name: 'html-template', component: HtmlTemplateComponentFieldType },
           { name: 'checkbox-italia', component: FormlyCheckboxItaliaInputComponentFieldType,
           defaultOptions: { }, wrappers: ['form-field']},
           {name : 'radio-italia', component: FormlyRadioItaliaInputComponentFieldType,

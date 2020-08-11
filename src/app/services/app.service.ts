@@ -72,7 +72,7 @@ export class AppService {
     // httpbin.org
     // curl -X POST "https://httpbin.org/anything" -H "accept: application/json"
 
-    SERVER_URL = "https://httpbin.org/anything""
+    SERVER_URL = "https://httpbin.org/anything"
 
     console.log('service-upload-data', SERVER_URL);
   

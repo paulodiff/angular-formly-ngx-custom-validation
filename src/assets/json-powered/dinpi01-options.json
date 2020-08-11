@@ -1,6 +1,7 @@
 {
   
     "formState": {
+      "debug" : true,
       "security" : {
         "token" : "token-id-AA-BB-CC-DD-EE-FF"
       },

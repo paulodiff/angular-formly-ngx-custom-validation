@@ -45,6 +45,15 @@
       }
     },
 
+{
+    "key": "info2",
+    "type": "html-template",
+    "templateOptions": {
+      "htmlTemplate" :"<h3>Info 3</h3>",
+      "label": "html template label"
+      }
+  },
+
      {
       "key": "capRimini",
       "type": "input",
