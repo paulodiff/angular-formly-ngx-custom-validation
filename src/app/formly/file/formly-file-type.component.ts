@@ -141,14 +141,30 @@ export class FormlyFileFieldType extends FieldType {
   buildHash(file) {
     console.log('buildHash');
     var reader = new FileReader();
+
     reader.onload = (event) => {
       var data = event.target.result;
       // var encrypted = CryptoJS.SHA256( data );
       var encrypted = shajs('sha256').update(data).digest('hex');
-      console.log('encrypted: ' + encrypted);
+      console.log('encrypted1: ' + encrypted);
       file.file_hash = encrypted;
       this.formControl.setValue(file);   
     };
+
+     reader.onloadend  =  (event) => {
+            //myReader.result is a String of the uploaded file
+            console.log('onLoadEnd!');
+
+            var data = event.target.result;
+            // var encrypted = CryptoJS.SHA256( data );
+            var encrypted = shajs('sha256').update(data).digest('hex');
+            console.log('encrypted2: ' + encrypted);
+
+            //fileString = myReader.result would not work, 
+            //because it is not in the scope of the callback
+        }
+
+
     reader.readAsBinaryString(file);
     
     return 'sha256';

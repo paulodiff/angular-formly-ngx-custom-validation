@@ -15,10 +15,10 @@
       "type": "upload-italia",
       "templateOptions": {
         "required" : true,
-        "label": "file1- documento di identità in formato PDF con dimensione massima 1 MB",
+        "label": "file1 pdf,doc,txt,svg  documento di identità in formato PDF con dimensione massima 1 MB",
         "maxFileSize" : "1024kb",
         "minFileSize" : "10kb",
-        "fileExtension" : "pdf,doc,txt"
+        "fileExtension" : "pdf,doc,txt,svg"
       }
 
       ,
