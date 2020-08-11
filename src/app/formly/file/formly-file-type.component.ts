@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import { FieldType } from '@ngx-formly/core';
-const shajs = require('sha.js');
+// const shajs = require('sha.js');
+// import sha256 from 'crypto-js/sha256';
+
+// var SHA256 = require("crypto-js/sha256");
+import { sha256, sha224 } from 'js-sha256';
 
 @Component({
   selector: 'formly-field-file',
@@ -145,12 +149,13 @@ export class FormlyFileFieldType extends FieldType {
     reader.onload = (event) => {
       var data = event.target.result;
       // var encrypted = CryptoJS.SHA256( data );
-      var encrypted = shajs('sha256').update(data).digest('hex');
+      var encrypted = sha256(data);
       console.log('encrypted1: ' + encrypted);
       file.file_hash = encrypted;
       this.formControl.setValue(file);   
     };
 
+/*
      reader.onloadend  =  (event) => {
             //myReader.result is a String of the uploaded file
             console.log('onLoadEnd!');
@@ -160,12 +165,20 @@ export class FormlyFileFieldType extends FieldType {
             var encrypted = shajs('sha256').update(data).digest('hex');
             console.log('encrypted2: ' + encrypted);
 
+            const hashDigest = SHA256(data).toString();
+            console.log(hashDigest);
+
+            const hashDigest2 = sha256(data);
+            console.log(hashDigest2);
+
             //fileString = myReader.result would not work, 
             //because it is not in the scope of the callback
         }
+        */
 
 
-    reader.readAsBinaryString(file);
+    //reader.readAsBinaryString(file);
+    reader.readAsArrayBuffer(file);
     
     return 'sha256';
   }
