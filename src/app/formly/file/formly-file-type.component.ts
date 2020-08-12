@@ -15,7 +15,10 @@ import { sha256, sha224 } from 'js-sha256';
   <div 
     class="upload-btn-wrapper btn-block" 
     >
+    <div *ngIf="!formControl.value">
     <button class="btn btn-primary btn-block">Seleziona un allegato</button>
+    </div>
+
     <input type="file" 
      
      [formControl]="formControl" [formlyAttributes]="field" (change)="onChange1(key, $event.target.files)">
