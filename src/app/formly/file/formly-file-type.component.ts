@@ -12,14 +12,16 @@ import { sha256, sha224 } from 'js-sha256';
   template: `
   
 
-  <div class="upload-btn-wrapper btn-block" [hidden]="formControl.value.file_name">
+  <div 
+    class="upload-btn-wrapper btn-block" 
+    >
     <button class="btn btn-primary btn-block">Seleziona un allegato</button>
     <input type="file" 
-     [hidden]="formControl.value.file_name"
+     
      [formControl]="formControl" [formlyAttributes]="field" (change)="onChange1(key, $event.target.files)">
 </div>
 
-  <div *ngIf="formControl.value.file_name" 
+  <div *ngIf="formControl.value" 
     class="" role="alert">
 
     <table class="table table-bordered table-sm">
@@ -135,7 +137,7 @@ export class FormlyFileFieldType extends FieldType {
 
   remove_item() {
     console.log('... remove_item ...');
-    this.formControl.setValue([]);
+    this.formControl.setValue(null);
     // this.model[this.key] = this.formControl.value;
     // this.model[this.key]--;
     // this.formControl.setValue(this.model[this.key] );
@@ -143,7 +145,7 @@ export class FormlyFileFieldType extends FieldType {
   }
 
   buildHash(file) {
-    console.log('buildHash');
+    console.log('buildHash...');
     var reader = new FileReader();
 
     reader.onload = (event) => {
@@ -185,43 +187,3 @@ export class FormlyFileFieldType extends FieldType {
 
 }
 
-/*
-
-{{formControl.value | json}} <button type="button" (click)="remove_item()">Rimuovi</button>
-
-class="row"
-
-    <p-fileUpload #form showCancelButton="false" customUpload="true" maxFileSize="5000000"
-    multiple="multiple" allowTypes="/(\.|\/)(txt|doc|docx|xls|xlsx|pdf|png|jpeg|jpg|gif)$/"
-    (uploadHandler)="uploadFiles($event,form)">
-      <ng-template pTemplate="content">
-      <div class="row">
-        <p-table *ngIf="formControl.value" [scrollable]="true" scrollHeight="200px" [responsive]="true"
-        [value]="formControl.value" >
-          <ng-template pTemplate="caption">
-            Uploaded Documents
-          </ng-template>
-          <ng-template pTemplate="header">
-            <tr>
-              <th>File Name</th>
-              <th>File Size</th>
-              <th></th>
-            </tr>
-          </ng-template>
-          <ng-template pTemplate="body" let-file>
-            <tr>
-              <td>{{file.name}}</td>
-              <td>{{formatSize(file.size)}}</td>
-              <td>
-                <button type="button" class="raised-btn" pButton icon="fa fa-download"
-                  label="Download" (click)="downloadFile(file)"></button>
-                <button type="button" class="raised-btn" pButton icon="fa fa-trash"
-                  label="Delete" (click)="deleteFile(file.fileId)"></button>
-              </td>
-            </tr>
-          </ng-template>
-        </p-table>
-      </div>
-      </ng-template>
-    </p-fileUpload>
-*/

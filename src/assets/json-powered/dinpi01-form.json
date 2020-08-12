@@ -32,7 +32,7 @@
       "key": "documento2",
       "type": "upload-italia",
       "templateOptions": {
-        "required" : true,
+        "required" : false,
         "label": "file2- documento di identità in formato PDF con dimensione massima 1 MB",
         "maxFileSize" : "1024kb",
         "minFileSize" : "10kb",

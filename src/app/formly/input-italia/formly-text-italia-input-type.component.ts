@@ -7,8 +7,8 @@ import { FieldType } from '@ngx-formly/core';
   selector: 'text-input',
   template:
   `
-  <div class="form-group">
-  <label [for]="id + '_' + i">{{to.label}}</label>
+  <div>
+  <!--<label [for]="id + '_' + i">{{to.label}}</label>-->
   <input
     type="text"
     [formControl]="formControl"

@@ -3,6 +3,7 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 import { Validators, FormGroup } from '@angular/forms';
 import { AppService } from '../services/app.service';
+import { sha256, sha224 } from 'js-sha256';
 
 
 
@@ -154,6 +155,41 @@ export class JsonComponent implements OnInit, OnDestroy {
     } else {
       alert('errori da sistemare');
     }
+  }
+
+  hmac() {
+    console.log('hmac .... ');
+
+    var hash = sha256.hmac.create('key');
+    
+    Object.keys(this.model).forEach((key, index) => {
+      //console.log(key, 
+      //this.model[key], 
+      //typeof this.model[key],
+      //this.model[key] instanceof File );
+
+      
+      // hash.update('Message to hash');
+
+
+      if ( this.model[key] instanceof File ) {
+        // formData.append(key, this.model[key]);
+        // formData.append(key, this.model[key].file_hash);  
+        // hash.update('Message to hash');
+        console.log('hash add', key, this.model[key].file_hash);
+        hash.update(this.model[key].file_hash);
+      } 
+
+      if (typeof this.model[key] === 'string') {
+        // formData.append(key, this.model[key]);  
+        console.log('hash add', key, this.model[key]);
+        hash.update(this.model[key]);
+      }
+              
+
+    });
+
+    console.log('hmac:', hash.hex());
   }
 
   uploadData() {

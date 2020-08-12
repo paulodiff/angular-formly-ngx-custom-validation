@@ -1,20 +1,21 @@
 [
     {
-      "key": "cap ita1",
-      "type": "input-italia",
+      "key": "cap",
+      "type": "rr-input",
       "templateOptions": {
-        "label": "cap"
+        "label": "cap-ita"
       },
        "validators": {
         "validation": ["capValidator"]
       }
     },
 
-        {
-      "key": "cap1 ita2",
-      "type": "input-italia",
+    {
+      "key": "cap1",
+      "type": "rr-input",
       "templateOptions": {
-        "label": "cap1"
+        "label": "cap1-no-ita",
+        "required" : true
       },
        "validators": {
         "validation": ["capValidator"]
@@ -23,7 +24,7 @@
 
         {
       "key": "cap2",
-      "type": "input-itali",
+      "type": "rr-input",
       "templateOptions": {
         "label": "cap2"
       },

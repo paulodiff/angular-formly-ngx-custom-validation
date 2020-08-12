@@ -206,6 +206,12 @@ export function fileValidator(
   let minFileSize = Utils.translateSize(field.templateOptions.minFileSize);
   let maxFileSize = Utils.translateSize(field.templateOptions.maxFileSize);
   // let toDate = field.templateOptions.toDate;
+
+  if(!control.value) {
+    console.log('fileValidator', control.value);
+    return null;
+  }
+
   let curValue = control.value;
   let curFileSize = curValue.file_size;
   
