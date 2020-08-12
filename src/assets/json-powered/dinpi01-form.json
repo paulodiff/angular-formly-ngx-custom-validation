@@ -8,6 +8,34 @@
       }
   },
   
+   {
+    "key": "CheckboxTerms3",
+    "type": "rr-checkbox",
+    "templateOptions": {
+      "label": "Indicare se si desidera accetare ...  ",
+      "description": "Accetto i te",
+      "required": true
+    }
+     ,
+       "validators": {
+        "validation": ["checkboxValidator"]
+      }
+    
+  },
+
+  {
+      "key": "radioInput2",
+      "type": "rr-radio",
+      "templateOptions": {
+        "label": "lista di scelta - con dati in options",
+        "placeholder": "Placeholder",
+        "description": "Description",
+        "required": true
+      },
+      "expressionProperties": {
+        "templateOptions.options": "formState.selectOptionsData.cities"
+      }
+    },
 
 
    {
@@ -83,7 +111,7 @@
 
     {
       "key": "svgCaptcha",
-      "type": "rsvgcaptcha",
+      "type": "rr-svgcaptcha",
       "templateOptions": {
         "label": "Controllo di sicurezza",
         "description" : "ATTENZIONE visualizzare l'immagine, leggere con attenzione la domanda e rispondere digitando i numeri richiesti",

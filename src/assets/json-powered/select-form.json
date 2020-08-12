@@ -2,7 +2,7 @@
 
      {
       "key": "em2",
-      "type": "html-template",
+      "type": "rr-html",
       "templateOptions": {
         "htmlTemplate" :"<h3>Per ogni minore </h3>",
         "label": "html template label"
@@ -14,6 +14,7 @@
       "type": "select",
       "templateOptions": {
         "label": "Grado scuola",
+        "description" : "description",
         "options": [
           { "id": "1", "name": "Primaria (elementari)" },
           { "id": "2", "name": "Secondaria I° grado (medie)" },
