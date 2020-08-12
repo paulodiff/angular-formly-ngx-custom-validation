@@ -158,11 +158,13 @@ export class JsonComponent implements OnInit, OnDestroy {
   }
 
   hmac() {
-    console.log('hmac .... ');
+    let currentModel = this.model;
+    let hmac_key = '123123123';
+    console.log('hmac .... ', hmac_key);
 
-    var hash = sha256.hmac.create('key');
+    var hash = sha256.hmac.create(hmac_key);
     
-    Object.keys(this.model).forEach((key, index) => {
+    Object.keys(currentModel).forEach((key, index) => {
       //console.log(key, 
       //this.model[key], 
       //typeof this.model[key],
@@ -172,18 +174,18 @@ export class JsonComponent implements OnInit, OnDestroy {
       // hash.update('Message to hash');
 
 
-      if ( this.model[key] instanceof File ) {
+      if ( currentModel[key] instanceof File ) {
         // formData.append(key, this.model[key]);
         // formData.append(key, this.model[key].file_hash);  
         // hash.update('Message to hash');
-        console.log('hash add', key, this.model[key].file_hash);
-        hash.update(this.model[key].file_hash);
+        console.log('hash add', key, currentModel[key].file_hash);
+        hash.update(currentModel[key].file_hash);
       } 
 
-      if (typeof this.model[key] === 'string') {
+      if (typeof currentModel[key] === 'string') {
         // formData.append(key, this.model[key]);  
-        console.log('hash add', key, this.model[key]);
-        hash.update(this.model[key]);
+        console.log('hash add', key, currentModel[key]);
+        hash.update(currentModel[key]);
       }
               
 

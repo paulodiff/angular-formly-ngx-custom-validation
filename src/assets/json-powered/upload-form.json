@@ -1,7 +1,7 @@
 [
     {
       "key": "file1",
-      "type": "upload-italia",
+      "type": "rr-upload",
       "templateOptions": {
         "required" : true,
         "label": "file1 - documento in formato PDF di dimensione non superiore a 1MB",

@@ -5,7 +5,7 @@
 
    {
     "key": "CheckboxTerms3",
-    "type": "checkbox-italia",
+    "type": "rr-checkbox",
     "templateOptions": {
       "label": "Accept terms 3 ",
       "description": "Itali3apt terms",

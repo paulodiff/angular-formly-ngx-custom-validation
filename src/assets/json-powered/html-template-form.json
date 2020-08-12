@@ -1,7 +1,7 @@
 [
       {
       "key": "em2",
-      "type": "html-template",
+      "type": "rr-html",
       "templateOptions": {
         "htmlTemplate" :"<h3>Per ogni minore </h3>",
         "label": "html template label"
@@ -10,7 +10,7 @@
     },
     {
       "key": "em1",
-      "type": "html-template",
+      "type": "rr-html",
       "templateOptions": {
         "htmlTemplate" : 
 

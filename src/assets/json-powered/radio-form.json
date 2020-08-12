@@ -1,7 +1,7 @@
 [
     {
       "key": "radioInput",
-      "type": "radio-italia",
+      "type": "rr-radio",
       "templateOptions": {
         "label": "lista di scelta",
         "placeholder": "Placeholder",
@@ -17,7 +17,7 @@
 
     {
       "key": "f1",
-      "type": "input",
+      "type": "rr-input",
       "hideExpression": "(model.radioInput=='1')",
       "templateOptions": {
         "label": "option1 hide if radio 1"
@@ -26,7 +26,7 @@
 
     {
       "key": "radioInput2",
-      "type": "radio-italia",
+      "type": "rr-radio",
       "templateOptions": {
         "label": "lista di scelta - con dati in options",
         "placeholder": "Placeholder",
