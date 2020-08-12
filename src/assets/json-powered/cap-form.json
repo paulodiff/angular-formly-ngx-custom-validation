@@ -1,7 +1,7 @@
 [
     {
-      "key": "cap",
-      "type": "input",
+      "key": "cap ita1",
+      "type": "input-italia",
       "templateOptions": {
         "label": "cap"
       },
@@ -11,8 +11,8 @@
     },
 
         {
-      "key": "cap1",
-      "type": "input",
+      "key": "cap1 ita2",
+      "type": "input-italia",
       "templateOptions": {
         "label": "cap1"
       },
@@ -23,7 +23,7 @@
 
         {
       "key": "cap2",
-      "type": "input",
+      "type": "input-itali",
       "templateOptions": {
         "label": "cap2"
       },
