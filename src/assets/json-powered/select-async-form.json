@@ -1,9 +1,10 @@
 [
   {
     "key": "sport",
-    "type": "select",
+    "type": "rr-select",
     "templateOptions": {
       "label": "Sport",
+      "description" : "recupera i dati in modo asincrono. Se impostato optionsUrl allora dal form vengono caricati i dati ed inseriti nel controllo",
       "optionsUrl" : "test-url",
       "options": [{ "id": "1", "title": "aa"},{"id": "2", "title": "b" }],
       "valueProp": "id",

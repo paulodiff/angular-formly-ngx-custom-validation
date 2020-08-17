@@ -19,7 +19,7 @@
         "options": [
           { "name": "1", "value": "Primaria (elementari)" },
           { "name": "2", "value": "Secondaria I° grado (medie)" },
-          { "name": "3", "vlue": "Secondaria II° grado (superiori)" }
+          { "name": "3", "value": "Secondaria II° grado (superiori)" }
         ]
       }
     },

@@ -159,8 +159,8 @@ export class JsonComponent implements OnInit, OnDestroy {
 
   hmac() {
     let currentModel = this.model;
-    let hmac_key = '123123123';
-    console.log('hmac .... ', hmac_key);
+    let hmac_key = this.securityToken ? this.securityToken : '12345678';
+    console.log('hmac key:', hmac_key);
 
     var hash = sha256.hmac.create(hmac_key);
     
@@ -188,6 +188,11 @@ export class JsonComponent implements OnInit, OnDestroy {
         hash.update(currentModel[key]);
       }
               
+       if (typeof currentModel[key] === 'boolean') {
+        // formData.append(key, this.model[key]);  
+        console.log('hash add', key, currentModel[key]);
+        hash.update(currentModel[key].toString());
+      }
 
     });
 
