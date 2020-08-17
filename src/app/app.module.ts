@@ -24,6 +24,8 @@ import { FormlyRadioItaliaInputComponentFieldType } from  './formly/radio-italia
 
 import { FormlyInputItaliaComponentFieldType } from './formly/input-italia/formly-text-italia-input-type.component';
 
+import { FormlySelectItaliaComponentFieldType } from './formly/select-italia/formly-select-input-type.component';
+
 
 import { FormlySvgCaptchaFieldType } from './formly/svg-captcha/formly-svgcaptcha-type.component';
 
@@ -92,6 +94,8 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
           {name : 'rr-radio', component: FormlyRadioItaliaInputComponentFieldType,
           defaultOptions: { defaultValue: [], }, wrappers: ['form-field']},
           {name : 'rr-input', component: FormlyInputItaliaComponentFieldType,
+          wrappers: ['form-field']},
+          {name : 'rr-select', component: FormlySelectItaliaComponentFieldType,
           wrappers: ['form-field']},
           {name : 'rr-svgcaptcha', component: FormlySvgCaptchaFieldType,
           wrappers: ['form-field']}
@@ -189,6 +193,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
     FormlyCheckboxItaliaInputComponentFieldType,
     FormlyRadioItaliaInputComponentFieldType,
     FormlyInputItaliaComponentFieldType,
+    FormlySelectItaliaComponentFieldType,
     FormlySvgCaptchaFieldType,
     // CounterInputComponentFieldType,
     // CheckboxInputComponentFieldType,
