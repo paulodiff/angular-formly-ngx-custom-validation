@@ -3,7 +3,7 @@
     "formState": {
       "debug" : true,
       "security" : {
-        "token" : "token-id-AA-BB-CC-DD-EE-FF"
+        "token" : "d4a77b47-5d55-4dff-9664-8d8f93ea72cb"
       },
       "svgcaptcha" : {
         "svgImage" : "%3Csvg xmlns='http://www.w3.org/2000/svg' height='100' width='100'%3E%3Ccircle cx='50' cy='50' r='40' stroke='black' stroke-width='3' fill='red' /%3E%3C/svg%3E",
