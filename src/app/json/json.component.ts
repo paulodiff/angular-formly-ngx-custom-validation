@@ -166,18 +166,8 @@ export class JsonComponent implements OnInit, OnDestroy {
     
     Object.keys(currentModel).forEach((key, index) => {
       //console.log(key, 
-      //this.model[key], 
-      //typeof this.model[key],
-      //this.model[key] instanceof File );
-
-      
-      // hash.update('Message to hash');
-
-
+ 
       if ( currentModel[key] instanceof File ) {
-        // formData.append(key, this.model[key]);
-        // formData.append(key, this.model[key].file_hash);  
-        // hash.update('Message to hash');
         console.log('hash add', key, currentModel[key].file_hash);
         hash.update(currentModel[key].file_hash);
       } 
@@ -204,8 +194,12 @@ export class JsonComponent implements OnInit, OnDestroy {
     console.log(this.model);
 
     const formData = new FormData();  
+    console.log('hmac key:', this.securityToken);
+
+    var hash = sha256.hmac.create(this.securityToken);
 
     Object.keys(this.model).forEach((key, index) => {
+
       console.log(key, 
       this.model[key], 
       typeof this.model[key],
@@ -213,21 +207,38 @@ export class JsonComponent implements OnInit, OnDestroy {
 
       if ( this.model[key] instanceof File ) {
         formData.append(key, this.model[key]);
-        formData.append(key, this.model[key].file_hash);  
+        formData.append(key, this.model[key].file_hash);
+        hash.update(this.model[key].file_hash);
       } 
 
       if (typeof this.model[key] === 'string') {
-        formData.append(key, this.model[key]);  
+        formData.append(key, this.model[key]); 
+        hash.update(this.model[key]);
       }
+
+
+      if (typeof this.model[key] === 'boolean') {
+        formData.append(key, this.model[key]);
+        hash.update(this.model[key].toString());
+      }
+
+      // NO NUMBERS!!!!!!!!
+
     });
+
+    // calcolo hashmac
 
 
     let formOptions = <any>{};
-    formOptions.securityToken = this.securityToken;
-    formData.append('rrtoken', this.securityToken); 
+    
 
+    let securityContext = <any>{};
+    securityContext.rrtoken = this.securityToken;
+    securityContext.rrhash = hash.hex();
 
-    formData.append('rrhash', this.securityToken); 
+    formData.append('securityContext', JSON.stringify(securityContext)); 
+
+ 
 
     this._appService.uploadData(formData, formOptions).subscribe(
         (res) => {

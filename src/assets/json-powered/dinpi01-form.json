@@ -9,7 +9,7 @@
   },
   
    {
-    "key": "CheckboxTerms3",
+    "key": "checkboxTerms",
     "type": "rr-checkbox",
     "templateOptions": {
       "label": "Indicare se si desidera accetare ...  ",
@@ -24,7 +24,7 @@
   },
 
  {
-      "key": "rr-sport",
+      "key": "selectSport",
       "type": "rr-select",
       "templateOptions": {
         "label": "rr - Grado scuola",
@@ -38,7 +38,7 @@
     },
 
   {
-      "key": "radioInput2",
+      "key": "radioInput",
       "type": "rr-radio",
       "templateOptions": {
         "label": "lista di scelta - con dati in options",
@@ -53,7 +53,7 @@
 
 
    {
-      "key": "documento1",
+      "key": "upload1",
       "type": "rr-upload",
       "templateOptions": {
         "required" : true,
@@ -71,7 +71,7 @@
 
 
      {
-      "key": "documento2",
+      "key": "upload2",
       "type": "rr-upload",
       "templateOptions": {
         "required" : false,
