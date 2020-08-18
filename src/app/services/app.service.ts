@@ -67,7 +67,7 @@ export class AppService {
   uploadData(fData, fOptions) {
     
 
-    var SERVER_URL = 'https://ISTANZESERVERV2.paulodiff.repl.co/upload';
+    var SERVER_URL = 'https://ISTANZESERVERV2.paulodiff.repl.co/upload/dinpi01';
 
     // httpbin.org
     // curl -X POST "https://httpbin.org/anything" -H "accept: application/json"

@@ -219,13 +219,15 @@ export class JsonComponent implements OnInit, OnDestroy {
       if (typeof this.model[key] === 'string') {
         formData.append(key, this.model[key]);  
       }
-      
-        
-
     });
+
 
     let formOptions = <any>{};
     formOptions.securityToken = this.securityToken;
+    formData.append('rrtoken', this.securityToken); 
+
+
+    formData.append('rrhash', this.securityToken); 
 
     this._appService.uploadData(formData, formOptions).subscribe(
         (res) => {
