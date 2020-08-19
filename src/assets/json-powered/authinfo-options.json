@@ -2,7 +2,7 @@
   
     "formState": {
       "security" : {
-        "token" : "token-id-AA-BB-CC-DD-EE-FF",
+        "token" : "we-AA-BB-CC-DD-EE-FF",
         "utenteNome" : "USER_NOME",
         "utenteCognome" : "USER_COGNOME",
         "utenteDataDiNascita" : "9999/88/111",

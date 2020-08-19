@@ -5,9 +5,7 @@ import { FieldType } from '@ngx-formly/core';
   selector: 'authinfo',
   template: `
      
-  
-
-    <table class="table table-bordered table-sm">
+   <table class="table table-bordered table-sm">
     <tr>
       <td>Nome:</td>
       <td>{{formState.security.utenteNome}}</td>
