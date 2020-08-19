@@ -92,7 +92,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
           { name: 'rr-checkbox', component: FormlyCheckboxItaliaInputComponentFieldType,
           defaultOptions: { }, wrappers: ['form-field']},
           {name : 'rr-radio', component: FormlyRadioItaliaInputComponentFieldType,
-          defaultOptions: { defaultValue: [], }, wrappers: ['form-field']},
+          wrappers: ['form-field']},
           {name : 'rr-input', component: FormlyInputItaliaComponentFieldType,
           wrappers: ['form-field']},
           {name : 'rr-select', component: FormlySelectItaliaComponentFieldType,
