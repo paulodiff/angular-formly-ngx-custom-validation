@@ -3,9 +3,9 @@
       "key": "svgCaptcha",
       "type": "rr-authinfo",
       "templateOptions": {
-        "label": "Auth info",
-        "description" : "ATTENZIONE visualizzare l'immagine, leggere con attenzione la domanda e rispondere digitando i numeri richiesti",
-        "required" : true
+        "label": "Infomazioni di identificazione del dichiarante",
+        "description" : "Qui di seguito sono riportate le informazioni di identificazione del dichiarante e la modalitò di identificazione. Leggere con attenzione i dati ed in caso di errori uscire dal modulo.",
+        "required" : false
      
       }
     }

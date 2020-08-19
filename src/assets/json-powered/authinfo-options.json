@@ -2,7 +2,15 @@
   
     "formState": {
       "security" : {
-        "token" : "token-id-AA-BB-CC-DD-EE-FF"
+        "token" : "token-id-AA-BB-CC-DD-EE-FF",
+        "utenteNome" : "USER_NOME",
+        "utenteCognome" : "USER_COGNOME",
+        "utenteDataDiNascita" : "9999/88/111",
+        "utenteCodiceFiscale" : "AAARRR33E33EEE4E",
+        "sourceAuth" : "SPID",
+        "sourceId" : "AA",
+        "hash": ""
+
       },
       "svgcaptcha" : {
         "svgImage" : "%3Csvg xmlns='http://www.w3.org/2000/svg' height='100' width='100'%3E%3Ccircle cx='50' cy='50' r='40' stroke='black' stroke-width='3' fill='red' /%3E%3C/svg%3E",
