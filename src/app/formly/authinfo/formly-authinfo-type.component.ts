@@ -2,15 +2,15 @@ import { Component } from '@angular/core';
 import { FieldType } from '@ngx-formly/core';
 
 @Component({
-  selector: 'auth-info',
+  selector: 'authinfo',
   template: `
     
 
    
    <h1>Auth Info</h1>
    
-    <img [src]="'data:image/svg+xml;;utf8,' + formState.svgcaptcha.svgImage | safeHtml ">
-    <p>{{formState.svgcaptcha.question}}</p>
+  
+    <p>{{formState.security.token}}</p>
    
     <input
     type="text"

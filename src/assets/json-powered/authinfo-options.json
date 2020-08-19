@@ -1,0 +1,32 @@
+{
+  
+    "formState": {
+      "security" : {
+        "token" : "token-id-AA-BB-CC-DD-EE-FF"
+      },
+      "svgcaptcha" : {
+        "svgImage" : "%3Csvg xmlns='http://www.w3.org/2000/svg' height='100' width='100'%3E%3Ccircle cx='50' cy='50' r='40' stroke='black' stroke-width='3' fill='red' /%3E%3C/svg%3E",
+        "question" : "Indicare le ultime due cifre dell'immagine visualizzata"
+      },
+      "selectOptionsData": {
+        "teams": [
+          { "id": "1", "name": "Rimini", "sportId": "1" },
+          { "id": "2", "name": "Santarcangelo di Romagna", "sportId": "1" },
+          { "id": "3", "name": "Pggio Torriana", "sportId": "1" },
+          { "id": "3", "name": "Bellaria Igea Marina", "sportId": "1" },
+          { "id": "4", "name": "Rimini", "sportId": "2" },
+          { "id": "4", "name": "Santarcangelo di Romagna", "sportId": "2" }
+        ],
+        "players": [
+          { "id": "1", "name": "Bayern Munich (Player 1)", "teamId": "1" },
+          { "id": "2", "name": "Bayern Munich (Player 2)", "teamId": "1" },
+          { "id": "3", "name": "Real Madrid (Player 1)", "teamId": "2" },
+          { "id": "4", "name": "Real Madrid (Player 2)", "teamId": "2" },
+          { "id": "5", "name": "Cleveland (Player 1)", "teamId": "3" },
+          { "id": "6", "name": "Cleveland (Player 2)", "teamId": "3" },
+          { "id": "7", "name": "Miami (Player 1)", "teamId": "4" },
+          { "id": "8", "name": "Miami (Player 2)", "teamId": "4" }
+        ]
+      }
+    }
+}

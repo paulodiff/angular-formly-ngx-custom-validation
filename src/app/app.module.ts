@@ -26,6 +26,7 @@ import { FormlyInputItaliaComponentFieldType } from './formly/input-italia/forml
 
 import { FormlySelectItaliaComponentFieldType } from './formly/select-italia/formly-select-input-type.component';
 
+import { FormlyAuthInfoFieldType } from './formly/authinfo/formly-authinfo-type.component';
 
 import { FormlySvgCaptchaFieldType } from './formly/svg-captcha/formly-svgcaptcha-type.component';
 
@@ -96,6 +97,8 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
           {name : 'rr-input', component: FormlyInputItaliaComponentFieldType,
           wrappers: ['form-field']},
           {name : 'rr-select', component: FormlySelectItaliaComponentFieldType,
+          wrappers: ['form-field']},
+          {name : 'rr-authinfo', component: FormlyAuthInfoFieldType,
           wrappers: ['form-field']},
           {name : 'rr-svgcaptcha', component: FormlySvgCaptchaFieldType,
           wrappers: ['form-field']}
@@ -194,6 +197,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
     FormlyRadioItaliaInputComponentFieldType,
     FormlyInputItaliaComponentFieldType,
     FormlySelectItaliaComponentFieldType,
+    FormlyAuthInfoFieldType,
     FormlySvgCaptchaFieldType,
     // CounterInputComponentFieldType,
     // CheckboxInputComponentFieldType,

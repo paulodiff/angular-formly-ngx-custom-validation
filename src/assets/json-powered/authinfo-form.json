@@ -1,0 +1,13 @@
+[
+    {
+      "key": "svgCaptcha",
+      "type": "rr-authinfo",
+      "templateOptions": {
+        "label": "Auth info",
+        "description" : "ATTENZIONE visualizzare l'immagine, leggere con attenzione la domanda e rispondere digitando i numeri richiesti",
+        "required" : true
+     
+      }
+    }
+    
+]
