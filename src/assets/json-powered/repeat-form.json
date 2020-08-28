@@ -2,18 +2,6 @@
     {
       "key": "radioInput",
       "type": "rr-repeat-section",
-      "fieldArray": {
-        "fieldGroup": [
-          {
-            "type": "input",
-            "key": "investmentName",
-            "templateOptions": {
-              "label": "Name of Investment:",
-              "required": true
-            }
-          }
-        ]
-      },
       "templateOptions": {
         "label": "lista di scelta",
         "placeholder": "Placeholder",
@@ -23,7 +11,19 @@
           { "value": 1, "label": "Al 3ata," },
           { "value": 2, "label": "Option 2" },
           { "value": 3, "label": "Option 3" }
-        ]
+        ],
+        
+          "fieldGroup": [
+            {
+              "type": "input",
+              "key": "investmentName",
+              "templateOptions": {
+                "label": "Name of Investment:",
+                "required": true
+              }
+            }
+          ]
+        }
       }
     }
 ]
