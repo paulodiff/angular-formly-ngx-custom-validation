@@ -1,11 +1,10 @@
 [
     {
       "key": "radioInput",
-      "type": "rr-repeat",
+      "type": "rr-repeat-section",
       "fieldArray": {
         "fieldGroup": [
           {
-           
             "type": "input",
             "key": "investmentName",
             "templateOptions": {
@@ -13,7 +12,8 @@
               "required": true
             }
           }
-        ],
+        ]
+      },
       "templateOptions": {
         "label": "lista di scelta",
         "placeholder": "Placeholder",
