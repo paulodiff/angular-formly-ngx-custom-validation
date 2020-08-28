@@ -30,6 +30,7 @@ import { FormlyAuthInfoFieldType } from './formly/authinfo/formly-authinfo-type.
 
 import { FormlySvgCaptchaFieldType } from './formly/svg-captcha/formly-svgcaptcha-type.component';
 
+import { FormlyRepeatTypeComponent } from './formly/formly-repeat-section.type';
 
 import { SafeHtmlPipe} from './pipes/safeHTML.pipe';
 import * as FV from './services/validator';
@@ -101,7 +102,10 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
           {name : 'rr-authinfo', component: FormlyAuthInfoFieldType,
           wrappers: ['form-field']},
           {name : 'rr-svgcaptcha', component: FormlySvgCaptchaFieldType,
+          wrappers: ['form-field']},
+          {name : 'rr-repeat-section', component: FormlyRepeatTypeComponent,
           wrappers: ['form-field']}
+          
       ],
 
        wrappers: [
