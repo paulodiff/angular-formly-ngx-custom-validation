@@ -203,6 +203,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
     FormlySelectItaliaComponentFieldType,
     FormlyAuthInfoFieldType,
     FormlySvgCaptchaFieldType,
+    FormlyRepeatTypeComponent,
     // CounterInputComponentFieldType,
     // CheckboxInputComponentFieldType,
     // TextInputComponentFieldType,
