@@ -42,3 +42,13 @@ Lo uuid può essere usato anche come nonce per il cacolo dell hmac dei dati invi
 
 1 - accesso all'app richiesta dei moduli - authguard
 2 - invia ad autenticazione
+
+
+API lato server -
+
+getAuthUrl
+getListaModuli
+getConfigModulo
+uploadModulo
+
+

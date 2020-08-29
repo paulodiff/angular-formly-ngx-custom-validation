@@ -11,7 +11,10 @@ import { sha256, sha224 } from 'js-sha256';
     templateUrl: './login.component.html'
 })
 
+
+
 export class LoginComponent implements OnInit, OnDestroy {
+
 
     public name = 'Login Component';
     public items: any;
@@ -28,19 +31,22 @@ export class LoginComponent implements OnInit, OnDestroy {
     userId: number = 1;
     uploadResponse = { status: '', message: '', filePath: '' };
     securityToken = '';
+    srcUrl: string = "https://www.urbanpro.com/kolkata/self-and-beyond-golf-green/4422880";
 
   constructor(
               private route: ActivatedRoute,
               private _appService: AppService
             ) {
 
-              console.log('Json:constructor');
+              console.log('Login:constructor');
 
 
   }
 
   ngOnInit() {
+    console.log('Login:ngOnInit');
 
+/*
     this.sub = this.route.params.subscribe(params => {
       console.log('Json:ngOnInit');
       // this.itemId = +params['id']; // (+) converts string 'id' to a number
@@ -94,7 +100,7 @@ export class LoginComponent implements OnInit, OnDestroy {
       );
     });
 
-
+  */
   
    
     
@@ -187,6 +193,22 @@ export class LoginComponent implements OnInit, OnDestroy {
     });
 
     console.log('hmac:', hash.hex());
+  }
+
+  getAuthUrl() {
+    console.log('getAuthUrl ... ');
+
+    this._appService.getAuthUrl().subscribe(
+        (res) => {
+          console.log(res);
+          // this.uploadResponse = res
+        },
+        (err) => {
+          console.log(err);
+          this.error = err
+        },
+        () => console.log('getAuthUrl:DONE!')
+    );
   }
 
   uploadData() {

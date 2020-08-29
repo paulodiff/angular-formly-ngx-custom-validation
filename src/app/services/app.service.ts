@@ -60,7 +60,27 @@ export class AppService {
      
      let asset = 'assets/json-powered/' + formId + '-options.json';
      console.log('AppService:getOptions:',asset);
-    return this.http.get<FormlyFieldConfig[]>(asset);
+     return this.http.get<FormlyFieldConfig[]>(asset);
+  }
+
+  getAuthUrl() {
+     var SERVER_URL = 'https://ISTANZESERVERV2.paulodiff.repl.co/getSpidUrl2';
+     // let asset = 'assets/json-powered/' + formId + '-options.json';
+     let asset = SERVER_URL;
+     console.log('AppService:getAuthUrl:',asset);
+     let Params = new HttpParams();
+     Params = Params.append('anno', '2020');
+     this.httpOptions.headers.append('Authorization', 'Basic username:password');
+
+    let headers = new HttpHeaders({ 'Authorization': 'Bearer aaaa','content-type': 'application/json'}  )
+    //console.log(headers);
+ 
+
+
+    // let headers = new Headers();
+     // headers.append('Authorization', 'Basic username:password');
+     return this.http.get(asset, { params: Params, headers: headers } );
+     //return this.http.get<any>(asset);
   }
 
   // upload data ....
