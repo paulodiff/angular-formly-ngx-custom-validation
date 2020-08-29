@@ -6,6 +6,7 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { FormControl } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { JsonComponent} from './json/json.component';
+import { LoginComponent} from './login/login.component';
 import { SchemaComponent} from './schema/schema.component';
 import { MainComponent} from './main/main.component';
 import { TabulatorTableComponent } from './tabulator/tabulator-table.component';
@@ -76,6 +77,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
 
       { path: 'json', component: JsonComponent },
       { path: 'main', component: MainComponent },
+      { path: 'login', component: LoginComponent },
       { path: 'json/:itemId', component: JsonComponent },
       { path: 'schema', component: SchemaComponent },
       { path: 'tabulator', component: TabulatorTableComponent }
@@ -188,6 +190,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
     SchemaComponent,
     MainComponent,
     TabulatorTableComponent,
+    LoginComponent,
 
 
     // LoaderComponent,

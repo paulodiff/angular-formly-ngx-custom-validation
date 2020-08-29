@@ -37,3 +37,8 @@ Lo uuid può essere usato anche come nonce per il cacolo dell hmac dei dati invi
 - per ogni file viene calcolato sha256 e passato al server che lo ricalcola per una verifica degli allegati arrivati
 
 - viene calcolato un hmac con tutti i dati del model (in cui sono anche aggiunti gli hash256 dei file) la key del calcolo viene fornita dal server ed è una chiave di accesso ai dati. Al cacolo viene aggiunto nonce che è uuid
+
+# logica applicativa simulata
+
+1 - accesso all'app richiesta dei moduli - authguard
+2 - invia ad autenticazione
