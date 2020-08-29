@@ -13,17 +13,17 @@
           { "value": 3, "label": "Option 3" }
         ],
         
-          "fieldGroup": [
-            {
-              "type": "input",
-              "key": "investmentName",
-              "templateOptions": {
-                "label": "Name of Investment:",
-                "required": true
-              }
+        "fieldGroup": [
+          {
+            "type": "input",
+            "key": "investmentName",
+            "templateOptions": {
+              "label": "Name of Investment:",
+              "required": true
             }
-          ]
-        }
+          }
+        ]
       }
+      
     }
 ]
