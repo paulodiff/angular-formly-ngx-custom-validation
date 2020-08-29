@@ -64,7 +64,7 @@ export class AppService {
   }
 
   getAuthUrl() {
-     var SERVER_URL = 'https://ISTANZESERVERV2.paulodiff.repl.co/getSpidUrl2';
+     var SERVER_URL = 'https://ISTANZESERVERV2.paulodiff.repl.co/getGatewayUrl';
      // let asset = 'assets/json-powered/' + formId + '-options.json';
      let asset = SERVER_URL;
      console.log('AppService:getAuthUrl:',asset);

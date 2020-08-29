@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     uploadResponse = { status: '', message: '', filePath: '' };
     securityToken = '';
     srcUrl: string = "https://www.urbanpro.com/kolkata/self-and-beyond-golf-green/4422880";
+    authUrl = "";
 
   constructor(
               private route: ActivatedRoute,
@@ -195,12 +196,17 @@ export class LoginComponent implements OnInit, OnDestroy {
     console.log('hmac:', hash.hex());
   }
 
+  goto1() {
+    window.location.href = 'https://www.google.com';
+  }
+
   getAuthUrl() {
     console.log('getAuthUrl ... ');
 
     this._appService.getAuthUrl().subscribe(
         (res) => {
           console.log(res);
+          this.authUrl = res.url;
           // this.uploadResponse = res
         },
         (err) => {

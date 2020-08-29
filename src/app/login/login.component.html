@@ -8,8 +8,14 @@ class="btn btn-primary submit-button">getAuthUrl</button>
 (click)="hmac()"
 class="btn btn-primary submit-button">HMAC</button>
 
-<a href="http://www.google.com">EXIT</a>
+
+<button 
+(click)="goto1()"
+class="btn btn-primary submit-button">goto1</button>
+
+<a [href]="authUrl">Link autenticazione</a>
 
 
 
-<iframe [src]="srcUrl|safeHt: 'resourceUrl'" height="400" width="400"></iframe>
+
+<iframe [src]="srcUrl|safeHtml: 'resourceUrl'" height="400" width="400"></iframe>
