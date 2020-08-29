@@ -1,28 +1,41 @@
 [
+
     {
-      "key": "radioInput",
+      "key": "em1",
+      "type": "input",
+      "templateOptions": {
+        "label": "email1",
+        "description" : "desc1"
+      }
+      ,
+      "validators": {
+        "validation": ["emailValidator"]
+      }
+    },
+
+    {
+      "key": "repeatSection1",
       "type": "rr-repeat-section",
       "templateOptions": {
+        "addText" : "aa",
         "label": "lista di scelta",
-        "placeholder": "Placeholder",
-        "description": "Description",
-        "required": true,
-        "options": [
-          { "value": 1, "label": "Al 3ata," },
-          { "value": 2, "label": "Option 2" },
-          { "value": 3, "label": "Option 3" }
-        ],
-        
-        "fieldGroup": [
-          {
-            "type": "input",
-            "key": "investmentName",
-            "templateOptions": {
-              "label": "Name of Investment:",
-              "required": true
+       
+        "description": "Description1"
+      },
+      
+      "fieldArray": {
+          "fieldGroupClassName": "row",
+          "fieldGroup": [
+            {
+              "type": "rr-input",
+              "key": "investmentName33",
+              "templateOptions": {
+                "label": "Name of Investment:33",
+                "required": true
+              }
             }
-          }
-        ]
+          ]
+
       }
       
     }
