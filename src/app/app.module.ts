@@ -78,6 +78,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
       { path: 'json', component: JsonComponent },
       { path: 'main', component: MainComponent },
       { path: 'login', component: LoginComponent },
+      { path: 'login/:token', component: LoginComponent },
       { path: 'json/:itemId', component: JsonComponent },
       { path: 'schema', component: SchemaComponent },
       { path: 'tabulator', component: TabulatorTableComponent }
