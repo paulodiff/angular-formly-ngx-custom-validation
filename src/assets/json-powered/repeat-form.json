@@ -29,6 +29,7 @@
             {
               "type": "rr-input",
               "key": "investmentName33",
+              "className": "col",
               "templateOptions": {
                 "label": "Name of Investment:33",
                 "required": true

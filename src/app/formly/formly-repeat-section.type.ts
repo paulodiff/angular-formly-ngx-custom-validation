@@ -8,12 +8,12 @@ import { FieldArrayType } from '@ngx-formly/core';
     <div *ngFor="let field of field.fieldGroup; let i = index;">
       <formly-group [field]="field">
     <div class="col-sm-2 d-flex align-items-center">
-        <button class="btn btn-danger" type="button" (click)="remove(i)">Remove</button>
+        <button class="btn btn-danger" type="button" (click)="remove(i)">Elimina</button>
       </div>
       </formly-group>
     </div>
     <div style="margin:30px 0;">
-      <button class="btn btn-primary" type="button" (click)="add()">Add</button>
+      <button class="btn btn-primary" type="button" (click)="add()">Aggiungi elemento</button>
   `,
 })
 export class FormlyRepeatTypeComponent extends FieldArrayType {}
