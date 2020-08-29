@@ -17,24 +17,49 @@
       "key": "repeatSection1",
       "type": "rr-repeat-section",
       "templateOptions": {
-        "addText" : "aa",
-        "label": "lista di scelta",
+        "addText" : "Aggiungi un nominativo",
+        "removeText" : "Rimuovi il nominativo",
+        "itemName" : "Nominativo",
+        "label": "Elenco nominativi",
        
-        "description": "Description1"
+        "description": "Gestione dei nominativi, aggiungere o togliere nominativi"
       },
       
       "fieldArray": {
-          "fieldGroupClassName": "row",
+          "fieldGroupClassName": "",
           "fieldGroup": [
             {
               "type": "rr-input",
-              "key": "investmentName33",
-              "className": "col",
+              "key": "Nome1",
+              
               "templateOptions": {
-                "label": "Name of Investment:33",
+                "label": "Nome",
                 "required": true
               }
+            },
+            {
+              "type": "rr-input",
+              "key": "Cognome1",
+              
+              "templateOptions": {
+                "label": "Cognome",
+                "required": true
+              }
+            },
+            {
+              "key": "Cf1",
+              "type": "input",
+              "templateOptions": {
+                "label": "codice fiscale label",
+                "description" : "codice fiscale description",
+                "required" : true,
+                "placeholder" : "segnaposto"
+              },
+              "validators": {
+                "validation": ["codiceFiscaleValidator"]
+              }
             }
+
           ]
 
       }

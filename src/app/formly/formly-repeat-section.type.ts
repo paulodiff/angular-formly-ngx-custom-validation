@@ -4,16 +4,23 @@ import { FieldArrayType } from '@ngx-formly/core';
 @Component({
   selector: 'formly-repeat-section',
   template: `
-    <hr/>
-    <div *ngFor="let field of field.fieldGroup; let i = index;">
+    
+    <div *ngFor="let field of field.fieldGroup; let i = index;" class="border border-success p-2">
+    
+      <h5>{{to.itemName}} n. {{ i + 1  }}</h5>
       <formly-group [field]="field">
-    <div class="col-sm-2 d-flex align-items-center">
-        <button class="btn btn-danger" type="button" (click)="remove(i)">Elimina</button>
-      </div>
+
+        <button class="btn btn-danger btn-lg btn-block" type="button" (click)="remove(i)">{{ to.removeText }} n. {{ i + 1 }}</button>
+    
       </formly-group>
+      
     </div>
-    <div style="margin:30px 0;">
-      <button class="btn btn-primary" type="button" (click)="add()">Aggiungi elemento</button>
+    
+    
+
+      <button 
+      class="btn btn-primary btn-lg btn-block p-2"
+      type="button" (click)="add()">{{ to.addText }}</button>
   `,
 })
 export class FormlyRepeatTypeComponent extends FieldArrayType {}
