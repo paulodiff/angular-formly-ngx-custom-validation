@@ -77,6 +77,7 @@ export class LoginComponent implements OnInit, OnDestroy {
         console.log('Login:OnInit:set:token');
         this.token = params['token'];
         console.log('token', this.token);
+        this._authService.setToken(this.token);
         // set token to service ...
       }
      

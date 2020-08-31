@@ -43,7 +43,7 @@ export class AuthService {
         this.decodedToken  = jwt.decode(t);
         console.log('auth.service.setToken.decoded', this.decodedToken);
         console.log(this.decodedToken.expiresIn);
-        console.log(moment());
+        // console.log(moment());
         console.log(momentTZ().tz("Europe/Rome").toISOString(true));
         console.log(momentTZ().tz("Europe/Rome").add(this.decodedToken.expiresIn, 'second'));
 
