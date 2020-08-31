@@ -14,6 +14,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { AppService } from './services/app.service';
+
+import { LoaderService } from './services/loader.service';
+import { LoaderInterceptor } from './interceptors/loader-interceptor.service';
+import { LoaderComponent } from './loader/loader.component';
+
+
 import { FormlyWrapperFormField } from './formly/formly-form-field.wrapper';
 import { CounterInputComponentFieldType } from './formly/counter/formly-counter-type.component';
 import { HtmlTemplateComponentFieldType } from './formly/html-template/formly-html-template-type.component';
@@ -192,6 +198,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
     MainComponent,
     TabulatorTableComponent,
     LoginComponent,
+    LoaderComponent,
 
 
     // LoaderComponent,
@@ -222,7 +229,10 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
 
   ],
    providers: [
-    AppService   
+    AppService,
+    
+    LoaderService,
+    { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }   
   ]
 })
 export class AppModule { }
