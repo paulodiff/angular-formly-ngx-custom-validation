@@ -4,8 +4,9 @@ import { Observable, forkJoin } from 'rxjs';
 import { shareReplay, map, catchError, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { FormlyFieldConfig } from '@ngx-formly/core';
-import * as moment from "moment";
-import * as jwt from 'jsonwebtoken';
+import moment from 'moment';
+import momentTZ from 'moment-timezone';
+import jwt from 'jsonwebtoken';
 
 
 @Injectable()
@@ -43,9 +44,10 @@ export class AuthService {
         console.log('auth.service.setToken.decoded', this.decodedToken);
         console.log(this.decodedToken.expiresIn);
         console.log(moment());
-        console.log(moment().add(this.decodedToken.expiresIn, 'second'));
+        console.log(momentTZ().tz("Europe/Rome").toISOString(true));
+        console.log(momentTZ().tz("Europe/Rome").add(this.decodedToken.expiresIn, 'second'));
 
-        this.expireAt = moment().add(this.decodedToken.expiresIn, 'second');
+        this.expireAt = momentTZ().tz("Europe/Rome").add(this.decodedToken.expiresIn, 'second');
         console.log('auth.service.setToken.expireAt', this.expireAt); 
       } catch(err){
         console.log(err);

@@ -5,7 +5,7 @@ import { Validators, FormGroup } from '@angular/forms';
 import { AppService } from '../services/app.service';
 import { AuthService } from '../services/auth.service';
 import { sha256, sha224 } from 'js-sha256';
-import * as moment from "moment";
+import moment from "moment";
 
 
 
