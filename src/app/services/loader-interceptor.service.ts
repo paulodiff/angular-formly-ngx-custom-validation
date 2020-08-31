@@ -32,6 +32,8 @@ export class LoaderInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
+    console.log("interceptor.add token:", + this.authService.getToken());
+
     req = req.clone({
       setHeaders: {
         Authorization: `Bearer ${this.authService.getToken()}`
