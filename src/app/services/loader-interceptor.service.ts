@@ -32,7 +32,7 @@ export class LoaderInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
-    console.log("interceptor.add token:", + this.authService.getToken());
+    console.log("interceptor.add token:", this.authService.getToken());
 
     req = req.clone({
       setHeaders: {
@@ -42,7 +42,7 @@ export class LoaderInterceptor implements HttpInterceptor {
 
     this.requests.push(req);
 
-    console.log("interceptor.No of requests:" + this.requests.length);
+    console.log("interceptor.NumOfRequests:" + this.requests.length);
 
     this.loaderService.isLoading.next(true);
 
