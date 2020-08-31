@@ -5,7 +5,8 @@ import { shareReplay, map, catchError, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 
-//const CACHE_SIZE = 1;
+
+// const CACHE_SIZE = 1;
 
 @Injectable()
 export class AppService {
@@ -14,7 +15,9 @@ export class AppService {
     public errorMsg: {};
     public errors: any = [];
     configUrl = 'https://jsonplaceholder.typicode.com/users';
-    constructor(private http: HttpClient) {
+    constructor(
+      private http: HttpClient,
+      private authService: AuthService) {
 
       console.log('APP_SERVICE:build:contructor');
 
@@ -68,19 +71,24 @@ export class AppService {
      // let asset = 'assets/json-powered/' + formId + '-options.json';
      let asset = SERVER_URL;
      console.log('AppService:getMe:',asset);
-     let Params = new HttpParams();
-     Params = Params.append('anno', '2020');
-     this.httpOptions.headers.append('Authorization', 'Basic username:password');
+     // let Params = new HttpParams();
+     // Params = Params.append('anno', '2020');
+     // this.httpOptions.headers.append('Authorization', 'Basic username:password');
 
-    let headers = new HttpHeaders({ 'Authorization': 'Bearer aaaa','content-type': 'application/json'}  )
+    let headers = new HttpHeaders(
+      { 
+        'Authorization': `Bearer ${this.authService.getToken()}`,
+        'content-type': 'application/json'
+      });
     //console.log(headers);
  
 
 
     // let headers = new Headers();
-     // headers.append('Authorization', 'Basic username:password');
-     return this.http.get(asset, { params: Params, headers: headers } );
-     //return this.http.get<any>(asset);
+    // headers.append('Authorization', 'Basic username:password');
+    // return this.http.get(asset, { params: Params, headers: headers } );
+    return this.http.get(asset, { headers: headers } );
+    //return this.http.get<any>(asset);
   }
 
   getAuthUrl() {
