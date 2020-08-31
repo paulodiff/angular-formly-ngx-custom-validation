@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     srcUrl: string = "https://www.urbanpro.com/kolkata/self-and-beyond-golf-green/4422880";
     authUrl = "";
     infoMe = "";
+    oldToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3N1ZXIiOiJyZXBsLml0Iiwic3ViamVjdCI6IjhlZjVjNDNhLWU5MzktNGRhNy1hYmFjLWJkMjZiMTU4NGFjOCIsImV4cGlyZXNJbiI6NjAwLCJpYXQiOjE1OTg4ODE2ODF9.466Nf4W36xlAXD7qSriqJjxD98bH5s8D8sCUyByMjpk';
 
     // form = new FormGroup({});
     model: any = {};
@@ -123,7 +124,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   setToken() {
     console.log('login.setToken');
     console.log(this.model.token);
-    this._authService.setToken(this.model.token);
+    this._authService.setToken(this.oldToken);
     this.model.expiration = this._authService.getTokenExpiration();
     console.log('login.expiration', moment(this.model.expiration).tz
     ("Europe/Rome").toISOString(true));

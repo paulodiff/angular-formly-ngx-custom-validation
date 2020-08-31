@@ -4,7 +4,7 @@ import { Observable, forkJoin } from 'rxjs';
 import { shareReplay, map, catchError, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { FormlyFieldConfig } from '@ngx-formly/core';
-
+import { AuthService } from '../services/auth.service';
 
 // const CACHE_SIZE = 1;
 
