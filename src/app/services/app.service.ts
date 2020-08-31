@@ -5,7 +5,7 @@ import { shareReplay, map, catchError, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { FormlyFieldConfig } from '@ngx-formly/core';
 
-const CACHE_SIZE = 1;
+//const CACHE_SIZE = 1;
 
 @Injectable()
 export class AppService {
