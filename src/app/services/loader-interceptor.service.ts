@@ -1,4 +1,7 @@
 // loader-interceptor.service.ts
+// https://medium.com/@ryanchenkie_40935/angular-authentication-using-the-http-client-and-http-interceptors-2f9d1540eb8
+
+
 import { Injectable } from '@angular/core';
 import {
   HttpResponse,
@@ -9,12 +12,15 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { LoaderService } from '../services/loader.service';
+import { AuthService } from '../services/auth.service';
 
 @Injectable()
 export class LoaderInterceptor implements HttpInterceptor {
   private requests: HttpRequest<any>[] = [];
 
-  constructor(private loaderService: LoaderService) { }
+  constructor(
+    private loaderService: LoaderService,
+    private authService: AuthService) { }
 
   removeRequest(req: HttpRequest<any>) {
     const i = this.requests.indexOf(req);
@@ -26,11 +32,18 @@ export class LoaderInterceptor implements HttpInterceptor {
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
 
+    req = req.clone({
+      setHeaders: {
+        Authorization: `Bearer ${this.authService.getToken()}`
+      }
+    });
+
     this.requests.push(req);
 
-    console.log("No of requests--->" + this.requests.length);
+    console.log("interceptor.No of requests:" + this.requests.length);
 
     this.loaderService.isLoading.next(true);
+
     return Observable.create(observer => {
       const subscription = next.handle(req)
         .subscribe(
@@ -55,5 +68,6 @@ export class LoaderInterceptor implements HttpInterceptor {
         subscription.unsubscribe();
       };
     });
+
   }
 }

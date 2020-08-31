@@ -35,6 +35,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     securityToken = '';
     srcUrl: string = "https://www.urbanpro.com/kolkata/self-and-beyond-golf-green/4422880";
     authUrl = "";
+    infoMe = "";
 
     // form = new FormGroup({});
     model: any = {};
@@ -127,7 +128,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     console.log('login.expiration', moment(this.model.expiration).tz
     ("Europe/Rome").toISOString(true));
     // moment.locale('it');
-    console.log('login.expiration', moment(this.model.expiration).tz("Europe/Rome").format('DD/MM/YYYY H:mm:ss'));
+    console.log('login.expiration', moment(this.model.expiration).tz("Europe/Rome").format('DD/MM/YYYY HH:mm:ss'));
   }
 
   removeToken() {
@@ -191,6 +192,23 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   goto1() {
     window.location.href = 'https://www.google.com';
+  }
+
+  getMe() {
+    console.log('getMe ... ');
+
+    this._appService.getMe().subscribe(
+        (res) => {
+          console.log(res);
+          this.infoMe = res;
+          // this.uploadResponse = res
+        },
+        (err) => {
+          console.log(err);
+          this.error = err
+        },
+        () => console.log('getMe:DONE!')
+    );
   }
 
   getAuthUrl() {

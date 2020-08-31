@@ -63,6 +63,26 @@ export class AppService {
      return this.http.get<FormlyFieldConfig[]>(asset);
   }
 
+  getMe() {
+     var SERVER_URL = 'https://ISTANZESERVERV2.paulodiff.repl.co/me';
+     // let asset = 'assets/json-powered/' + formId + '-options.json';
+     let asset = SERVER_URL;
+     console.log('AppService:getMe:',asset);
+     let Params = new HttpParams();
+     Params = Params.append('anno', '2020');
+     this.httpOptions.headers.append('Authorization', 'Basic username:password');
+
+    let headers = new HttpHeaders({ 'Authorization': 'Bearer aaaa','content-type': 'application/json'}  )
+    //console.log(headers);
+ 
+
+
+    // let headers = new Headers();
+     // headers.append('Authorization', 'Basic username:password');
+     return this.http.get(asset, { params: Params, headers: headers } );
+     //return this.http.get<any>(asset);
+  }
+
   getAuthUrl() {
      var SERVER_URL = 'https://ISTANZESERVERV2.paulodiff.repl.co/getGatewayUrl';
      // let asset = 'assets/json-powered/' + formId + '-options.json';

@@ -13,6 +13,11 @@
 class="btn btn-primary submit-button">getAuthUrl</button>
 
 <button 
+(click)="getMe()"
+class="btn btn-primary submit-button">getMe</button>
+
+
+<button 
 (click)="setToken()"
 class="btn btn-primary submit-button">setToken</button>
 
@@ -20,9 +25,12 @@ class="btn btn-primary submit-button">setToken</button>
 (click)="removeToken()"
 class="btn btn-primary submit-button">removeToken</button>
 
+<hr>
 <a [href]="authUrl">Link autenticazione</a>
-
+<hr>
 {{authUrl}}
-
+<hr>
+{{infoMe}}
+<hr>
 
 
