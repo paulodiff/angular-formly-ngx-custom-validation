@@ -3,7 +3,9 @@ import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 import { Validators, FormGroup } from '@angular/forms';
 import { AppService } from '../services/app.service';
+import { AuthService } from '../services/auth.service';
 import { sha256, sha224 } from 'js-sha256';
+import * as moment from "moment";
 
 
 
@@ -25,8 +27,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     private sub: any;
     form = new FormGroup({});
     options: FormlyFormOptions = {};
-    fields: FormlyFieldConfig[];
-    model;
+    // fields: FormlyFieldConfig[];
     token;
     error: string;
     userId: number = 1;
@@ -35,9 +36,25 @@ export class LoginComponent implements OnInit, OnDestroy {
     srcUrl: string = "https://www.urbanpro.com/kolkata/self-and-beyond-golf-green/4422880";
     authUrl = "";
 
+    // form = new FormGroup({});
+    model: any = {};
+    fields: FormlyFieldConfig[] = [
+      {
+        key: 'token',
+        type: 'input',
+        templateOptions: {
+          label: 'Token',
+          placeholder: '',
+          required: false,
+        },
+      }
+    ];
+
+
   constructor(
               private route: ActivatedRoute,
-              private _appService: AppService
+              private _appService: AppService,
+              private _authService: AuthService,
             ) {
 
               console.log('Login:constructor');
@@ -46,7 +63,11 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    
     console.log('Login:ngOnInit');
+    console.log('Login:ngOnInit', moment().format());
+    
+    this.model.token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3N1ZXIiOiJyZXBsLml0Iiwic3ViamVjdCI6IjhlZjVjNDNhLWU5MzktNGRhNy1hYmFjLWJkMjZiMTU4NGFjOCIsImV4cGlyZXNJbiI6NjAwLCJpYXQiOjE1OTg4ODE2ODF9.466Nf4W36xlAXD7qSriqJjxD98bH5s8D8sCUyByMjpk';
 
 
     this.sub = this.route.params.subscribe(params => {
@@ -79,47 +100,19 @@ export class LoginComponent implements OnInit, OnDestroy {
     
   } // ngOnInit - end
 
+  // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3N1ZXIiOiJyZXBsLml0Iiwic3ViamVjdCI6IjhlZjVjNDNhLWU5MzktNGRhNy1hYmFjLWJkMjZiMTU4NGFjOCIsImV4cGlyZXNJbiI6NjAwLCJpYXQiOjE1OTg4ODE2ODF9.466Nf4W36xlAXD7qSriqJjxD98bH5s8D8sCUyByMjpk
+
+  setToken() {
+    console.log(this.model.token);
+    this._authService.setToken(this.model.token);
+  }
+
+
   nameVal(field)  {
     console.log('nameVal');
     console.log('checking name');
   }
-
-  sumOnChange(field) {
-    // console.log('nameChange');
-    console.log('sumOnChange', field.key);
-    console.log('sumOnChange', field.templateOptions);
-    console.log(field.parent.form);
-
-    console.log(field.templateOptions.sumExpr.destField);
-    let d = field.templateOptions.sumExpr.destField;
-    field.parent.formControl.controls[d].setValue("SUM!");
-    // field.parent.formControl // will return FormGroup
-    // field.parent.form // will return FormArray
-    //  to access to the FormArray from the child FormGroup knowing which // index in the array has the child FormGroup assigned?
-
-    //field.parent.form.at(field.parent.key) // which will return the same result as `field.parent.formControl`
-    // field.model.lastName="";
-    // console.log(field.model);
-  }
-
-  multiplyOnChange(field) {
-    console.log('multiplyOnChange', field);
-  }
-
-  nameChange(field) {
-    // console.log('nameChange');
-    console.log('nameChange', field.key);
-    console.log('nameChange', field.templateOptions);
-    console.log('nameChange', field.parent.formControl.controls["mac"].setValue("ss"));
-    console.log(field.parent.form);
-    // field.parent.formControl // will return FormGroup
-    // field.parent.form // will return FormArray
-    //  to access to the FormArray from the child FormGroup knowing which // index in the array has the child FormGroup assigned?
-
-    //field.parent.form.at(field.parent.key) // which will return the same result as `field.parent.formControl`
-    // field.model.lastName="";
-    // console.log(field.model);
-  }
+  
 
   ngOnDestroy() {
     // this.connection.unsubscribe();

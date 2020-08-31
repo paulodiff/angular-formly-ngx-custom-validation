@@ -1,5 +1,13 @@
 <h5> Login component </h5>
 
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
+ 
+    <button type="submit" class="btn btn-primary submit-button">SubmitAlways</button>
+</form>
+
+
 <button 
 (click)="getAuthUrl()"
 class="btn btn-primary submit-button">getAuthUrl</button>
@@ -8,12 +16,18 @@ class="btn btn-primary submit-button">getAuthUrl</button>
 (click)="hmac()"
 class="btn btn-primary submit-button">HMAC</button>
 
+<button 
+(click)="setToken()"
+class="btn btn-primary submit-button">setToken</button>
 
 <button 
-(click)="goto1()"
-class="btn btn-primary submit-button">goto1</button>
+(click)="removeToken()"
+class="btn btn-primary submit-button">removeToken</button>
+
 
 <a [href]="authUrl">Link autenticazione</a>
+
+{{authUrl}}
 
 
 

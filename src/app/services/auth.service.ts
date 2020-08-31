@@ -4,13 +4,16 @@ import { Observable, forkJoin } from 'rxjs';
 import { shareReplay, map, catchError, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { FormlyFieldConfig } from '@ngx-formly/core';
-import * as jwt_decode from "jwt-decode";
 import * as moment from "moment";
+import * as jwt from 'jsonwebtoken';
+
 
 @Injectable()
 export class AuthService {
 
     constructor(private http: HttpClient) {
+
+        // console.log('AuthService:contructor', moment().format());
 
     }
 /*
@@ -22,6 +25,7 @@ export class AuthService {
  */         
     token : null;
     decodedToken = <any>{};
+    expireAt;
 
     private setSession(authResult) {
         const expiresAt = moment().add(authResult.expiresIn,'second');
@@ -31,19 +35,38 @@ export class AuthService {
     }          
 
     public setToken(t){
+      
+      console.log('auth.service.setToken:', t); 
       this.token = t;
-      this.decodedToken = jwt_decode(t); 
-      console.log('auth.service.setToken:',token'); 
+      try{
+        this.decodedToken  = jwt.decode(t);
+        console.log('auth.service.setToken.decoded', this.decodedToken);
+        console.log(this.decodedToken.expiresIn);
+        console.log(moment());
+        console.log(moment().add(this.decodedToken.expiresIn, 'second'));
+
+        this.expireAt = moment().add(this.decodedToken.expiresIn, 'second');
+        console.log('auth.service.setToken.expireAt', this.expireAt); 
+      } catch(err){
+        console.log(err);
+        this.decodedToken = {};
+      }
+      
+     
     }
 
-    logout() {
-        localStorage.removeItem("id_token");
-        localStorage.removeItem("expires_at");
+    public removeToken() {
+      this.token = null;
+      this.decodedToken = {};
     }
 
     public isLoggedIn() {
-        if(this.token && )
-        return moment().isBefore(this.getExpiration());
+        if(this.token) {
+          return moment().isBefore(this.getExpiration());
+        } else {
+          return false;
+        }
+        
     }
 
     isLoggedOut() {
@@ -51,6 +74,11 @@ export class AuthService {
     }
 
     getExpiration() {
+        if(this.token) {
+          const expiration = this.decodedToken.expireAt
+          const expiresAt = JSON.parse(expiration);
+          return moment(expiresAt);
+        }
         const expiration = localStorage.getItem("expires_at");
         const expiresAt = JSON.parse(expiration);
         return moment(expiresAt);

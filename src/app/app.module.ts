@@ -14,6 +14,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { HttpModule, JsonpModule } from '@angular/http';
 import { AppService } from './services/app.service';
+import { AuthService } from './services/auth.service';
 
 import { LoaderService } from './services/loader.service';
 import { LoaderInterceptor } from './interceptors/loader-interceptor.service';
@@ -230,7 +231,8 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
   ],
    providers: [
     AppService,
-    
+    AuthService,
+
     LoaderService,
     { provide: HTTP_INTERCEPTORS, useClass: LoaderInterceptor, multi: true }   
   ]
