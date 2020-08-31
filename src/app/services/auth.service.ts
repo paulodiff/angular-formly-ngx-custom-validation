@@ -4,6 +4,7 @@ import { Observable, forkJoin } from 'rxjs';
 import { shareReplay, map, catchError, tap } from 'rxjs/operators';
 import { environment } from '../../environments/environment';
 import { FormlyFieldConfig } from '@ngx-formly/core';
+import * as jwt_decode from "jwt-decode";
 import * as moment from "moment";
 
 @Injectable()
@@ -19,6 +20,9 @@ export class AuthService {
             .shareReplay();
     }
  */         
+    token : null;
+    decodedToken = <any>{};
+
     private setSession(authResult) {
         const expiresAt = moment().add(authResult.expiresIn,'second');
 
@@ -26,12 +30,19 @@ export class AuthService {
         localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()) );
     }          
 
+    public setToken(t){
+      this.token = t;
+      this.decodedToken = jwt_decode(t); 
+      console.log('auth.service.setToken:',token'); 
+    }
+
     logout() {
         localStorage.removeItem("id_token");
         localStorage.removeItem("expires_at");
     }
 
     public isLoggedIn() {
+        if(this.token && )
         return moment().isBefore(this.getExpiration());
     }
 
