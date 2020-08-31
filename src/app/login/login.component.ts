@@ -39,6 +39,7 @@ export class LoginComponent implements OnInit, OnDestroy {
     // form = new FormGroup({});
     model: any = {};
     fields: FormlyFieldConfig[] = [
+
       {
         key: 'token',
         type: 'input',
@@ -47,7 +48,18 @@ export class LoginComponent implements OnInit, OnDestroy {
           placeholder: '',
           required: false,
         },
+      },
+
+      {
+        key: 'expiration',
+        type: 'input',
+        templateOptions: {
+          label: 'expiration',
+          placeholder: '',
+          required: false,
+        },
       }
+
     ];
 
 
@@ -77,7 +89,11 @@ export class LoginComponent implements OnInit, OnDestroy {
         console.log('Login:OnInit:set:token');
         this.token = params['token'];
         console.log('token', this.token);
+        this.model.token = this.token;
         this._authService.setToken(this.token);
+        this.model.expiration = this._authService.getTokenExpiration();
+        console.log(moment(this.model.expiration).tz("Europe/Rome").toISOString(true));
+
         // set token to service ...
       }
      
@@ -104,10 +120,21 @@ export class LoginComponent implements OnInit, OnDestroy {
   // eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3N1ZXIiOiJyZXBsLml0Iiwic3ViamVjdCI6IjhlZjVjNDNhLWU5MzktNGRhNy1hYmFjLWJkMjZiMTU4NGFjOCIsImV4cGlyZXNJbiI6NjAwLCJpYXQiOjE1OTg4ODE2ODF9.466Nf4W36xlAXD7qSriqJjxD98bH5s8D8sCUyByMjpk
 
   setToken() {
+    console.log('login.setToken');
     console.log(this.model.token);
     this._authService.setToken(this.model.token);
+    this.model.expiration = this._authService.getTokenExpiration();
+    console.log('login.expiration', moment(this.model.expiration).tz
+    ("Europe/Rome").toISOString(true));
+    // moment.locale('it');
+    console.log('login.expiration', moment(this.model.expiration).tz("Europe/Rome").format('DD/MM/YYYY H:mm:ss'));
   }
 
+  removeToken() {
+    console.log(this._authService.getToken());
+    console.log('removeToken');
+    this._authService.removeToken();
+  }
 
   nameVal(field)  {
     console.log('nameVal');

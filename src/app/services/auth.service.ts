@@ -35,6 +35,10 @@ export class AuthService {
         localStorage.setItem("expires_at", JSON.stringify(expiresAt.valueOf()) );
     }          
 
+    public getToken(){
+      return this.token;
+    }
+
     public setToken(t){
       
       console.log('auth.service.setToken:', t); 
@@ -42,16 +46,17 @@ export class AuthService {
       try{
         this.decodedToken  = jwt.decode(t);
         console.log('auth.service.setToken.decoded', this.decodedToken);
-        console.log(this.decodedToken.expiresIn);
+        console.log('token:expiresIn:', this.decodedToken.expiresIn);
         // console.log(moment());
         console.log(momentTZ().tz("Europe/Rome").toISOString(true));
-        console.log(momentTZ().tz("Europe/Rome").add(this.decodedToken.expiresIn, 'second'));
+        console.log(momentTZ().tz("Europe/Rome").add(this.decodedToken.expiresIn, 'second').toISOString(true));
 
         this.expireAt = momentTZ().tz("Europe/Rome").add(this.decodedToken.expiresIn, 'second');
         console.log('auth.service.setToken.expireAt', this.expireAt); 
       } catch(err){
         console.log(err);
         this.decodedToken = {};
+        this.expireAt = '';
       }
       
      
@@ -60,8 +65,10 @@ export class AuthService {
     public removeToken() {
       this.token = null;
       this.decodedToken = {};
+      this.expireAt = '';
     }
 
+/*
     public isLoggedIn() {
         if(this.token) {
           return moment().isBefore(this.getExpiration());
@@ -74,15 +81,15 @@ export class AuthService {
     isLoggedOut() {
         return !this.isLoggedIn();
     }
-
-    getExpiration() {
+*/
+    public getTokenExpiration() {
         if(this.token) {
-          const expiration = this.decodedToken.expireAt
-          const expiresAt = JSON.parse(expiration);
-          return moment(expiresAt);
+          const expiration = this.expireAt;
+          console.log('auth.getTokenExpiration.expiration:', expiration);
+          // const expiresAt = JSON.parse(expiration);
+          return expiration;
+        } else {
+          return null;
         }
-        const expiration = localStorage.getItem("expires_at");
-        const expiresAt = JSON.parse(expiration);
-        return moment(expiresAt);
     }    
 }

@@ -4,7 +4,7 @@
 <form [formGroup]="form" (ngSubmit)="submit()">
   <formly-form [model]="model" [fields]="fields" [options]="options" [form]="form"></formly-form>
  
-    <button type="submit" class="btn btn-primary submit-button">SubmitAlways</button>
+
 </form>
 
 
@@ -13,17 +13,12 @@
 class="btn btn-primary submit-button">getAuthUrl</button>
 
 <button 
-(click)="hmac()"
-class="btn btn-primary submit-button">HMAC</button>
-
-<button 
 (click)="setToken()"
 class="btn btn-primary submit-button">setToken</button>
 
 <button 
 (click)="removeToken()"
 class="btn btn-primary submit-button">removeToken</button>
-
 
 <a [href]="authUrl">Link autenticazione</a>
 
