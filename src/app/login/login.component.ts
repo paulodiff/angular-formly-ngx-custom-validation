@@ -205,11 +205,13 @@ export class LoginComponent implements OnInit, OnDestroy {
         (res) => {
           console.log(res);
           this.infoMe = res;
+          this._loaderService.isLoading.next(false);
           // this.uploadResponse = res
         },
         (err) => {
           console.log(err);
           this.error = err
+          
         },
         () => {
           console.log('getMe:DONE!');
