@@ -4,6 +4,7 @@ import { FormlyFormOptions, FormlyFieldConfig } from '@ngx-formly/core';
 import { Validators, FormGroup } from '@angular/forms';
 import { AppService } from '../services/app.service';
 import { AuthService } from '../services/auth.service';
+import { LoaderService } from '../services/loader.service';
 import { sha256, sha224 } from 'js-sha256';
 import moment from "moment";
 
@@ -69,6 +70,7 @@ export class LoginComponent implements OnInit, OnDestroy {
               private route: ActivatedRoute,
               private _appService: AppService,
               private _authService: AuthService,
+              private _loaderService: LoaderService
             ) {
 
               console.log('Login:constructor');
@@ -197,6 +199,7 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   getMe() {
     console.log('getMe ... ');
+    this._loaderService.isLoading.next(true);
 
     this._appService.getMe().subscribe(
         (res) => {
@@ -208,7 +211,10 @@ export class LoginComponent implements OnInit, OnDestroy {
           console.log(err);
           this.error = err
         },
-        () => console.log('getMe:DONE!')
+        () => {
+          console.log('getMe:DONE!');
+          this._loaderService.isLoading.next(false);
+        }
     );
   }
 
