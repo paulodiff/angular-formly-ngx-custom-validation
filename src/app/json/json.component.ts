@@ -274,7 +274,7 @@ let f1: FormlyFieldConfig = {
 
     let dynamic: FormlyFieldConfig = {};
     dynamic.templateOptions = {};
-    dynamic.key = Math.random().toString();
+    dynamic.key = 'ggt' + Math.floor(Math.random() * Math.floor(10000)).toString();
     dynamic.type = 'input';
     dynamic.templateOptions.type = 'text';
     dynamic.templateOptions.label = 'Dynamic:' + dynamic.key;
