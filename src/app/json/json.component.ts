@@ -204,22 +204,55 @@ let f2 : FormlyFieldConfig = {
       },
        fieldGroup: [
           {
-            className: 'col-sm-4',
+            className: 'col-sm-6',
             type: 'input',
-            key: 'investmentName',
+            key: 'key',
             templateOptions: {
-              label: 'Name of Investment:',
+              label: 'f-key',
+              type: 'input',
+              default: 'infoSimple01',
               required: true,
             },
           },
           {
             type: 'input',
-            key: 'investmentDate',
-            className: 'col-sm-4',
+            key: 'type',
+            className: 'col-sm-6',
             templateOptions: {
-              type: 'date',
-              label: 'Date of Investment:',
+              type: 'input',
+              label: 'f-type',
+              default: 'infoSimple'
             },
+          },
+
+          {
+            fieldGroupClassName: "row",
+             key : "f2b",
+             fieldGroup: [
+              {
+                className: 'col-sm-6',
+                type: 'input',
+                key: 'key2',
+                templateOptions: {
+                  label: 'f-key-2',
+                  type: 'input',
+                  required: true,
+                },
+              },
+              {
+                type: 'input',
+                key: 'type2',
+                className: 'col-sm-6',
+                templateOptions: {
+                  type: 'input',
+                  label: 'f-type-2',
+                },
+              }
+             ]
+
+
+
+
           }
        ]
 
