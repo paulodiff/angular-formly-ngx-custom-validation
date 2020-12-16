@@ -247,11 +247,45 @@ let f2 : FormlyFieldConfig = {
                 },
               }
              ]
+          },
+      {
+      "key": "options",
+      "type": "rr-repeat-section",
+      "templateOptions": {
+        "addText" : "Aggiungi un nominativo",
+        "removeText" : "Rimuovi il nominativo",
+        "itemName" : "Elemen",
+        "label": "Elenco nominativi",
+        "description": "Gestione dei nominativi, aggiungere o togliere nominativi"
+      },
+      
+      "fieldArray": {
+          "fieldGroupClassName": "row",
+          "fieldGroup": [
+            {
+              "type": "rr-input",
+              "key": "Nome1",
+               className: 'col-sm-6',
+              "templateOptions": {
+                "label": "Nome",
+                "required": true
+              }
+            },
+            {
+              "type": "rr-input",
+              "key": "Cognome1",
+               className: 'col-sm-6',
+              "templateOptions": {
+                "label": "Cognome",
+                "required": true
+              }
+            }
+          ]
 
+      }
+   
+    }
 
-
-
-          }
        ]
 
 };
