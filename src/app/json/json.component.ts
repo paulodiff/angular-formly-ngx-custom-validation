@@ -210,7 +210,6 @@ let f2 : FormlyFieldConfig = {
             templateOptions: {
               label: 'f-key',
               type: 'input',
-              default: 'infoSimple01',
               required: true,
             },
           },
@@ -220,32 +219,31 @@ let f2 : FormlyFieldConfig = {
             className: 'col-sm-6',
             templateOptions: {
               type: 'input',
-              label: 'f-type',
-              default: 'infoSimple'
+              label: 'f-type'
             },
           },
 
           {
             fieldGroupClassName: "row",
-             key : "f2b",
+             key : "templateOptions",
              fieldGroup: [
               {
                 className: 'col-sm-6',
                 type: 'input',
-                key: 'key2',
+                key: 'label',
                 templateOptions: {
-                  label: 'f-key-2',
+                  label: 'label',
                   type: 'input',
                   required: true,
                 },
               },
               {
                 type: 'input',
-                key: 'type2',
+                key: 'description',
                 className: 'col-sm-6',
                 templateOptions: {
                   type: 'input',
-                  label: 'f-type-2',
+                  label: 'description'
                 },
               }
              ]
@@ -324,9 +322,7 @@ let f1: FormlyFieldConfig = {
         dynamic
      ];
 
-     this.model = [
-       ...this.model
-     ]
+ 
      
 
   }
