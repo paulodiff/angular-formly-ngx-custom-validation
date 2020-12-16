@@ -198,6 +198,7 @@ export class JsonComponent implements OnInit, OnDestroy {
 let f2 : FormlyFieldConfig = {
 
       fieldGroupClassName: "row",
+      key : "f2",
       templateOptions: {
         addText: 'Add another investment',
       },
@@ -286,13 +287,12 @@ let f1: FormlyFieldConfig = {
 
      this.fields = [
         ...this.fields,
-        
+        f2,
         dynamic
      ];
 
      this.model = [
-       ...this.model,
-       dynamic.key = 'rew'
+       ...this.model
      ]
      
 
