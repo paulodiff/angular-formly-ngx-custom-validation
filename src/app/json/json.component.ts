@@ -94,8 +94,6 @@ export class JsonComponent implements OnInit, OnDestroy {
       );
     });
 
-
-  
    
     
   } // ngOnInit - end
@@ -158,6 +156,7 @@ export class JsonComponent implements OnInit, OnDestroy {
   }
 
   hmac() {
+
     let currentModel = this.model;
     let hmac_key = this.securityToken ? this.securityToken : '12345678';
     console.log('hmac key:', hmac_key);
@@ -187,6 +186,116 @@ export class JsonComponent implements OnInit, OnDestroy {
     });
 
     console.log('hmac:', hash.hex());
+  }
+
+  addItem2Form() {
+    console.log('add item to form');
+
+
+    console.log(this.fields);
+
+
+let f2 : FormlyFieldConfig = {
+
+      fieldGroupClassName: "row",
+      templateOptions: {
+        addText: 'Add another investment',
+      },
+       fieldGroup: [
+          {
+            className: 'col-sm-4',
+            type: 'input',
+            key: 'investmentName',
+            templateOptions: {
+              label: 'Name of Investment:',
+              required: true,
+            },
+          },
+          {
+            type: 'input',
+            key: 'investmentDate',
+            className: 'col-sm-4',
+            templateOptions: {
+              type: 'date',
+              label: 'Date of Investment:',
+            },
+          }
+       ]
+
+};
+
+let f1: FormlyFieldConfig = {
+      key: 'investments',
+      type: 'rr-repeat-section',
+      templateOptions: {
+        addText: 'Add another investment',
+      },
+      fieldArray: {
+        fieldGroup: [
+          {
+            className: 'col-sm-4',
+            type: 'input',
+            key: 'investmentName',
+            templateOptions: {
+              label: 'Name of Investment:',
+              required: true,
+            },
+          },
+          {
+            type: 'input',
+            key: 'investmentDate',
+            className: 'col-sm-4',
+            templateOptions: {
+              type: 'date',
+              label: 'Date of Investment:',
+            },
+          },
+          {
+            type: 'input',
+            key: 'stockIdentifier',
+            className: 'col-sm-4',
+            templateOptions: {
+              label: 'Stock Identifier:',
+            },
+          },
+        ],
+      },
+    };
+
+
+
+
+
+
+
+
+
+
+
+    let dynamic: FormlyFieldConfig = {};
+    dynamic.templateOptions = {};
+    dynamic.key = Math.random().toString();
+    dynamic.type = 'input';
+    dynamic.templateOptions.type = 'text';
+    dynamic.templateOptions.label = 'Dynamic:' + dynamic.key;
+    
+    console.log(dynamic);
+    
+    // this.fields.push(dynamic);
+
+
+     this.fields = [
+        ...this.fields,
+        
+        dynamic
+     ];
+
+     this.model = [
+       ...this.model,
+       dynamic.key = 'rew'
+     ]
+     
+
   }
 
   uploadData() {
