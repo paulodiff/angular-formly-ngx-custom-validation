@@ -54,7 +54,7 @@
                 "key": "required",
                 "className": "col-sm-4",
                 "templateOptions": {
-                  "type": "chkbo",
+                  "type": "rr-checkbox",
                   "label": "required"
                 }
               }
