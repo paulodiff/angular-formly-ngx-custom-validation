@@ -256,7 +256,7 @@ let f2 : FormlyFieldConfig = {
         "removeText" : "Rimuovi il nominativo",
         "itemName" : "Elemen",
         "label": "Elenco nominativi",
-        "description": "Gestione dei nominativi, aggiungere o togliere nominativi"
+        "description": "Gestione dei nomin..."
       },
       
       "fieldArray": {
