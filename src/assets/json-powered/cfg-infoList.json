@@ -12,7 +12,7 @@
             "key": "key",
             "templateOptions": {
               "label": "f-key",
-              "description": "valore key descrittivo",
+              "description": "valore key identificatore anche per essere utilizzato come rifereimento nelle espress",
               "type": "input",
               "required": true
             }
@@ -23,7 +23,7 @@
             "className": "col-sm-6",
             "templateOptions": {
               "type": "input",
-              "description": "tipo della chi",
+              "description": "tipo della chiave",
               "label": "f-type"
             }
           },
