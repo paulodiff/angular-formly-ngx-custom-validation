@@ -276,7 +276,7 @@ let f2 : FormlyFieldConfig = {
               "key": "Cognome1",
               "className": 'col-sm-6',
               "templateOptions": {
-                "label": "Cognome",
+                "label": "V",
                 "required": true
               }
             }
