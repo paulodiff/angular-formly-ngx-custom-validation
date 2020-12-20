@@ -192,7 +192,9 @@ addItemAsync() {
   console.log('addItemAsync');
   this._appService.getCfg('infoList').subscribe((cfgField) => {
         console.log('returned data ... building form ... ');
-        console.log(cfgField);
+        
+        cfgField.key = cfgField.key + Math.floor(Math.random() * Math.floor(1000)).toString();
+        
         // this.options = {};
         // this.model = {};
         this.fields = [
