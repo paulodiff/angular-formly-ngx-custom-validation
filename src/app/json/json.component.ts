@@ -252,7 +252,7 @@ let f2 : FormlyFieldConfig = {
       "key": "options",
       "type": "rr-repeat-section",
       "templateOptions": {
-        "addText" : "Aggiungi un nominativo",
+        "addText" : "Aggiungi un nom",
         "removeText" : "Rimuovi il nominativo",
         "itemName" : "Elemen",
         "label": "Elenco nominativi",
@@ -265,7 +265,7 @@ let f2 : FormlyFieldConfig = {
             {
               "type": "rr-input",
               "key": "Nome1",
-               className: 'col-sm-6',
+              "className": 'col-sm-6',
               "templateOptions": {
                 "label": "Nome",
                 "required": true
@@ -274,7 +274,7 @@ let f2 : FormlyFieldConfig = {
             {
               "type": "rr-input",
               "key": "Cognome1",
-               className: 'col-sm-6',
+              "className": 'col-sm-6',
               "templateOptions": {
                 "label": "Cognome",
                 "required": true
@@ -333,11 +333,6 @@ let f1: FormlyFieldConfig = {
 
 
 
-
-
-
-
-
     let dynamic: FormlyFieldConfig = {};
     dynamic.templateOptions = {};
     dynamic.key = 'ggt' + Math.floor(Math.random() * Math.floor(10000)).toString();
@@ -352,8 +347,8 @@ let f1: FormlyFieldConfig = {
 
      this.fields = [
         ...this.fields,
-        f2,
-        dynamic
+        f2
+        // dynamic
      ];
 
  
