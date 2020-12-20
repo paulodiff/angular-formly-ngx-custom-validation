@@ -19,6 +19,12 @@ class="btn btn-primary submit-button">HMAC</button>
 (click)="addItem2Form()"
 class="btn btn-primary submit-button">add item 2 form</button>
 
+<button 
+(click)="addItemAsync()"
+class="btn btn-primary submit-button">add item async</button>
+
+
+
 <div>
   <div *ngIf="error">
     {{ error.message }}
