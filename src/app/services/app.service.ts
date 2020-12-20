@@ -50,7 +50,7 @@ export class AppService {
   getCfg(cfgId) {
     let asset = 'assets/json-powered/cfg-' + cfgId + '.json';
     console.log('AppService:getCfg:',asset);
-    return this.http.get<[]>(asset);
+    return this.http.get<FormlyFieldConfig[]>(asset);
   }
 
   getModel(formId) {

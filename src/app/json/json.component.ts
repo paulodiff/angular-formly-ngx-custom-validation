@@ -195,6 +195,11 @@ addItemAsync() {
         console.log(cfgField);
         // this.options = {};
         // this.model = {};
+        this.fields = [
+        ...this.fields,
+        cfgField
+        
+     ];
   });
 }
 
