@@ -12,7 +12,7 @@
             "key": "key",
             "templateOptions": {
               "label": "f-key",
-              "description": "valore key identificatore anche per essere utilizzato come rifereimento nelle espress",
+              "description": "valore key identificatore anche per essere utilizzato come rifereimento nelle espressioni",
               "type": "input",
               "required": true
             }
@@ -34,7 +34,7 @@
             "fieldGroup": [
               {
                 "className": "col-sm-4",
-                "type": "input",
+                "type": "rr-input",
                 "key": "label",
                 "templateOptions": {
                   "label": "label",
@@ -42,7 +42,7 @@
                 }
               },
               {
-                "type": "input",
+                "type": "rr-input",
                 "key": "description",
                 "className": "col-sm-4",
                 "templateOptions": {
@@ -76,7 +76,7 @@
 		  
             {
               "type": "rr-input",
-              "key": "Nome1",
+              "key": "value",
               "className": "col-sm-6",
               "templateOptions": {
                 "label": "Nome",
@@ -86,7 +86,7 @@
 			
             {
               "type": "rr-input",
-              "key": "Cognome1",
+              "key": "l",
               "className": "col-sm-6",
               "templateOptions": {
                 "label": "Valore",
