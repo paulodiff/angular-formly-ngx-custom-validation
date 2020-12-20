@@ -41,6 +41,8 @@ import { FormlySvgCaptchaFieldType } from './formly/svg-captcha/formly-svgcaptch
 
 import { FormlyRepeatTypeComponent } from './formly/formly-repeat-section.type';
 
+import { FormlyRepeatTableTypeComponent } from './formly/formly-repeat-section-table.type';
+
 import { FormlyCfgInfoListFieldType } from './formly/CfgInfoList/formly-CfgInfoList-type.component';
 
 import { SafeHtmlPipe} from './pipes/safeHTML.pipe';
@@ -118,6 +120,8 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
           wrappers: ['form-field']},
           {name : 'rr-repeat-section', component: FormlyRepeatTypeComponent,
           wrappers: ['form-field']},
+          {name : 'rr-repeat-section-table', component: FormlyRepeatTableTypeComponent},
+
           {name : 'CfgInfoList', component: FormlyCfgInfoListFieldType},
           {name : 'cfg-input', component: FormlyInputItaliaComponentFieldType,
           wrappers: ['form-field-cfg']}
@@ -227,6 +231,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
     FormlyAuthInfoFieldType,
     FormlySvgCaptchaFieldType,
     FormlyRepeatTypeComponent,
+    FormlyRepeatTableTypeComponent,
     FormlyCfgInfoListFieldType,
     // CounterInputComponentFieldType,
     // CheckboxInputComponentFieldType,
