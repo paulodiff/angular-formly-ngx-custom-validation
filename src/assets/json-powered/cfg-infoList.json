@@ -1,0 +1,97 @@
+{
+
+      "fieldGroupClassName": "row",
+      "key" : "simpleList",
+      "templateOptions": {
+        "addText": "Add another item"
+      },
+	  
+      "fieldGroup": [
+          {
+            "className": "col-sm-6",
+            "type": "input",
+            "key": "key",
+            "templateOptions": {
+              "label": "f-key",
+              "type": "input",
+              "required": true
+            }
+          },
+          {
+            "type": "input",
+            "key": "type",
+            "className": "col-sm-6",
+            "templateOptions": {
+              "type": "input",
+              "label": "f-type"
+            }
+          },
+
+          {
+            "fieldGroupClassName": "row",
+            "key" : "templateOptions",
+            "fieldGroup": [
+              {
+                "className": "col-sm-6",
+                "type": "input",
+                "key": "label",
+                "templateOptions": {
+                  "label": "label",
+                  "type": "input",
+                  "required": true
+                }
+              },
+              {
+                "type": "input",
+                "key": "description",
+                "className": "col-sm-6",
+                "templateOptions": {
+                  "type": "input",
+                  "label": "description"
+                }
+              }
+             ]
+          },
+      {
+      "key": "options",
+      "type": "rr-repeat-section",
+      "templateOptions": {
+        "addText" : "Aggiungi elemento",
+        "removeText" : "Rimuovi elemento",
+        "itemName" : "Elemen",
+        "label": "Elenco elementi",
+        "description": "Gestione dei nomin..."
+      },
+      
+      "fieldArray": {
+          "fieldGroupClassName": "row",
+          "fieldGroup": [
+		  
+            {
+              "type": "rr-input",
+              "key": "Nome1",
+              "className": "col-sm-6",
+              "templateOptions": {
+                "label": "Nome",
+                "required": true
+              }
+            },
+			
+            {
+              "type": "rr-input",
+              "key": "Cognome1",
+              "className": "col-sm-6",
+              "templateOptions": {
+                "label": "Valore",
+                "required": true
+              }
+            }
+          ]
+
+      }
+   
+    }
+
+    ]
+
+}

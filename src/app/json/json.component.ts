@@ -188,7 +188,16 @@ export class JsonComponent implements OnInit, OnDestroy {
     console.log('hmac:', hash.hex());
   }
 
-  addItem2Form() {
+addItemAsync() {
+  console.log('addItemAsync');
+
+
+
+
+  
+}
+
+addItem2Form() {
     console.log('add item to form');
 
 
@@ -276,7 +285,7 @@ let f2 : FormlyFieldConfig = {
               "key": "Cognome1",
               "className": 'col-sm-6',
               "templateOptions": {
-                "label": "V",
+                "label": "Valore",
                 "required": true
               }
             }

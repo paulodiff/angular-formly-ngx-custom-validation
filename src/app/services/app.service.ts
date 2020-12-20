@@ -47,6 +47,12 @@ export class AppService {
       ]);
   }
 
+  getCfg(cfgId) {
+    let asset = 'assets/json-powered/cfg-' + cfgId + '.json';
+    console.log('AppService:getCfg:',asset);
+    return this.http.get<[]>(asset);
+  }
+
   getModel(formId) {
     let asset = 'assets/json-powered/' + formId + '-model.json';
     console.log('AppService:getModel:',asset);
