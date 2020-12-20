@@ -12,7 +12,7 @@
             "key": "key",
             "templateOptions": {
               "label": "f-key",
-              "description": "desc",
+              "description": "valore key descrittivo",
               "type": "input",
               "required": true
             }
@@ -23,6 +23,7 @@
             "className": "col-sm-6",
             "templateOptions": {
               "type": "input",
+              "description": "tipo della chi",
               "label": "f-type"
             }
           },
