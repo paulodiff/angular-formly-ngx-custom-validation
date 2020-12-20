@@ -40,7 +40,6 @@ import { FormlyAuthInfoFieldType } from './formly/authinfo/formly-authinfo-type.
 import { FormlySvgCaptchaFieldType } from './formly/svg-captcha/formly-svgcaptcha-type.component';
 
 import { FormlyRepeatTypeComponent } from './formly/formly-repeat-section.type';
-
 import { FormlyRepeatTableTypeComponent } from './formly/formly-repeat-section-table.type';
 
 import { FormlyCfgInfoListFieldType } from './formly/CfgInfoList/formly-CfgInfoList-type.component';

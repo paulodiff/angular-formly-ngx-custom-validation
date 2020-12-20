@@ -61,7 +61,7 @@
           },
       {
       "key": "options",
-      "type": "rr-repeat-section",
+      "type": "rr-repeat-section-table",
       "templateOptions": {
         "addText" : "Aggiungi elemento",
         "removeText" : "Rimuovi elemento",

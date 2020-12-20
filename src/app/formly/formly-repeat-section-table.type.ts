@@ -6,7 +6,7 @@ import { FieldArrayType } from '@ngx-formly/core';
   template: `
     
     <div *ngFor="let field of field.fieldGroup; let i = index;" class="border border-success p-2">
-      <p>SECTIIN TABLE</p
+      <p>SECTIIN TABLE</p>
       <h5>{{to.itemName}} n. {{ i + 1  }}</h5>
       <formly-group [field]="field">
 
