@@ -1,6 +1,5 @@
 {
       "fieldGroupClassName": "row",
-      "type" : "CfgInfoList",
       "key" : "infoList",
       "templateOptions": {
         "addText": "Add another item"
@@ -9,7 +8,7 @@
       "fieldGroup": [
           {
             "className": "col-sm-6",
-            "type": "input",
+            "type": "cfg-input",
             "key": "key",
             "templateOptions": {
               "label": "f-key",
@@ -19,7 +18,7 @@
             }
           },
           {
-            "type": "input",
+            "type": "cfg-input",
             "key": "type",
             "className": "col-sm-6",
             "templateOptions": {

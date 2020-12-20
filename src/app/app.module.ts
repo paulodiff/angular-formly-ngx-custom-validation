@@ -22,6 +22,7 @@ import { LoaderComponent } from './loader/loader.component';
 
 
 import { FormlyWrapperFormField } from './formly/formly-form-field.wrapper';
+import { FormlyWrapperFormFieldCfg } from './formly/formly-cfg-field.wrapper';
 import { CounterInputComponentFieldType } from './formly/counter/formly-counter-type.component';
 import { HtmlTemplateComponentFieldType } from './formly/html-template/formly-html-template-type.component';
 import { FileValueAccessor } from './formly/file-value-accessor';
@@ -117,14 +118,18 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
           wrappers: ['form-field']},
           {name : 'rr-repeat-section', component: FormlyRepeatTypeComponent,
           wrappers: ['form-field']},
-          {name : 'CfgInfoList', component: FormlyCfgInfoListFieldType}
+          {name : 'CfgInfoList', component: FormlyCfgInfoListFieldType},
+          {name : 'cfg-input', component: FormlyInputItaliaComponentFieldType,
+          wrappers: ['form-field-cfg']}
 
 
           
       ],
 
        wrappers: [
-         { name: 'form-field', component: FormlyWrapperFormField }
+         { name: 'form-field', component: FormlyWrapperFormField },
+         { name: 'form-field-cfg', component: FormlyWrapperFormFieldCfg }
+
       ],
 
       validators: [
@@ -212,6 +217,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
     FileValueAccessor,
     // RatingInputComponent,
     FormlyWrapperFormField,
+    FormlyWrapperFormFieldCfg,
     CounterInputComponentFieldType,
     HtmlTemplateComponentFieldType,
     FormlyCheckboxItaliaInputComponentFieldType,

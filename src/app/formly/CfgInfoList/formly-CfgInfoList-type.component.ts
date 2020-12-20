@@ -13,6 +13,7 @@ import { FieldType } from '@ngx-formly/core';
   <pre>
   {{formControl}}
   {{to.label}}
+  {{to.addText}}
   </pre>
 
   <div 
