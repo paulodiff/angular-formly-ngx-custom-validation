@@ -12,6 +12,7 @@
             "key": "key",
             "templateOptions": {
               "label": "f-key",
+              "description": "desc",
               "type": "input",
               "required": true
             }
