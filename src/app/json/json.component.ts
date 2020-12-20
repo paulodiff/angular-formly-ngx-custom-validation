@@ -194,7 +194,7 @@ addItemAsync() {
         console.log('returned data ... building form ... ');
         
         cfgField.key = cfgField.key + Math.floor(Math.random() * Math.floor(1000)).toString();
-        
+        console.log(cfgField.key);
         // this.options = {};
         // this.model = {};
         this.fields = [
