@@ -1,5 +1,6 @@
 {
       "fieldGroupClassName": "row",
+      "type" : "CfgInfoList",
       "key" : "infoList",
       "templateOptions": {
         "addText": "Add another item"
