@@ -36,7 +36,6 @@
                 "key": "label",
                 "templateOptions": {
                   "label": "label",
-                  "type": "input",
                   "required": true
                 }
               },
@@ -45,16 +44,14 @@
                 "key": "description",
                 "className": "col-sm-4",
                 "templateOptions": {
-                  "type": "input",
                   "label": "description"
                 }
               },
               {
-                "type": "input",
+                "type": "rr-checkbox",
                 "key": "required",
                 "className": "col-sm-4",
                 "templateOptions": {
-                  "type": "rr-checkbox",
                   "label": "required"
                 }
               }
