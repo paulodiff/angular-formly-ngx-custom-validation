@@ -1,7 +1,6 @@
 {
-
       "fieldGroupClassName": "row",
-      "key" : "simpleList",
+      "key" : "infoList",
       "templateOptions": {
         "addText": "Add another item"
       },
@@ -86,6 +85,7 @@
                 "required": true
               }
             }
+
           ]
 
       }
