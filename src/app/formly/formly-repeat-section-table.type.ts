@@ -5,14 +5,33 @@ import { FieldArrayType } from '@ngx-formly/core';
   selector: 'formly-repeat-section-table',
   template: `
     
-    <div *ngFor="let field of field.fieldGroup; let i = index;" class="border border-success p-2">
-      <p>SECTIIN TABLE</p>
-      <h5>{{to.itemName}} n. {{ i + 1  }}</h5>
-      <formly-group [field]="field">
+    <p>SECTION TABLE</p>
+    <div 
+    *ngFor="let field of field.fieldGroup; let i = index;" 
+    class="border border-success p-2">
 
-        <button class="btn btn-danger btn-lg btn-block" type="button" (click)="remove(i)">{{ to.removeText }} n. {{ i + 1 }}</button>
+    <div class="row">
+      <div class="col-sm-6">
+      {{to.itemName}} n. {{ i + 1  }}
+      </div>
+      <div class="col-sm-">
+           <button 
+        class="btn btn-danger btn-sm btn-block" type="button" (click)="remove(i)">{{ to.removeText }} n. {{ i + 1 }}</button>
+      </div>
+    </div>
+      
+  <!--
+      <h5>{{to.itemName}} n. {{ i + 1  }}</h5>
+              <button 
+        class="btn btn-danger btn-sm btn-block" type="button" (click)="remove(i)">{{ to.removeText }} n. {{ i + 1 }}</button>
+    --> 
     
+      <formly-group [field]="field">
+               
       </formly-group>
+        
+
+    
       
     </div>
     
