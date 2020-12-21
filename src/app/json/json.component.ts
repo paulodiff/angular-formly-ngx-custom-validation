@@ -205,7 +205,9 @@ addItemAsync() {
           cfgField
         ];
 
-        console.log(this.model);
+        
+        this.model[cfgField.key] = {};
+        this.model[cfgField.key].key = cfgField.key;
   });
 }
 

@@ -13,7 +13,7 @@
             "templateOptions": {
               "label": "f-key",
               "description": "valore key identificatore anche per essere utilizzato come rifereimento nelle espressioni",
-
+              "disabled" : tru
               "required": true
             }
           },
