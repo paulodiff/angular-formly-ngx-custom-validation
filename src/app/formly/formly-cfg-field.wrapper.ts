@@ -10,18 +10,21 @@ import { FieldWrapper } from '@ngx-formly/core';
 
   <p>CFG wr{{ to.label }} 
   
-  <span *ngIf="to.required && to.hideRequiredMarker !== true"> (obbligatorio) </span> </p>
+  <span *ngIf="to.required && to.hideRequiredMarker !== true"> (obbligatorio) </span> 
+  
+  </p>
+
   <p *ngIf="to.description">{{ to.description }}<p>
+
   <ng-template #fieldComponent></ng-template>
   
   <div *ngIf="showError" 
     class="border border-danger align-middle" 
   >
     
-  <p class="font-weight-bold text-danger">Attenzione</h>
-  <p class="card-text text-red"><formly-validation-message [field]="field"></formly-validation-message></p>
-          
-   
+  <p class="font-weight-bold text-danger">Attenzione</p>
+  <p class="text-red"><formly-validation-message [field]="field"></formly-validation-message></p>
+             
 
   </div>
 </div>
