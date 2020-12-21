@@ -86,7 +86,7 @@
 			
             {
               "type": "rr-input",
-              "key": "l",
+              "key": "label",
               "className": "col-sm-6",
               "templateOptions": {
                 "label": "Valore",

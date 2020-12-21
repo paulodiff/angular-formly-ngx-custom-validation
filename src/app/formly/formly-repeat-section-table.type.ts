@@ -5,7 +5,20 @@ import { FieldArrayType } from '@ngx-formly/core';
   selector: 'formly-repeat-section-table',
   template: `
     
-    <p>SECTION TABLE</p>
+
+
+    <div class="row">
+      <div class="col-sm-6">
+      SECTION TABLE
+      </div>
+      <div class="col-sm-6">
+
+      <button 
+      class="btn btn-primary btn-sm btn-block p-2"
+      type="button" (click)="add()">{{ to.addText }}</button>
+      </div>
+    </div>
+
     <div 
     *ngFor="let field of field.fieldGroup; let i = index;" 
     class="border border-success p-2">
@@ -14,7 +27,7 @@ import { FieldArrayType } from '@ngx-formly/core';
       <div class="col-sm-6">
       {{to.itemName}} n. {{ i + 1  }}
       </div>
-      <div class="col-sm-">
+      <div class="col-sm-6">
            <button 
         class="btn btn-danger btn-sm btn-block" type="button" (click)="remove(i)">{{ to.removeText }} n. {{ i + 1 }}</button>
       </div>
@@ -29,9 +42,7 @@ import { FieldArrayType } from '@ngx-formly/core';
       <formly-group [field]="field">
                
       </formly-group>
-        
-
-    
+           
       
     </div>
     

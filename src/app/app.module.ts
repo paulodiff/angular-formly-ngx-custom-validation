@@ -109,8 +109,10 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
           defaultOptions: { }, wrappers: ['form-field']},
           {name : 'rr-radio', component: FormlyRadioItaliaInputComponentFieldType,
           wrappers: ['form-field']},
+
           {name : 'rr-input', component: FormlyInputItaliaComponentFieldType,
           wrappers: ['form-field']},
+          
           {name : 'rr-select', component: FormlySelectItaliaComponentFieldType,
           wrappers: ['form-field']},
           {name : 'rr-authinfo', component: FormlyAuthInfoFieldType,
