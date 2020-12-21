@@ -195,13 +195,17 @@ addItemAsync() {
         
         cfgField.key = cfgField.key + Math.floor(Math.random() * Math.floor(1000)).toString();
         console.log(cfgField.key);
+        console.log('------------------------------');
+        console.log(cfgField);
+        
         // this.options = {};
         // this.model = {};
         this.fields = [
-        ...this.fields,
-        cfgField
-        
-     ];
+          ...this.fields,
+          cfgField
+        ];
+
+        console.log(this.model);
   });
 }
 
