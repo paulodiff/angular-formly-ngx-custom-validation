@@ -8,7 +8,7 @@ import { FieldWrapper } from '@ngx-formly/core';
   <div class="form-group border border-primary p-2" [class.has-error]="showError">
 
 
-  <h5>CFG CFG{{ to.label }} 
+  <h5>CFG wr{{ to.label }} 
   
   <span *ngIf="to.required && to.hideRequiredMarker !== true"> (obbligatorio) </span> </h5>
   <p *ngIf="to.description">{{ to.description }}<p>

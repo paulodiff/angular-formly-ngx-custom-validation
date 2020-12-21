@@ -112,7 +112,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
 
           {name : 'rr-input', component: FormlyInputItaliaComponentFieldType,
           wrappers: ['form-field']},
-          
+
           {name : 'rr-select', component: FormlySelectItaliaComponentFieldType,
           wrappers: ['form-field']},
           {name : 'rr-authinfo', component: FormlyAuthInfoFieldType,
@@ -124,6 +124,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
           {name : 'rr-repeat-section-table', component: FormlyRepeatTableTypeComponent},
 
           {name : 'CfgInfoList', component: FormlyCfgInfoListFieldType},
+          
           {name : 'cfg-input', component: FormlyInputItaliaComponentFieldType,
           wrappers: ['form-field-cfg']}
 
