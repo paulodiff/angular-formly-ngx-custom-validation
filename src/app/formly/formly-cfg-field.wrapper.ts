@@ -5,20 +5,20 @@ import { FieldWrapper } from '@ngx-formly/core';
   selector: 'formly-wrapper-form-field-cfg',
   template:  `
   
-  <div class="form-group border border-primary p-2" [class.has-error]="showError">
+  <div class="form-group border-primary" [class.has-error]="showError">
 
 
-  <h5>CFG wr{{ to.label }} 
+  <p>CFG wr{{ to.label }} 
   
-  <span *ngIf="to.required && to.hideRequiredMarker !== true"> (obbligatorio) </span> </h5>
+  <span *ngIf="to.required && to.hideRequiredMarker !== true"> (obbligatorio) </span> </p>
   <p *ngIf="to.description">{{ to.description }}<p>
   <ng-template #fieldComponent></ng-template>
   
   <div *ngIf="showError" 
-    class="border border-danger align-middle p-2" 
+    class="border border-danger align-middle" 
   >
     
-  <h5 class="font-weight-bold text-danger">Attenzione</h5>
+  <p class="font-weight-bold text-danger">Attenzione</h>
   <p class="card-text text-red"><formly-validation-message [field]="field"></formly-validation-message></p>
           
    
