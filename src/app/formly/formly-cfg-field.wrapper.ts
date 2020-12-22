@@ -4,6 +4,8 @@ import { FieldWrapper } from '@ngx-formly/core';
 @Component({
   selector: 'formly-wrapper-form-field-cfg',
   template:  `
+
+
   
   <div class="form-group border-primary" [class.has-error]="showError">
 
@@ -28,6 +30,8 @@ import { FieldWrapper } from '@ngx-formly/core';
 
   </div>
 </div>
+
+
 `
 })
 export class FormlyWrapperFormFieldCfg extends FieldWrapper {

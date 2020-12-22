@@ -13,7 +13,7 @@
             "templateOptions": {
               "label": "f-key",
               "description": "valore key identificatore anche per essere utilizzato come rifereimento nelle espressioni",
-              "disabled" : true
+              "disabled" : true,
               "required": true
             }
           },
@@ -77,7 +77,7 @@
             {
               "type": "rr-input",
               "key": "value",
-              "className": "col-sm-6",
+              "className": "col-xl-6",
               "templateOptions": {
                 "label": "Nome",
                 "required": true
@@ -87,7 +87,7 @@
             {
               "type": "rr-input",
               "key": "label",
-              "className": "col-sm-6",
+              "className": "col-x-6",
               "templateOptions": {
                 "label": "Valore",
                 "required": true
