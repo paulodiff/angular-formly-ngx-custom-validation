@@ -2,6 +2,7 @@
       "fieldGroupClassName": "row",
       "key" : "infoList",
       "type" : "CfgInfoList",
+      "wrappers" : ["form-field-cfg-all"],
       "templateOptions": {
         "addText": "Add another item"
       },
