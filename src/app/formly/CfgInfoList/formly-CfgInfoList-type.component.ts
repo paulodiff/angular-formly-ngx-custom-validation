@@ -9,12 +9,14 @@ import { FieldType } from '@ngx-formly/core';
 @Component({
   selector: 'formly-field-CfgInfoList',
   template: `
-  
+  <pre>CfgInfoList</pre>
   <pre>
   {{formControl}}
   {{to.label}}
   {{to.addText}}
   </pre>
+
+<ng-template #fieldComponent></ng-template>
 
   <div 
     class="upload-btn-wrapper btn-block" 
