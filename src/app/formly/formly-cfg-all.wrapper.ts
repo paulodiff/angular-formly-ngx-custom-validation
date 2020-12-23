@@ -8,7 +8,7 @@ import { FieldWrapper } from '@ngx-formly/core';
 
   
 <div class="border border-secondary">
-
+  WRAP ALL
   <ng-template #fieldComponent></ng-template>
   
 </div>
