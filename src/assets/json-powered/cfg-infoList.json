@@ -23,7 +23,6 @@
             "key": "type",
             "className": "col-sm-6",
             "templateOptions": {
-
               "description": "tipo della chiave",
               "label": "f-type"
             }
@@ -60,23 +59,24 @@
               }
              ]
           },
+
       {
       "key": "options",
       "type": "rr-repeat-section-table",
       "templateOptions": {
-        "addText" : "Aggiungi elemento",
-        "removeText" : "Rimuovi elemento",
-        "itemName" : "Elemen",
-        "label": "Elenco elementi",
-        "description": "Gestione dei nomin55.."
-      },
+          "addText" : "Aggiungi elemento",
+          "removeText" : "Rimuovi elemento",
+          "itemName" : "Elemen",
+          "label": "Elenco elementi",
+          "description": "Gestione dei nomin.."
+        },
       
       "fieldArray": {
           "fieldGroupClassName": "row",
           "fieldGroup": [
 		  
             {
-              "type": "rr-input",
+              "type": "input",
               "key": "value",
               "className": "col-xl-6",
               "templateOptions": {
@@ -86,9 +86,9 @@
             },
 			
             {
-              "type": "rr-input",
+              "type": "input",
               "key": "label",
-              "className": "col-x-6",
+              "className": "col-xl-6",
               "templateOptions": {
                 "label": "Valore",
                 "required": true
