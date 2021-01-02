@@ -197,6 +197,7 @@ addItemAsync() {
         console.log(cfgField.key);
         console.log('------------------------------');
         console.log(cfgField);
+        // cfgField.type = 'infoList';
         
         // this.options = {};
         // this.model = {};
@@ -208,6 +209,7 @@ addItemAsync() {
         
         this.model[cfgField.key] = {};
         this.model[cfgField.key].key = cfgField.key;
+        this.model[cfgField.key].type = 'infoList';
   });
 }
 
