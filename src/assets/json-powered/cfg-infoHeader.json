@@ -1,9 +1,12 @@
+[
 {         
         "key" : "infoHeader",
+        "fieldGroupClassName": "row",
         "fieldGroup": [
           {
             "type": "input",
             "key": "key",
+            "className": "col-sm-6",
             "templateOptions": {
               "label": "f-key",
               "description": "desc...",
@@ -14,34 +17,21 @@
           {
             "type": "input",
             "key": "type",
+            "className": "col-sm-6",
             "templateOptions": {
               "description": "tipo della chiave",
               "label": "f-type"
             }
-          },
-       
-          {
-            "fieldGroupClassName": "row",
-            "key" : "templateOptions",
-            "fieldGroup": [
-              {
-                "className": "col-sm-6",
-                "type": "rr-input",
-                "key": "label",
-                "templateOptions": {
-                  "label": "label",
-                  "required": true
-                }
-              },
-              {
-                "type": "rr-input",
-                "key": "description",
-                "className": "col-sm-",
-                "templateOptions": {
-                  "label": "description"
-                }
-              }
-             ]
           }
         ]
-}
+   
+},
+{
+            "type": "input",
+            "key": "type",
+            "className": "col-sm-6",
+            "templateOptions": {
+              "description": "tipo della chiave",
+              "label": "f-type"
+            }
+          }
