@@ -190,7 +190,8 @@ export class JsonComponent implements OnInit, OnDestroy {
 
 addItemAsync() {
   console.log('addItemAsync');
-  this._appService.getCfg('infoList').subscribe((cfgField) => {
+  let cfgType = 'infoHeader';
+  this._appService.getCfg(cfgType).subscribe((cfgField) => {
         console.log('returned data ... building form ... ');
         
         cfgField.key = cfgField.key + Math.floor(Math.random() * Math.floor(1000)).toString();
@@ -209,7 +210,7 @@ addItemAsync() {
         
         this.model[cfgField.key] = {};
         this.model[cfgField.key].key = cfgField.key;
-        this.model[cfgField.key].type = 'infoList';
+        this.model[cfgField.key].type = cfgType;
   });
 }
 
