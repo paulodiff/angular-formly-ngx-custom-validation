@@ -1,7 +1,5 @@
-[
- 
+[          
           {
-          
             "type": "input",
             "key": "key",
             "templateOptions": {
@@ -14,20 +12,17 @@
           {
             "type": "input",
             "key": "type",
-    
             "templateOptions": {
               "description": "tipo della chiave",
               "label": "f-type"
             }
           },
           {
-            "type": "rr-input-no-wrap",
+            "type": "input",
             "key": "titolo",
-    
             "templateOptions": {
               "description": "titolo da ...",
               "label": "titolo"
             }
           }      
-  
 ]
