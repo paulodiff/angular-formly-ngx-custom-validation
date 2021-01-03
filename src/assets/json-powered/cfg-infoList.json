@@ -34,7 +34,7 @@
             "fieldGroup": [
               {
                 "className": "col-sm-4",
-                "type": "rr-input",
+                "type": "rr-input-no-wrap",
                 "key": "label",
                 "templateOptions": {
                   "label": "label",
@@ -42,7 +42,7 @@
                 }
               },
               {
-                "type": "rr-input",
+                "type": "rr-input-no-wrap",
                 "key": "description",
                 "className": "col-sm-4",
                 "templateOptions": {

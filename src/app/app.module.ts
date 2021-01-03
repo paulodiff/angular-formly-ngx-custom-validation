@@ -114,6 +114,8 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
           {name : 'rr-input', component: FormlyInputItaliaComponentFieldType,
           wrappers: ['form-field']},
 
+           {name : 'rr-input-no-wrap', component: FormlyInputItaliaComponentFieldType},
+
           {name : 'rr-select', component: FormlySelectItaliaComponentFieldType,
           wrappers: ['form-field']},
           {name : 'rr-authinfo', component: FormlyAuthInfoFieldType,
