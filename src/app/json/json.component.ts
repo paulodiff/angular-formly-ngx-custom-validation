@@ -195,9 +195,8 @@ addItemAsync() {
   this._appService.getCfg(cfgType).subscribe((cfgField) => {
         console.log('returned data ... building form ... ');
         
-        cfgField.key = cfgField.key + Math.floor(Math.random() * Math.floor(1000)).toString();
+        cfgField.key = cfgType + Math.floor(Math.random() * Math.floor(1000)).toString();
         console.log(cfgField.key);
-        console.log('------------------------------');
         console.log(cfgField);
         // cfgField.type = 'infoList';
         

@@ -1,4 +1,6 @@
-[          
+{         
+        "key" : "infoHeade",
+        "fieldGroup": [
           {
             "type": "input",
             "key": "key",
@@ -24,5 +26,6 @@
               "description": "titolo da ...",
               "label": "titolo"
             }
-          }      
-]
+          } 
+        ]     
+}
