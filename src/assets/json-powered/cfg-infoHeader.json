@@ -1,5 +1,5 @@
 {         
-        "key" : "infoHeade",
+        "key" : "infoHeader",
         "fieldGroup": [
           {
             "type": "input",
@@ -19,13 +19,29 @@
               "label": "f-type"
             }
           },
+       
           {
-            "type": "input",
-            "key": "titolo",
-            "templateOptions": {
-              "description": "titolo da ...",
-              "label": "titolo"
-            }
-          } 
-        ]     
+            "fieldGroupClassName": "row",
+            "key" : "templateOptions",
+            "fieldGroup": [
+              {
+                "className": "col-sm-6",
+                "type": "rr-input",
+                "key": "label",
+                "templateOptions": {
+                  "label": "label",
+                  "required": true
+                }
+              },
+              {
+                "type": "rr-input",
+                "key": "description",
+                "className": "col-sm-",
+                "templateOptions": {
+                  "label": "description"
+                }
+              }
+             ]
+          }
+        ]
 }
