@@ -1,6 +1,6 @@
 {
       "fieldGroupClassName": "row",
-      "key" : "infoHeader",
+      "key" : "infoList",
       "wrappers" : ["form-field-cfg-all"],
       "templateOptions": {
         "addText": "Add another item"

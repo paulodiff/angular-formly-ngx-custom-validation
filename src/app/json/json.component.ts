@@ -190,7 +190,8 @@ export class JsonComponent implements OnInit, OnDestroy {
 
 addItemAsync() {
   console.log('addItemAsync');
-  let cfgType = 'infoHeader';
+  let cfgType = 'infoL';
+  console.log('addItemAsync', cfgType);
   this._appService.getCfg(cfgType).subscribe((cfgField) => {
         console.log('returned data ... building form ... ');
         
