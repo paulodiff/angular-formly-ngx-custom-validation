@@ -1,30 +1,33 @@
-{
-      "fieldGroupClassName": "row",
-      "key" : "infoHeader",
-      "templateOptions": {
-        "addText": "Add another item"
-      },
-	  
-      "fieldGroup": [
+[
+ 
           {
-            "className": "col-sm-6",
-            "type": "cfg-input",
+          
+            "type": "input",
             "key": "key",
             "templateOptions": {
               "label": "f-key",
-              "description": "valto nelle espressioni",
+              "description": "desc...",
               "disabled" : true,
               "required": true
             }
           },
           {
-            "type": "cfg-input",
+            "type": "input",
             "key": "type",
-            "className": "col-sm-6",
+    
             "templateOptions": {
               "description": "tipo della chiave",
               "label": "f-type"
             }
-          }   
-    ]
-}
+          },
+          {
+            "type": "rr-input-no-wrap",
+            "key": "titolo",
+    
+            "templateOptions": {
+              "description": "titolo da ...",
+              "label": "titolo"
+            }
+          }      
+  
+]
