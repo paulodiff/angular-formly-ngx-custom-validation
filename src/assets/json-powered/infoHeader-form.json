@@ -34,7 +34,6 @@
               "key": "description",
               "type": "input",
               "templateOptions": {
-                "type": "text",
                 "label": "DESCRIPTION"
               }
             },
@@ -43,16 +42,71 @@
               "key": "label",
               "type": "input",
               "templateOptions": {
-                "type": "text",
                 "label": "LABEL"
               }
             },
             {
               "className": "col-sm-4 col-md-4 col-lg-4",
               "key": "required",
-              "type": "checkbox",
+              "type": "input",
               "templateOptions": {
-                "type": "text",
+                "label": "REQUIRED"
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+    {
+      "key": "infoHeader2",
+      "fieldGroupClassName": "row",
+      "fieldGroup": [
+        {
+          "className": "col-sm-6 col-md-6 col-lg-6",
+          "key": "key",
+          "type": "input",
+          "templateOptions": {
+            "required": true,
+            "type": "text",
+            "label": "KEY"
+          }
+        },
+        {
+          "className": "col-sm-6 col-md-6 col-lg-6",
+          "key": "type",
+          "type": "input",
+          "templateOptions": {
+            "required": true,
+            "type": "text",
+            "label": "TYPE"
+          }
+        },
+        {
+          "key": "templateOptions",
+          "fieldGroupClassName": "row",
+          "fieldGroup": [
+            {
+              "className": "col-sm-4 col-md-4 col-lg-4",
+              "key": "description",
+              "type": "input",
+              "templateOptions": {
+                "label": "DESCRIPTION"
+              }
+            },
+            {
+              "className": "col-sm-4 col-md-4 col-lg-4",
+              "key": "label",
+              "type": "input",
+              "templateOptions": {
+                "label": "LABEL"
+              }
+            },
+            {
+              "className": "col-sm-4 col-md-4 col-lg-4",
+              "key": "required",
+              "type": "input",
+              "templateOptions": {
                 "label": "REQUIRED"
               }
             }

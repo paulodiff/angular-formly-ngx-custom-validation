@@ -152,6 +152,7 @@ export class JsonComponent implements OnInit, OnDestroy {
       alert(JSON.stringify(this.model));
     } else {
       alert('errori da sistemare');
+      console.log(this.form.valid);
     }
   }
 
