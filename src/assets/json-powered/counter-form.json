@@ -6,6 +6,109 @@
         "label": "counter"
       }
      
-    }
+    },
+
+{
+      "key": "infoHeader",
+      "fieldGroupClassName": "row",
+      "fieldGroup": [
+        {
+          "className": "col-sm-6 col-md-6 col-lg-6",
+          "key": "key",
+          "type": "input",
+          "templateOptions": {
+            "required": true,
+            "type": "text",
+            "label": "KEY"
+          }
+        },
+        {
+          "className": "col-sm-6 col-md-6 col-lg-6",
+          "key": "type",
+          "type": "input",
+          "templateOptions": {
+            "required": true,
+            "type": "text",
+            "label": "TYPE"
+          }
+        },
+        {
+          "key": "templateOptions",
+          "fieldGroupClassName": "row",
+          "fieldGroup": [
+            {
+              "className": "col-sm-4 col-md-4 col-lg-4",
+              "key": "description",
+              "type": "input",
+              "templateOptions": {
+                "type": "text",
+                "label": "DESCRIPTION"
+              }
+            },
+            {
+              "className": "col-sm-4 col-md-4 col-lg-4",
+              "key": "label",
+              "type": "input",
+              "templateOptions": {
+                "type": "text",
+                "label": "LABEL"
+              }
+            },
+            {
+              "className": "col-sm-4 col-md-4 col-lg-4",
+              "key": "required",
+              "type": "checkbox",
+              "templateOptions": {
+                "type": "text",
+                "label": "REQUIRED"
+              }
+            }
+          ]
+        }
+      ]
+    },
+
+
+
+
+
+
+
+
+    {
+      "className": "col-sm-12 col-md-4 col-lg-4",
+      "type": "input",
+      "key": "chg_Fax",
+      
+      "templateOptions": {
+        "label": "Main Fax #",
+        "placeholder": "Fax"
+      }
+    },
+    {
+      "fieldGroupClassName": "row",
+      "fieldGroup": [
+	            {
+              "className": "col-sm-6 col-md-6 col-lg-6",
+              "type": "input",
+              "key": "chg_MName",
+              "templateOptions": {
+                "label": "Middle Name",
+                "placeholder": "Middle Name"
+              }
+            },
+            {
+              "className": "col-sm-6 col-md-6 col-lg-6",
+              "type": "input",
+              "key": "chg_LName",
+              "templateOptions": {
+                "label": "Last Name",
+                "placeholder": "Last Name",
+                "required": true
+              }
+            }
+	]
+}
+
    
   ]
