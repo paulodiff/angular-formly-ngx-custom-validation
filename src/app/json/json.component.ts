@@ -49,7 +49,7 @@ export class JsonComponent implements OnInit, OnDestroy {
       // In a real app: dispatch action to load the details here.
       // recupera model,fields,options 
       this._appService.getFormData(this.itemId).subscribe(([model, fields, options ]) => {
-        console.log('returned data ... building form ... ');
+        console.log('json.component:ngOnInit:getFormData...');
         // this.options = {};
         this.model = {};
         this.fields = null;
@@ -57,7 +57,8 @@ export class JsonComponent implements OnInit, OnDestroy {
         this.fields = fields;
         this.options = options;
 
-        console.log(options);
+        console.log('model:',model);
+        console.log('options:',options);
         if(options && options.formState && options.formState.security ) {
           this.securityToken = options.formState.security.token;
         }

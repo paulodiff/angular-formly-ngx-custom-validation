@@ -1,16 +1,16 @@
 {
-  "infoHeader": {
+  "infoHeader01": {
     "templateOptions": {
-      "description": "asd",
-      "label": "asd",
-      "required": "ads"
+      "description": "d_escription_",
+      "label": "l_abel",
+      "required": "r_equired"
     },
-    "key": "eee",
-    "type": "ee"
+    "key": "infoHeader01",
+    "type": "infoHeader"
   },
-  "infoHeader2": {
+  "infoHeader02": {
     "templateOptions": {},
-    "type": "dsasd",
-    "key": "asdasd"
+    "type": "infoHeader",
+    "key": "infoHeader02"
   }
 }
