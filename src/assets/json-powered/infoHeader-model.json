@@ -1,1 +1,16 @@
-{}
+{
+  "infoHeader": {
+    "templateOptions": {
+      "description": "asd",
+      "label": "asd",
+      "required": "ads"
+    },
+    "key": "eee",
+    "type": "ee"
+  },
+  "infoHeader2": {
+    "templateOptions": {},
+    "type": "dsasd",
+    "key": "asdasd"
+  }
+}

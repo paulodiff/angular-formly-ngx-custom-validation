@@ -2,7 +2,7 @@
   
 
 {
-      "key": "infoHeader",
+      "key": "infoHeader01",
       "fieldGroupClassName": "row",
       "fieldGroup": [
         {
@@ -59,7 +59,7 @@
     },
 
     {
-      "key": "infoHeader2",
+      "key": "infoHeader02",
       "fieldGroupClassName": "row",
       "fieldGroup": [
         {
