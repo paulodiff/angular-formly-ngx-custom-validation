@@ -3,6 +3,7 @@
 
 {
       "key": "infoHeader01",
+      "wrappers": ["form-field-cfg-all"],
       "fieldGroupClassName": "row",
       "fieldGroup": [
         {

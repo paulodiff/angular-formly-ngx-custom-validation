@@ -7,10 +7,13 @@ import { FieldWrapper } from '@ngx-formly/core';
 
 
   
-<div class="border border-secondary">
+<div class="border border-secondary p-3">
 
 
   <small>[formly-wrapper-form-field-cfg-all]</small>
+  {{key}} <button 
+(click)="removeItem(key)"
+class="btn btn-primary submit-button">Remove</button>
   <ng-template #fieldComponent></ng-template>
 
   

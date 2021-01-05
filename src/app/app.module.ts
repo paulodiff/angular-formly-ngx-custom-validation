@@ -6,6 +6,7 @@ import { FormlyBootstrapModule } from '@ngx-formly/bootstrap';
 import { FormControl } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { JsonComponent} from './json/json.component';
+import { EditorComponent} from './editor/editor.component';
 import { LoginComponent} from './login/login.component';
 import { SchemaComponent} from './schema/schema.component';
 import { MainComponent} from './main/main.component';
@@ -88,6 +89,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
     RouterModule.forRoot([
 
       { path: 'json', component: JsonComponent },
+      { path: 'editor/:itemId', component: EditorComponent },
       { path: 'main', component: MainComponent },
       { path: 'login', component: LoginComponent },
       { path: 'login/:token', component: LoginComponent },
@@ -216,6 +218,7 @@ export function IpValidatorMessage(err, field: FormlyFieldConfig) {
   declarations: [
     AppComponent,
     JsonComponent,
+    EditorComponent,
     SchemaComponent,
     MainComponent,
     TabulatorTableComponent,
